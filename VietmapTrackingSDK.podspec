@@ -9,7 +9,7 @@ Pod::Spec.new do |spec|
                    DESC
   
   spec.homepage     = "https://github.com/nhatpv-vietmap/vietmap_tracking_sdk_ios"
-  spec.license      = { :type => "MIT", :file => "LICENSE" }
+  spec.license      = { :type => "MIT" }
   spec.author       = { "Vietmap" => "nhatpv@vietmap.vn" }
   
   spec.platform     = :ios, "12.0"
@@ -21,7 +21,7 @@ Pod::Spec.new do |spec|
   }
   
   # Use prebuilt XCFramework - supports both device and simulator
-  spec.vendored_frameworks = "ios/VietmapTrackingSDK.xcframework"
+  spec.vendored_frameworks = "VietmapTrackingSDK/1.0.0/VietmapTrackingSDK.xcframework"
   
   # Framework requirements
   spec.frameworks = ['Foundation', 'CoreLocation', 'UIKit']
