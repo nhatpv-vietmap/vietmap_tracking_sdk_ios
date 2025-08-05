@@ -1,0 +1,101 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.0.3 effective-5.10 (swiftlang-6.0.3.1.10 clang-1600.0.30.1)
+// swift-module-flags: -target arm64-apple-ios12.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name VietmapTrackingSDK
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface
+import AVFoundation
+import BackgroundTasks
+import CoreLocation
+import Foundation
+import Network
+import Swift
+import UIKit
+@_exported import VietmapTrackingSDK
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+public struct VMLocation {
+  public let latitude: Swift.Double
+  public let longitude: Swift.Double
+  public let altitude: Swift.Double
+  public let accuracy: Swift.Double
+  public let speed: Swift.Double
+  public let bearing: Swift.Double
+  public let timestamp: Foundation.TimeInterval
+  public init(latitude: Swift.Double, longitude: Swift.Double, altitude: Swift.Double = 0.0, accuracy: Swift.Double = 0.0, speed: Swift.Double = 0.0, bearing: Swift.Double = 0.0, timestamp: Foundation.TimeInterval = Date().timeIntervalSince1970)
+}
+public struct RouteData {
+  public var routeId: Swift.String
+  public var totalDistance: Swift.Double
+  public var estimatedTime: Swift.Double
+  public var waypoints: [VietmapTrackingSDK.VMLocation]
+  public var speedLimits: [Swift.Double]
+  public init()
+}
+public struct TrackingConfig {
+  public var updateInterval: Foundation.TimeInterval
+  public var minDistanceFilter: Swift.Double
+  public var enableSpeedAlerts: Swift.Bool
+  public var speedThreshold: Swift.Double
+  public var accuracy: Swift.String
+  public var enableBackgroundMode: Swift.Bool
+  public var distanceFilter: Swift.Double
+  public init()
+}
+public struct AlertConfig {
+  public var speedAlertEnabled: Swift.Bool
+  public var voiceAlertsEnabled: Swift.Bool
+  public var alertThreshold: Swift.Double
+  public var speedThreshold: Swift.Double
+  public var language: Swift.String
+  public init()
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class VietmapTrackingManager : ObjectiveC.NSObject {
+  @objc public static let shared: VietmapTrackingSDK.VietmapTrackingManager
+  @objc public var onLocationUpdate: ((Foundation.NSDictionary) -> Swift.Void)?
+  @objc public var onTrackingStatusChanged: ((Foundation.NSDictionary) -> Swift.Void)?
+  @objc public var onError: ((Swift.String) -> Swift.Void)?
+  @objc public var onPermissionChanged: ((Swift.String) -> Swift.Void)?
+  @objc public var onRouteUpdate: ((Swift.Bool, Foundation.NSDictionary?) -> Swift.Void)?
+  @objc convenience public init(apiKey: Swift.String? = nil)
+  @objc deinit
+  @objc public func initialize(apiKey: Swift.String, baseURL: Swift.String)
+  @objc public func configure(apiKey: Swift.String)
+  @objc public func configure(baseURL: Swift.String)
+  @objc public func configure(apiVersion: Swift.String)
+  @objc public func setTrackingStatus(_ status: Swift.String)
+  @objc public func configure(apiKey: Swift.String, baseURL: Swift.String, autoUpload: Swift.Bool = true)
+  @objc public func setAutoUpload(enabled: Swift.Bool)
+  @objc public func getCurrentLocation() -> Foundation.NSDictionary?
+  @objc public func isTrackingActive() -> Swift.Bool
+  @objc public func getTrackingStatus() -> Foundation.NSDictionary
+  @objc public func requestLocationPermissions(completion: @escaping (Swift.String) -> Swift.Void)
+  @objc public func requestAlwaysLocationPermissions(completion: @escaping (Swift.String) -> Swift.Void)
+  @objc public func hasLocationPermissions() -> Swift.Bool
+  @objc public func startTracking(enhancedBackgroundMode: Swift.Bool, intervalMs: Swift.Int, distanceFilter: Swift.Double, completion: @escaping (Swift.Bool, Swift.String?) -> Swift.Void)
+  @objc public func stopTracking(completion: @escaping (Swift.Bool, Swift.String?) -> Swift.Void)
+  @objc public func turnOnAlert(completion: @escaping (Swift.Bool) -> Swift.Void)
+  @objc public func turnOffAlert(completion: @escaping (Swift.Bool) -> Swift.Void)
+  @objc public func setRouteAPIEndpoint(_ endpoint: Swift.String, completion: @escaping (Swift.Bool) -> Swift.Void)
+  @objc public func enableRouteBoundaryDetection(threshold: Swift.Double, completion: @escaping (Swift.Bool) -> Swift.Void)
+  @objc public func getCurrentRouteInfo() -> Foundation.NSDictionary?
+  @objc public func configureAlertAPI(url: Swift.String, apiKey: Swift.String)
+  @objc public func encodeLocationData(_ locationDict: Foundation.NSDictionary) -> Foundation.Data?
+  @objc public func decodeLocationData(_ data: Foundation.Data) -> Foundation.NSDictionary?
+  @objc public func getCachedLocationsCount() -> Swift.Int
+  @objc public func uploadCachedLocationsManually(completion: @escaping (Swift.Bool, Swift.String?) -> Swift.Void)
+  @objc public func clearCachedLocations()
+  @objc public func isNetworkConnected() -> Swift.Bool
+  @objc public func getTrackingHealthStatus() -> Foundation.NSDictionary
+}
+extension VietmapTrackingSDK.VietmapTrackingManager : CoreLocation.CLLocationManagerDelegate {
+  @objc dynamic public func locationManager(_ manager: CoreLocation.CLLocationManager, didUpdateLocations locations: [CoreLocation.CLLocation])
+  @objc dynamic public func locationManager(_ manager: CoreLocation.CLLocationManager, didFailWithError error: any Swift.Error)
+  @objc dynamic public func locationManager(_ manager: CoreLocation.CLLocationManager, didChangeAuthorization status: CoreLocation.CLAuthorizationStatus)
+}
+extension VietmapTrackingSDK.VietmapTrackingManager : AVFAudio.AVSpeechSynthesizerDelegate {
+  @objc dynamic public func speechSynthesizer(_ synthesizer: AVFAudio.AVSpeechSynthesizer, didStart utterance: AVFAudio.AVSpeechUtterance)
+  @objc dynamic public func speechSynthesizer(_ synthesizer: AVFAudio.AVSpeechSynthesizer, didFinish utterance: AVFAudio.AVSpeechUtterance)
+}
+extension VietmapTrackingSDK.VietmapTrackingManager {
+  @objc dynamic public func startTracking(backgroundMode: Swift.Bool, intervalMs: Swift.Int, forceUpdateBackground: Swift.Bool, distanceFilter: Swift.Double, completion: @escaping (Swift.Bool, Swift.String?) -> Swift.Void)
+}
