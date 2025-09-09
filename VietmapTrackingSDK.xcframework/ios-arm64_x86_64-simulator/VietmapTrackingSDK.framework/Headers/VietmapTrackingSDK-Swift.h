@@ -305,9 +305,41 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 
 #if defined(__OBJC__)
-@class NSDictionary;
+@class CLLocation;
 @class NSString;
-@class NSData;
+
+SWIFT_CLASS("_TtC18VietmapTrackingSDK23EnhancedLocationManager")
+@interface EnhancedLocationManager : NSObject
+@property (nonatomic, copy) void (^ _Nullable onLocationUpdate)(CLLocation * _Nonnull, NSString * _Nonnull, NSString * _Nonnull);
+@property (nonatomic, copy) void (^ _Nullable onLocationError)(NSString * _Nonnull);
+@property (nonatomic, copy) void (^ _Nullable onAuthorizationChanged)(CLAuthorizationStatus);
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (void)startTrackingWithHighAccuracyMode:(BOOL)highAccuracyMode SWIFT_AVAILABILITY(ios,introduced=14.0);
+- (void)stopTracking;
+- (void)requestLocationPermissions SWIFT_AVAILABILITY(ios,introduced=14.0);
+- (BOOL)isTracking SWIFT_WARN_UNUSED_RESULT;
+- (CLLocation * _Nullable)getLastKnownLocation SWIFT_WARN_UNUSED_RESULT;
+- (NSString * _Nonnull)getLocationServicesStatus SWIFT_WARN_UNUSED_RESULT SWIFT_AVAILABILITY(ios,introduced=14.0);
+- (void)requestFullAccuracy;
+- (void)setCustomAccuracy:(CLLocationAccuracy)accuracy distanceFilter:(CLLocationDistance)distanceFilter;
+- (void)enableBackgroundLocationUpdates:(BOOL)enable SWIFT_AVAILABILITY(ios,introduced=14.0);
+@end
+
+@class CLLocationManager;
+
+@interface EnhancedLocationManager (SWIFT_EXTENSION(VietmapTrackingSDK)) <CLLocationManagerDelegate>
+- (void)locationManager:(CLLocationManager * _Nonnull)manager didUpdateLocations:(NSArray<CLLocation *> * _Nonnull)locations;
+- (void)locationManager:(CLLocationManager * _Nonnull)manager didFailWithError:(NSError * _Nonnull)error;
+- (void)locationManager:(CLLocationManager * _Nonnull)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status;
+- (void)locationManagerDidChangeAuthorization:(CLLocationManager * _Nonnull)manager SWIFT_AVAILABILITY(ios,introduced=14.0);
+@end
+
+typedef SWIFT_ENUM(NSInteger, VMLocationMode, open) {
+  VMLocationModeGpsCallback = 0,
+  VMLocationModeExternalInput = 1,
+};
+
+@class NSDictionary;
 
 SWIFT_CLASS("_TtC18VietmapTrackingSDK22VietmapTrackingManager")
 @interface VietmapTrackingManager : NSObject
@@ -338,12 +370,18 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VietmapTrack
 - (void)stopTrackingWithCompletion:(void (^ _Nonnull)(BOOL, NSString * _Nullable))completion;
 - (void)turnOnAlertWithCompletion:(void (^ _Nonnull)(BOOL))completion;
 - (void)turnOffAlertWithCompletion:(void (^ _Nonnull)(BOOL))completion;
-- (void)setRouteAPIEndpoint:(NSString * _Nonnull)endpoint completion:(void (^ _Nonnull)(BOOL))completion;
-- (void)enableRouteBoundaryDetectionWithThreshold:(double)threshold completion:(void (^ _Nonnull)(BOOL))completion;
-- (NSDictionary * _Nullable)getCurrentRouteInfo SWIFT_WARN_UNUSED_RESULT;
-- (void)configureAlertAPIWithUrl:(NSString * _Nonnull)url apiKey:(NSString * _Nonnull)apiKey;
-- (NSData * _Nullable)encodeLocationData:(NSDictionary * _Nonnull)locationDict SWIFT_WARN_UNUSED_RESULT;
-- (NSDictionary * _Nullable)decodeLocationData:(NSData * _Nonnull)data SWIFT_WARN_UNUSED_RESULT;
+- (void)configureAlertAPIWithApiKey:(NSString * _Nonnull)apiKey apiID:(NSString * _Nonnull)apiID url:(NSString * _Nonnull)url;
+/// Process external location input for speed alerts
+/// This method allows feeding location data from external sources
+/// Auto-switches from GPS to external input mode when called
+- (void)processExternalLocationWithLatitude:(double)latitude longitude:(double)longitude speed:(double)speed heading:(double)heading;
+/// Process external location input with CLLocation object
+/// Convenience method for existing CLLocation objects
+- (void)processExternalLocation:(CLLocation * _Nonnull)location;
+/// Get current location mode
+- (enum VMLocationMode)getCurrentLocationMode SWIFT_WARN_UNUSED_RESULT;
+/// Check if speed alerts are currently active
+- (BOOL)isSpeedAlertCurrentlyActive SWIFT_WARN_UNUSED_RESULT;
 - (NSInteger)getCachedLocationsCount SWIFT_WARN_UNUSED_RESULT;
 - (void)uploadCachedLocationsManuallyWithCompletion:(void (^ _Nonnull)(BOOL, NSString * _Nullable))completion;
 - (void)clearCachedLocations;
@@ -352,21 +390,30 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VietmapTrack
 - (NSDictionary * _Nonnull)getTrackingHealthStatus SWIFT_WARN_UNUSED_RESULT;
 @end
 
+
+@interface VietmapTrackingManager (SWIFT_EXTENSION(VietmapTrackingSDK))
+- (void)startTrackingWithBackgroundMode:(BOOL)backgroundMode intervalMs:(NSInteger)intervalMs forceUpdateBackground:(BOOL)forceUpdateBackground distanceFilter:(double)distanceFilter completion:(void (^ _Nonnull)(BOOL, NSString * _Nullable))completion;
+@end
+
+
+SWIFT_AVAILABILITY(ios,introduced=14.0)
+@interface VietmapTrackingManager (SWIFT_EXTENSION(VietmapTrackingSDK))
+- (void)startEnhancedTrackingWithHighAccuracyMode:(BOOL)highAccuracyMode completion:(void (^ _Nonnull)(BOOL, NSString * _Nullable))completion SWIFT_AVAILABILITY(ios,introduced=14.0);
+- (NSDictionary * _Nonnull)getEnhancedLocationStatus SWIFT_WARN_UNUSED_RESULT SWIFT_AVAILABILITY(ios,introduced=14.0);
+- (void)requestFullLocationAccuracy;
+@end
+
 @class AVSpeechSynthesizer;
 @class AVSpeechUtterance;
 
 @interface VietmapTrackingManager (SWIFT_EXTENSION(VietmapTrackingSDK)) <AVSpeechSynthesizerDelegate>
 - (void)speechSynthesizer:(AVSpeechSynthesizer * _Nonnull)synthesizer didStartSpeechUtterance:(AVSpeechUtterance * _Nonnull)utterance;
 - (void)speechSynthesizer:(AVSpeechSynthesizer * _Nonnull)synthesizer didFinishSpeechUtterance:(AVSpeechUtterance * _Nonnull)utterance;
+- (void)speechSynthesizer:(AVSpeechSynthesizer * _Nonnull)synthesizer didPauseSpeechUtterance:(AVSpeechUtterance * _Nonnull)utterance;
+- (void)speechSynthesizer:(AVSpeechSynthesizer * _Nonnull)synthesizer didContinueSpeechUtterance:(AVSpeechUtterance * _Nonnull)utterance;
+- (void)speechSynthesizer:(AVSpeechSynthesizer * _Nonnull)synthesizer didCancelSpeechUtterance:(AVSpeechUtterance * _Nonnull)utterance;
 @end
 
-
-@interface VietmapTrackingManager (SWIFT_EXTENSION(VietmapTrackingSDK))
-- (void)startTrackingWithBackgroundMode:(BOOL)backgroundMode intervalMs:(NSInteger)intervalMs forceUpdateBackground:(BOOL)forceUpdateBackground distanceFilter:(double)distanceFilter completion:(void (^ _Nonnull)(BOOL, NSString * _Nullable))completion;
-@end
-
-@class CLLocationManager;
-@class CLLocation;
 
 @interface VietmapTrackingManager (SWIFT_EXTENSION(VietmapTrackingSDK)) <CLLocationManagerDelegate>
 - (void)locationManager:(CLLocationManager * _Nonnull)manager didUpdateLocations:(NSArray<CLLocation *> * _Nonnull)locations;
@@ -689,9 +736,41 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 
 #if defined(__OBJC__)
-@class NSDictionary;
+@class CLLocation;
 @class NSString;
-@class NSData;
+
+SWIFT_CLASS("_TtC18VietmapTrackingSDK23EnhancedLocationManager")
+@interface EnhancedLocationManager : NSObject
+@property (nonatomic, copy) void (^ _Nullable onLocationUpdate)(CLLocation * _Nonnull, NSString * _Nonnull, NSString * _Nonnull);
+@property (nonatomic, copy) void (^ _Nullable onLocationError)(NSString * _Nonnull);
+@property (nonatomic, copy) void (^ _Nullable onAuthorizationChanged)(CLAuthorizationStatus);
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (void)startTrackingWithHighAccuracyMode:(BOOL)highAccuracyMode SWIFT_AVAILABILITY(ios,introduced=14.0);
+- (void)stopTracking;
+- (void)requestLocationPermissions SWIFT_AVAILABILITY(ios,introduced=14.0);
+- (BOOL)isTracking SWIFT_WARN_UNUSED_RESULT;
+- (CLLocation * _Nullable)getLastKnownLocation SWIFT_WARN_UNUSED_RESULT;
+- (NSString * _Nonnull)getLocationServicesStatus SWIFT_WARN_UNUSED_RESULT SWIFT_AVAILABILITY(ios,introduced=14.0);
+- (void)requestFullAccuracy;
+- (void)setCustomAccuracy:(CLLocationAccuracy)accuracy distanceFilter:(CLLocationDistance)distanceFilter;
+- (void)enableBackgroundLocationUpdates:(BOOL)enable SWIFT_AVAILABILITY(ios,introduced=14.0);
+@end
+
+@class CLLocationManager;
+
+@interface EnhancedLocationManager (SWIFT_EXTENSION(VietmapTrackingSDK)) <CLLocationManagerDelegate>
+- (void)locationManager:(CLLocationManager * _Nonnull)manager didUpdateLocations:(NSArray<CLLocation *> * _Nonnull)locations;
+- (void)locationManager:(CLLocationManager * _Nonnull)manager didFailWithError:(NSError * _Nonnull)error;
+- (void)locationManager:(CLLocationManager * _Nonnull)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status;
+- (void)locationManagerDidChangeAuthorization:(CLLocationManager * _Nonnull)manager SWIFT_AVAILABILITY(ios,introduced=14.0);
+@end
+
+typedef SWIFT_ENUM(NSInteger, VMLocationMode, open) {
+  VMLocationModeGpsCallback = 0,
+  VMLocationModeExternalInput = 1,
+};
+
+@class NSDictionary;
 
 SWIFT_CLASS("_TtC18VietmapTrackingSDK22VietmapTrackingManager")
 @interface VietmapTrackingManager : NSObject
@@ -722,12 +801,18 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VietmapTrack
 - (void)stopTrackingWithCompletion:(void (^ _Nonnull)(BOOL, NSString * _Nullable))completion;
 - (void)turnOnAlertWithCompletion:(void (^ _Nonnull)(BOOL))completion;
 - (void)turnOffAlertWithCompletion:(void (^ _Nonnull)(BOOL))completion;
-- (void)setRouteAPIEndpoint:(NSString * _Nonnull)endpoint completion:(void (^ _Nonnull)(BOOL))completion;
-- (void)enableRouteBoundaryDetectionWithThreshold:(double)threshold completion:(void (^ _Nonnull)(BOOL))completion;
-- (NSDictionary * _Nullable)getCurrentRouteInfo SWIFT_WARN_UNUSED_RESULT;
-- (void)configureAlertAPIWithUrl:(NSString * _Nonnull)url apiKey:(NSString * _Nonnull)apiKey;
-- (NSData * _Nullable)encodeLocationData:(NSDictionary * _Nonnull)locationDict SWIFT_WARN_UNUSED_RESULT;
-- (NSDictionary * _Nullable)decodeLocationData:(NSData * _Nonnull)data SWIFT_WARN_UNUSED_RESULT;
+- (void)configureAlertAPIWithApiKey:(NSString * _Nonnull)apiKey apiID:(NSString * _Nonnull)apiID url:(NSString * _Nonnull)url;
+/// Process external location input for speed alerts
+/// This method allows feeding location data from external sources
+/// Auto-switches from GPS to external input mode when called
+- (void)processExternalLocationWithLatitude:(double)latitude longitude:(double)longitude speed:(double)speed heading:(double)heading;
+/// Process external location input with CLLocation object
+/// Convenience method for existing CLLocation objects
+- (void)processExternalLocation:(CLLocation * _Nonnull)location;
+/// Get current location mode
+- (enum VMLocationMode)getCurrentLocationMode SWIFT_WARN_UNUSED_RESULT;
+/// Check if speed alerts are currently active
+- (BOOL)isSpeedAlertCurrentlyActive SWIFT_WARN_UNUSED_RESULT;
 - (NSInteger)getCachedLocationsCount SWIFT_WARN_UNUSED_RESULT;
 - (void)uploadCachedLocationsManuallyWithCompletion:(void (^ _Nonnull)(BOOL, NSString * _Nullable))completion;
 - (void)clearCachedLocations;
@@ -736,21 +821,30 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VietmapTrack
 - (NSDictionary * _Nonnull)getTrackingHealthStatus SWIFT_WARN_UNUSED_RESULT;
 @end
 
+
+@interface VietmapTrackingManager (SWIFT_EXTENSION(VietmapTrackingSDK))
+- (void)startTrackingWithBackgroundMode:(BOOL)backgroundMode intervalMs:(NSInteger)intervalMs forceUpdateBackground:(BOOL)forceUpdateBackground distanceFilter:(double)distanceFilter completion:(void (^ _Nonnull)(BOOL, NSString * _Nullable))completion;
+@end
+
+
+SWIFT_AVAILABILITY(ios,introduced=14.0)
+@interface VietmapTrackingManager (SWIFT_EXTENSION(VietmapTrackingSDK))
+- (void)startEnhancedTrackingWithHighAccuracyMode:(BOOL)highAccuracyMode completion:(void (^ _Nonnull)(BOOL, NSString * _Nullable))completion SWIFT_AVAILABILITY(ios,introduced=14.0);
+- (NSDictionary * _Nonnull)getEnhancedLocationStatus SWIFT_WARN_UNUSED_RESULT SWIFT_AVAILABILITY(ios,introduced=14.0);
+- (void)requestFullLocationAccuracy;
+@end
+
 @class AVSpeechSynthesizer;
 @class AVSpeechUtterance;
 
 @interface VietmapTrackingManager (SWIFT_EXTENSION(VietmapTrackingSDK)) <AVSpeechSynthesizerDelegate>
 - (void)speechSynthesizer:(AVSpeechSynthesizer * _Nonnull)synthesizer didStartSpeechUtterance:(AVSpeechUtterance * _Nonnull)utterance;
 - (void)speechSynthesizer:(AVSpeechSynthesizer * _Nonnull)synthesizer didFinishSpeechUtterance:(AVSpeechUtterance * _Nonnull)utterance;
+- (void)speechSynthesizer:(AVSpeechSynthesizer * _Nonnull)synthesizer didPauseSpeechUtterance:(AVSpeechUtterance * _Nonnull)utterance;
+- (void)speechSynthesizer:(AVSpeechSynthesizer * _Nonnull)synthesizer didContinueSpeechUtterance:(AVSpeechUtterance * _Nonnull)utterance;
+- (void)speechSynthesizer:(AVSpeechSynthesizer * _Nonnull)synthesizer didCancelSpeechUtterance:(AVSpeechUtterance * _Nonnull)utterance;
 @end
 
-
-@interface VietmapTrackingManager (SWIFT_EXTENSION(VietmapTrackingSDK))
-- (void)startTrackingWithBackgroundMode:(BOOL)backgroundMode intervalMs:(NSInteger)intervalMs forceUpdateBackground:(BOOL)forceUpdateBackground distanceFilter:(double)distanceFilter completion:(void (^ _Nonnull)(BOOL, NSString * _Nullable))completion;
-@end
-
-@class CLLocationManager;
-@class CLLocation;
 
 @interface VietmapTrackingManager (SWIFT_EXTENSION(VietmapTrackingSDK)) <CLLocationManagerDelegate>
 - (void)locationManager:(CLLocationManager * _Nonnull)manager didUpdateLocations:(NSArray<CLLocation *> * _Nonnull)locations;

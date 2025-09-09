@@ -10,12 +10,22 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype _Nonnull)sharedInstance;
 
-- (void)configureWithApiUrl:(NSString *)apiUrl apiKey:(NSString *)apiKey;
+- (void)configureWithApiUrl:(NSString *)apiUrl apiKey:(NSString *)apiKey apiID:(NSString *)apiID;
 
-- (void)requestAlertsWithLocation:(CLLocation *)location 
-                          heading:(double)heading 
-                            speed:(double)speed 
-                       completion:(void (^)(BOOL success, NSDictionary * _Nullable response, NSString * _Nullable error))completion;
+// Alert lifecycle methods
+- (void)startAlert;
+- (void)stopAlert;
+
+// Main method - returns speed limit text for TTS
+- (void)processLocation:(CLLocation *)location
+          forSpeedAlert:(double)heading 
+                 speed:(double)speed
+             vehicleId:(int)vehicleId
+           vehicleType:(int)vehicleType
+                 seats:(int)seats
+               weights:(float)weights
+          maxProvision:(int)maxProvision
+            completion:(void (^)(BOOL hasSpeedLimit, NSString * _Nullable speedLimitText))completion;
 
 @end
 
