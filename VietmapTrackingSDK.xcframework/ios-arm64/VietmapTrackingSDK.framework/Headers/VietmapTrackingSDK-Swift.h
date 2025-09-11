@@ -339,6 +339,19 @@ typedef SWIFT_ENUM(NSInteger, VMLocationMode, open) {
   VMLocationModeExternalInput = 1,
 };
 
+typedef SWIFT_ENUM(NSInteger, VMVehicleType, open) {
+  VMVehicleTypeCar = 1,
+  VMVehicleTypeTaxi = 2,
+  VMVehicleTypeBus = 3,
+  VMVehicleTypeCoach = 4,
+  VMVehicleTypeTruck = 5,
+  VMVehicleTypeTrailer = 6,
+  VMVehicleTypeCycle = 7,
+  VMVehicleTypeBike = 8,
+  VMVehicleTypePedestrian = 9,
+  VMVehicleTypeSemiTrailer = 10,
+};
+
 @class NSDictionary;
 
 SWIFT_CLASS("_TtC18VietmapTrackingSDK22VietmapTrackingManager")
@@ -371,6 +384,42 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VietmapTrack
 - (void)turnOnAlertWithCompletion:(void (^ _Nonnull)(BOOL))completion;
 - (void)turnOffAlertWithCompletion:(void (^ _Nonnull)(BOOL))completion;
 - (void)configureAlertAPIWithApiKey:(NSString * _Nonnull)apiKey apiID:(NSString * _Nonnull)apiID url:(NSString * _Nonnull)url;
+/// Process location with custom vehicle parameters using enum for speed alerts
+/// @param latitude Latitude coordinate
+/// @param longitude Longitude coordinate<br/>
+/// @param speed Current speed in m/s
+/// @param heading Current heading in degrees
+/// @param vehicleId Unique identifier for the vehicle (default: 1)
+/// @param vehicleType Type of vehicle using VMVehicleType enum (default: .car)
+/// @param seats Number of seats in the vehicle (default: 5)
+/// @param weights Vehicle weight in kg (default: 1500.0)
+- (void)processLocationWithVehicleTypeLatitude:(double)latitude longitude:(double)longitude speed:(double)speed heading:(double)heading vehicleId:(NSString * _Nonnull)vehicleId vehicleTypeEnum:(enum VMVehicleType)vehicleType seats:(NSInteger)seats weights:(double)weights;
+/// Process location with custom vehicle parameters for speed alerts (backward compatibility)
+/// @param latitude Latitude coordinate
+/// @param longitude Longitude coordinate<br/>
+/// @param speed Current speed in m/s
+/// @param heading Current heading in degrees
+/// @param vehicleId Unique identifier for the vehicle (default: 1)
+/// @param vehicleType Type of vehicle - 1=Car, 2=Truck, etc. (default: 1)
+/// @param seats Number of seats in the vehicle (default: 5)
+/// @param weights Vehicle weight in kg (default: 1500.0)
+- (void)processLocationWithVehicleParamsWithLatitude:(double)latitude longitude:(double)longitude speed:(double)speed heading:(double)heading vehicleId:(NSString * _Nonnull)vehicleId vehicleType:(NSInteger)vehicleType seats:(NSInteger)seats weights:(double)weights;
+/// Configure vehicle information for speed alerts (using VMVehicleType enum)
+/// @param vehicleId Unique identifier for the vehicle
+/// @param vehicleType Type of vehicle using VMVehicleType enum
+/// @param seats Number of seats in the vehicle
+/// @param weight Vehicle weight in kg
+/// @param maxProvision Maximum provision value
+- (void)configureVehicleWithVehicleId:(NSString * _Nonnull)vehicleId vehicleTypeEnum:(enum VMVehicleType)vehicleType seats:(NSInteger)seats weight:(double)weight;
+/// Configure vehicle information for speed alerts (backward compatibility)
+/// @param vehicleId Unique identifier for the vehicle
+/// @param vehicleType Type of vehicle (1 = Car, 2 = Truck, etc.)
+/// @param seats Number of seats in the vehicle
+/// @param weight Vehicle weight in kg
+/// @param maxProvision Maximum provision value
+- (void)configureVehicleWithVehicleId:(NSString * _Nonnull)vehicleId vehicleType:(NSInteger)vehicleType seats:(NSInteger)seats weight:(double)weight maxProvision:(NSInteger)maxProvision;
+/// Get current vehicle configuration
+- (NSDictionary * _Nonnull)getVehicleConfiguration SWIFT_WARN_UNUSED_RESULT;
 /// Process external location input for speed alerts
 /// This method allows feeding location data from external sources
 /// Auto-switches from GPS to external input mode when called
@@ -417,6 +466,13 @@ SWIFT_AVAILABILITY(ios,introduced=14.0)
 
 @interface VietmapTrackingManager (SWIFT_EXTENSION(VietmapTrackingSDK)) <CLLocationManagerDelegate>
 - (void)locationManager:(CLLocationManager * _Nonnull)manager didUpdateLocations:(NSArray<CLLocation *> * _Nonnull)locations;
+/// Process speed alert using C++ with custom vehicle parameters
+/// @param location Current location data
+/// @param vehicleId Unique identifier for the vehicle
+/// @param vehicleType Type of vehicle (1 = Car, 2 = Truck, etc.)
+/// @param seats Number of seats in the vehicle
+/// @param weights Vehicle weight in kg
+- (void)processSpeedAlertUsingCPPWithLocation:(CLLocation * _Nonnull)location vehicleId:(NSString * _Nonnull)vehicleId vehicleType:(NSInteger)vehicleType seats:(NSInteger)seats weights:(double)weights;
 - (void)locationManager:(CLLocationManager * _Nonnull)manager didFailWithError:(NSError * _Nonnull)error;
 - (void)locationManager:(CLLocationManager * _Nonnull)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status;
 @end

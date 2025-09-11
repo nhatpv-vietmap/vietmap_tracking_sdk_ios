@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)processLocation:(CLLocation *)location
           forSpeedAlert:(double)heading 
                  speed:(double)speed
-             vehicleId:(int)vehicleId
+             vehicleId:(NSString *)vehicleId
            vehicleType:(int)vehicleType
                  seats:(int)seats
                weights:(float)weights

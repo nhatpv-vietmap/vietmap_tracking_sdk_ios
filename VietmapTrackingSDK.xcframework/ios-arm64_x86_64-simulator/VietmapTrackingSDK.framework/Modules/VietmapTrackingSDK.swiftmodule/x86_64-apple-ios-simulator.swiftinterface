@@ -59,6 +59,27 @@ public struct AlertConfig {
     get
   }
 }
+@objc public enum VMVehicleType : Swift.Int {
+  case car = 1
+  case taxi = 2
+  case bus = 3
+  case coach = 4
+  case truck = 5
+  case trailer = 6
+  case cycle = 7
+  case bike = 8
+  case pedestrian = 9
+  case semiTrailer = 10
+  public var description: Swift.String {
+    get
+  }
+  public static func fromValue(_ value: Swift.Int) -> VietmapTrackingSDK.VMVehicleType
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class VietmapTrackingManager : ObjectiveC.NSObject {
   @objc public static let shared: VietmapTrackingSDK.VietmapTrackingManager
   @objc public var onLocationUpdate: ((Foundation.NSDictionary) -> Swift.Void)?
@@ -85,7 +106,12 @@ public struct AlertConfig {
   @objc public func stopTracking(completion: @escaping (Swift.Bool, Swift.String?) -> Swift.Void)
   @objc public func turnOnAlert(completion: @escaping (Swift.Bool) -> Swift.Void)
   @objc public func turnOffAlert(completion: @escaping (Swift.Bool) -> Swift.Void)
-  @objc public func configureAlertAPI(apiKey: Swift.String, apiID: Swift.String, url: Swift.String = "https://drive-api.vietmap.vn/fleetwork/api/Alert/v1/mpp")
+  @objc public func configureAlertAPI(apiKey: Swift.String, apiID: Swift.String, url: Swift.String = "https://drive-api.vietmap.vn/fleetwork/api/Alert/v2/mpp")
+  @objc(processLocationWithVehicleTypeLatitude:longitude:speed:heading:vehicleId:vehicleTypeEnum:seats:weights:) public func processLocationWithVehicleType(latitude: Swift.Double, longitude: Swift.Double, speed: Swift.Double, heading: Swift.Double, vehicleId: Swift.String = "1", vehicleType: VietmapTrackingSDK.VMVehicleType = .car, seats: Swift.Int = 5, weights: Swift.Double = 1500.0)
+  @objc public func processLocationWithVehicleParams(latitude: Swift.Double, longitude: Swift.Double, speed: Swift.Double, heading: Swift.Double, vehicleId: Swift.String = "1", vehicleType: Swift.Int = 1, seats: Swift.Int = 5, weights: Swift.Double = 1500.0)
+  @objc(configureVehicleWithVehicleId:vehicleTypeEnum:seats:weight:) public func configureVehicleWithType(vehicleId: Swift.String, vehicleType: VietmapTrackingSDK.VMVehicleType, seats: Swift.Int, weight: Swift.Double)
+  @objc public func configureVehicle(vehicleId: Swift.String, vehicleType: Swift.Int, seats: Swift.Int, weight: Swift.Double, maxProvision: Swift.Int)
+  @objc public func getVehicleConfiguration() -> Foundation.NSDictionary
   @objc public func processExternalLocation(latitude: Swift.Double, longitude: Swift.Double, speed: Swift.Double, heading: Swift.Double)
   @objc public func processExternalLocation(_ location: CoreLocation.CLLocation)
   @objc public func getCurrentLocationMode() -> VietmapTrackingSDK.VMLocationMode
@@ -98,6 +124,7 @@ public struct AlertConfig {
 }
 extension VietmapTrackingSDK.VietmapTrackingManager : CoreLocation.CLLocationManagerDelegate {
   @objc dynamic public func locationManager(_ manager: CoreLocation.CLLocationManager, didUpdateLocations locations: [CoreLocation.CLLocation])
+  @objc dynamic public func processSpeedAlertUsingCPP(location: CoreLocation.CLLocation, vehicleId: Swift.String, vehicleType: Swift.Int, seats: Swift.Int, weights: Swift.Double)
   @objc dynamic public func locationManager(_ manager: CoreLocation.CLLocationManager, didFailWithError error: any Swift.Error)
   @objc dynamic public func locationManager(_ manager: CoreLocation.CLLocationManager, didChangeAuthorization status: CoreLocation.CLAuthorizationStatus)
 }
@@ -216,5 +243,8 @@ public class VMSpeedAlertState {
 extension VietmapTrackingSDK.VMLocationMode : Swift.Equatable {}
 extension VietmapTrackingSDK.VMLocationMode : Swift.Hashable {}
 extension VietmapTrackingSDK.VMLocationMode : Swift.RawRepresentable {}
+extension VietmapTrackingSDK.VMVehicleType : Swift.Equatable {}
+extension VietmapTrackingSDK.VMVehicleType : Swift.Hashable {}
+extension VietmapTrackingSDK.VMVehicleType : Swift.RawRepresentable {}
 extension VietmapTrackingSDK.VMTransportMode : Swift.Equatable {}
 extension VietmapTrackingSDK.VMTransportMode : Swift.Hashable {}
