@@ -373,6 +373,12 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VietmapTrack
 - (void)setTrackingStatus:(NSString * _Nonnull)status;
 - (void)configureWithApiKey:(NSString * _Nonnull)apiKey baseURL:(NSString * _Nonnull)baseURL autoUpload:(BOOL)autoUpload;
 - (void)setAutoUploadWithEnabled:(BOOL)enabled;
+- (void)setVehicleId:(NSString * _Nonnull)vehicleId;
+- (void)setDriverId:(NSString * _Nullable)driverId;
+- (NSString * _Nonnull)getVehicleId SWIFT_WARN_UNUSED_RESULT;
+- (NSString * _Nullable)getDriverId SWIFT_WARN_UNUSED_RESULT;
+- (void)onAppBackground;
+- (void)onAppForeground;
 - (NSDictionary * _Nullable)getCurrentLocation SWIFT_WARN_UNUSED_RESULT;
 - (BOOL)isTrackingActive SWIFT_WARN_UNUSED_RESULT;
 - (NSDictionary * _Nonnull)getTrackingStatus SWIFT_WARN_UNUSED_RESULT;
@@ -444,14 +450,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VietmapTrack
 - (void)startTrackingWithBackgroundMode:(BOOL)backgroundMode intervalMs:(NSInteger)intervalMs forceUpdateBackground:(BOOL)forceUpdateBackground distanceFilter:(double)distanceFilter completion:(void (^ _Nonnull)(BOOL, NSString * _Nullable))completion;
 @end
 
-
-SWIFT_AVAILABILITY(ios,introduced=14.0)
-@interface VietmapTrackingManager (SWIFT_EXTENSION(VietmapTrackingSDK))
-- (void)startEnhancedTrackingWithHighAccuracyMode:(BOOL)highAccuracyMode completion:(void (^ _Nonnull)(BOOL, NSString * _Nullable))completion SWIFT_AVAILABILITY(ios,introduced=14.0);
-- (NSDictionary * _Nonnull)getEnhancedLocationStatus SWIFT_WARN_UNUSED_RESULT SWIFT_AVAILABILITY(ios,introduced=14.0);
-- (void)requestFullLocationAccuracy;
-@end
-
 @class AVSpeechSynthesizer;
 @class AVSpeechUtterance;
 
@@ -461,6 +459,14 @@ SWIFT_AVAILABILITY(ios,introduced=14.0)
 - (void)speechSynthesizer:(AVSpeechSynthesizer * _Nonnull)synthesizer didPauseSpeechUtterance:(AVSpeechUtterance * _Nonnull)utterance;
 - (void)speechSynthesizer:(AVSpeechSynthesizer * _Nonnull)synthesizer didContinueSpeechUtterance:(AVSpeechUtterance * _Nonnull)utterance;
 - (void)speechSynthesizer:(AVSpeechSynthesizer * _Nonnull)synthesizer didCancelSpeechUtterance:(AVSpeechUtterance * _Nonnull)utterance;
+@end
+
+
+SWIFT_AVAILABILITY(ios,introduced=14.0)
+@interface VietmapTrackingManager (SWIFT_EXTENSION(VietmapTrackingSDK))
+- (void)startEnhancedTrackingWithHighAccuracyMode:(BOOL)highAccuracyMode completion:(void (^ _Nonnull)(BOOL, NSString * _Nullable))completion SWIFT_AVAILABILITY(ios,introduced=14.0);
+- (NSDictionary * _Nonnull)getEnhancedLocationStatus SWIFT_WARN_UNUSED_RESULT SWIFT_AVAILABILITY(ios,introduced=14.0);
+- (void)requestFullLocationAccuracy;
 @end
 
 

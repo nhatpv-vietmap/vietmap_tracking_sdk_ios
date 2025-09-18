@@ -96,6 +96,12 @@ public struct AlertConfig {
   @objc public func setTrackingStatus(_ status: Swift.String)
   @objc public func configure(apiKey: Swift.String, baseURL: Swift.String, autoUpload: Swift.Bool = true)
   @objc public func setAutoUpload(enabled: Swift.Bool)
+  @objc public func setVehicleId(_ vehicleId: Swift.String)
+  @objc public func setDriverId(_ driverId: Swift.String?)
+  @objc public func getVehicleId() -> Swift.String
+  @objc public func getDriverId() -> Swift.String?
+  @objc public func onAppBackground()
+  @objc public func onAppForeground()
   @objc public func getCurrentLocation() -> Foundation.NSDictionary?
   @objc public func isTrackingActive() -> Swift.Bool
   @objc public func getTrackingStatus() -> Foundation.NSDictionary

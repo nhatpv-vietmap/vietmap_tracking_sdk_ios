@@ -4120,6 +4120,164 @@
           },
           {
             "kind": "Function",
+            "name": "setVehicleId",
+            "printedName": "setVehicleId(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTrackingManager(im)setVehicleId:",
+            "mangledName": "$s18VietmapTrackingSDK0aB7ManagerC12setVehicleIdyySSF",
+            "moduleName": "VietmapTrackingSDK",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setDriverId",
+            "printedName": "setDriverId(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTrackingManager(im)setDriverId:",
+            "mangledName": "$s18VietmapTrackingSDK0aB7ManagerC11setDriverIdyySSSgF",
+            "moduleName": "VietmapTrackingSDK",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getVehicleId",
+            "printedName": "getVehicleId()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTrackingManager(im)getVehicleId",
+            "mangledName": "$s18VietmapTrackingSDK0aB7ManagerC12getVehicleIdSSyF",
+            "moduleName": "VietmapTrackingSDK",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getDriverId",
+            "printedName": "getDriverId()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTrackingManager(im)getDriverId",
+            "mangledName": "$s18VietmapTrackingSDK0aB7ManagerC11getDriverIdSSSgyF",
+            "moduleName": "VietmapTrackingSDK",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "onAppBackground",
+            "printedName": "onAppBackground()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTrackingManager(im)onAppBackground",
+            "mangledName": "$s18VietmapTrackingSDK0aB7ManagerC15onAppBackgroundyyF",
+            "moduleName": "VietmapTrackingSDK",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "onAppForeground",
+            "printedName": "onAppForeground()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTrackingManager(im)onAppForeground",
+            "mangledName": "$s18VietmapTrackingSDK0aB7ManagerC15onAppForegroundyyF",
+            "moduleName": "VietmapTrackingSDK",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "getCurrentLocation",
             "printedName": "getCurrentLocation()",
             "children": [
@@ -10204,371 +10362,392 @@
     {
       "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "FloatLiteral",
-      "offset": 475,
+      "offset": 559,
       "length": 3,
       "value": "0.0"
     },
     {
       "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "FloatLiteral",
-      "offset": 499,
+      "offset": 583,
       "length": 3,
       "value": "0.0"
     },
     {
       "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "FloatLiteral",
-      "offset": 520,
+      "offset": 604,
       "length": 3,
       "value": "0.0"
     },
     {
       "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "FloatLiteral",
-      "offset": 543,
+      "offset": 627,
       "length": 3,
       "value": "0.0"
     },
     {
       "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "IntegerLiteral",
-      "offset": 2517,
+      "offset": 2601,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "IntegerLiteral",
-      "offset": 2586,
+      "offset": 2670,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "IntegerLiteral",
-      "offset": 2707,
+      "offset": 2791,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "IntegerLiteral",
-      "offset": 2748,
+      "offset": 2832,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "IntegerLiteral",
-      "offset": 2785,
+      "offset": 2869,
       "length": 1,
       "value": "3"
     },
     {
       "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "IntegerLiteral",
-      "offset": 2824,
+      "offset": 2908,
       "length": 1,
       "value": "4"
     },
     {
       "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "IntegerLiteral",
-      "offset": 2864,
+      "offset": 2948,
       "length": 1,
       "value": "5"
     },
     {
       "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "IntegerLiteral",
-      "offset": 2905,
+      "offset": 2989,
       "length": 1,
       "value": "6"
     },
     {
       "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "IntegerLiteral",
-      "offset": 2943,
+      "offset": 3027,
       "length": 1,
       "value": "7"
     },
     {
       "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "IntegerLiteral",
-      "offset": 2983,
+      "offset": 3067,
       "length": 1,
       "value": "8"
     },
     {
       "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "IntegerLiteral",
-      "offset": 3029,
+      "offset": 3113,
       "length": 1,
       "value": "9"
     },
     {
       "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "IntegerLiteral",
-      "offset": 3078,
+      "offset": 3162,
       "length": 2,
       "value": "10"
     },
     {
       "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "StringLiteral",
-      "offset": 4153,
+      "offset": 4237,
       "length": 5,
       "value": "\"1.0\""
     },
     {
       "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "StringLiteral",
-      "offset": 4193,
-      "length": 28,
-      "value": "\"http:\/\/192.168.22.154:5757\""
+      "offset": 4277,
+      "length": 37,
+      "value": "\"https:\/\/dev.fastmap.vn\/tracking-api\""
     },
     {
       "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "BooleanLiteral",
-      "offset": 4266,
+      "offset": 4359,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "StringLiteral",
-      "offset": 4360,
+      "offset": 4453,
       "length": 8,
       "value": "\"active\""
     },
     {
       "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "BooleanLiteral",
-      "offset": 4425,
+      "offset": 4518,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "IntegerLiteral",
-      "offset": 4481,
+      "offset": 4574,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "IntegerLiteral",
-      "offset": 4534,
+      "offset": 4627,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
+      "kind": "BooleanLiteral",
+      "offset": 4668,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
+      "kind": "BooleanLiteral",
+      "offset": 4762,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "IntegerLiteral",
-      "offset": 4570,
+      "offset": 4855,
       "length": 4,
       "value": "5000"
     },
     {
       "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "FloatLiteral",
-      "offset": 4616,
+      "offset": 4901,
       "length": 4,
       "value": "10.0"
     },
     {
       "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "BooleanLiteral",
-      "offset": 4702,
+      "offset": 4987,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "BooleanLiteral",
-      "offset": 4908,
+      "offset": 5193,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "BooleanLiteral",
-      "offset": 5025,
+      "offset": 5310,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "IntegerLiteral",
-      "offset": 5082,
+      "offset": 5367,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "FloatLiteral",
-      "offset": 5135,
+      "offset": 5420,
       "length": 3,
       "value": "5.0"
     },
     {
       "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "StringLiteral",
-      "offset": 5542,
+      "offset": 5827,
       "length": 3,
       "value": "\"1\""
     },
     {
       "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "IntegerLiteral",
-      "offset": 5581,
+      "offset": 5923,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "IntegerLiteral",
-      "offset": 5631,
+      "offset": 5973,
       "length": 1,
       "value": "5"
     },
     {
       "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "FloatLiteral",
-      "offset": 5673,
+      "offset": 6015,
       "length": 6,
       "value": "1500.0"
     },
     {
       "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "IntegerLiteral",
-      "offset": 5723,
+      "offset": 6065,
       "length": 4,
       "value": "1000"
     },
     {
       "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "StringLiteral",
-      "offset": 5849,
+      "offset": 6191,
       "length": 57,
       "value": "\"https:\/\/drive-api.vietmap.vn\/fleetwork\/api\/Alert\/v2\/mpp\""
     },
     {
       "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "StringLiteral",
-      "offset": 6092,
+      "offset": 6434,
       "length": 44,
       "value": "\"com.vietmaptrackingsdk.background-location\""
     },
     {
       "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "StringLiteral",
-      "offset": 6174,
+      "offset": 6516,
       "length": 38,
       "value": "\"com.vietmaptrackingsdk.location-sync\""
     },
     {
       "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "BooleanLiteral",
-      "offset": 6299,
+      "offset": 6641,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "Array",
-      "offset": 6354,
+      "offset": 6696,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "IntegerLiteral",
-      "offset": 6399,
+      "offset": 6741,
       "length": 5,
       "value": "10000"
     },
     {
       "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "StringLiteral",
-      "offset": 6587,
+      "offset": 6836,
+      "length": 26,
+      "value": "\"VietmapTrackingSDK.cache\""
+    },
+    {
+      "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
+      "kind": "StringLiteral",
+      "offset": 7022,
       "length": 16,
       "value": "\"NetworkMonitor\""
     },
     {
       "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "Array",
-      "offset": 7380,
+      "offset": 7815,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "BooleanLiteral",
-      "offset": 8819,
+      "offset": 9254,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "StringLiteral",
-      "offset": 21144,
+      "offset": 23998,
       "length": 57,
       "value": "\"https:\/\/drive-api.vietmap.vn\/fleetwork\/api\/Alert\/v2\/mpp\""
     },
     {
       "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "StringLiteral",
-      "offset": 22484,
+      "offset": 25338,
       "length": 3,
       "value": "\"1\""
     },
     {
       "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "IntegerLiteral",
-      "offset": 22627,
+      "offset": 25481,
       "length": 1,
       "value": "5"
     },
     {
       "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "FloatLiteral",
-      "offset": 22693,
+      "offset": 25547,
       "length": 6,
       "value": "1500.0"
     },
     {
       "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "StringLiteral",
-      "offset": 23923,
+      "offset": 26777,
       "length": 3,
       "value": "\"1\""
     },
     {
       "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "IntegerLiteral",
-      "offset": 24000,
+      "offset": 26854,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "IntegerLiteral",
-      "offset": 24069,
+      "offset": 26923,
       "length": 1,
       "value": "5"
     },
     {
       "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "FloatLiteral",
-      "offset": 24143,
+      "offset": 26997,
       "length": 6,
       "value": "1500.0"
     },
     {
       "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "BooleanLiteral",
-      "offset": 79309,
+      "offset": 87918,
       "length": 5,
       "value": "false"
     },

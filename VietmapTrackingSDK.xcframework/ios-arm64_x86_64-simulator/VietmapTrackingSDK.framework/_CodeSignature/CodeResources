@@ -14,7 +14,7 @@
 		</data>
 		<key>Headers/VietmapTrackingSDK-Swift.h</key>
 		<data>
-		eZxOqoyAoqGJgmO84sY+nj+mlrs=
+		ogPn4e4m+9J5TMSaanGThJ2vtTI=
 		</data>
 		<key>Headers/VietmapTrackingSDK.h</key>
 		<data>
@@ -26,11 +26,11 @@
 		</data>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		/mnEjTorVepkzwBDR/K77FiCF6U=
+		x/lb23MwuwvXaJLOk3X7CjGeO7s=
 		</data>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		1Ny+yrZxHN2CfYD7FYF/D8nAnvk=
+		Z/2RkPeam/UesbLoOry9TO005QM=
 		</data>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -38,19 +38,19 @@
 		</data>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		1Ny+yrZxHN2CfYD7FYF/D8nAnvk=
+		Z/2RkPeam/UesbLoOry9TO005QM=
 		</data>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		8EAWVEOX3Pgnlh96g/R0oj+fDk0=
+		zJQ+2fjVKcpBElKuB+AXDoI4P/0=
 		</data>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		/mnEjTorVepkzwBDR/K77FiCF6U=
+		x/lb23MwuwvXaJLOk3X7CjGeO7s=
 		</data>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		0lhtE1gvjz9XstRvymELeGYXxJY=
+		1eeusEK7g6EzLDTfCyJwpUq0hxg=
 		</data>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -58,11 +58,11 @@
 		</data>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		0lhtE1gvjz9XstRvymELeGYXxJY=
+		1eeusEK7g6EzLDTfCyJwpUq0hxg=
 		</data>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		7YbWpkJzl5bHMjkyaV5xEv9DTtQ=
+		yXALUwWwlMExtmCX1HrE1eGMdfA=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -89,7 +89,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ALFF3KAufF5HYyn/eLyrUIgMEeUvJll/zcmHlIZEhLs=
+			pCBSajQqI9wZ8SAEHzcn9nfj511mNWL6bT1VDBoujCg=
 			</data>
 		</dict>
 		<key>Headers/VietmapTrackingSDK.h</key>
@@ -103,14 +103,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			zsUWc/6hOhXoZdtILmFc+2LPXbNXN3E90R4o8Q5gy0U=
+			XcVa9Fhns0e5Xd8iFrZYGjLSY5OSAxigcmsCQL5z+p4=
 			</data>
 		</dict>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			dHJykCfVZsGHzEl/b8UZ47UmrT55HRnIDIE0YweMInI=
+			A+CaOoW6DUI6+0i5rurGTKYJ9XbPEZWXU4eSGV/4m+E=
 			</data>
 		</dict>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
@@ -124,28 +124,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			dHJykCfVZsGHzEl/b8UZ47UmrT55HRnIDIE0YweMInI=
+			A+CaOoW6DUI6+0i5rurGTKYJ9XbPEZWXU4eSGV/4m+E=
 			</data>
 		</dict>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Cs6Fopau+sfWxpC9vDtbFbmVgfMdH0g9FyO1jJchzC8=
+			ngaX7YxjjCTwzqSGKCcT/Nnhy7H+uLOakKFNE5+vh6A=
 			</data>
 		</dict>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			zsUWc/6hOhXoZdtILmFc+2LPXbNXN3E90R4o8Q5gy0U=
+			XcVa9Fhns0e5Xd8iFrZYGjLSY5OSAxigcmsCQL5z+p4=
 			</data>
 		</dict>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			OHW6giHCJf1+QWMM/MY4PQZwGcjMRgmRfdQvW2PBfRI=
+			/qTajg7lr4JREz9MnwPewpSNxEWqZww76eYLT35av70=
 			</data>
 		</dict>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -159,14 +159,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			OHW6giHCJf1+QWMM/MY4PQZwGcjMRgmRfdQvW2PBfRI=
+			/qTajg7lr4JREz9MnwPewpSNxEWqZww76eYLT35av70=
 			</data>
 		</dict>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ch/cSkf2BxVhRTeS5ZR/IIOvNNP7mFgUeYJ1T1m4l28=
+			yoe/Y7i21PyjuhnCIYcGGgRtj5/bDnnWLI2mPoMp0bQ=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
