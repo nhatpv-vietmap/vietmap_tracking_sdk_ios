@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.0.3 effective-5.10 (swiftlang-6.0.3.1.10 clang-1600.0.30.1)
-// swift-module-flags: -target arm64-apple-ios12.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name VietmapTrackingSDK
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface
+// swift-compiler-version: Apple Swift version 6.2 effective-5.10 (swiftlang-6.2.0.19.9 clang-1700.3.19.1)
+// swift-module-flags: -target arm64-apple-ios12.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name VietmapTrackingSDK
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2
 import AVFoundation
 import BackgroundTasks
 import CoreLocation
@@ -53,7 +53,9 @@ public struct AlertConfig {
 @objc public enum VMLocationMode : Swift.Int {
   case gpsCallback = 0
   case externalInput = 1
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -74,7 +76,9 @@ public struct AlertConfig {
     get
   }
   public static func fromValue(_ value: Swift.Int) -> VietmapTrackingSDK.VMVehicleType
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -87,7 +91,9 @@ public struct AlertConfig {
   @objc public var onError: ((Swift.String) -> Swift.Void)?
   @objc public var onPermissionChanged: ((Swift.String) -> Swift.Void)?
   @objc public var onRouteUpdate: ((Swift.Bool, Foundation.NSDictionary?) -> Swift.Void)?
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc convenience public init(apiKey: Swift.String? = nil)
+  #endif
   @objc deinit
   @objc public func initialize(apiKey: Swift.String, baseURL: Swift.String)
   @objc public func configure(apiKey: Swift.String)
@@ -97,19 +103,29 @@ public struct AlertConfig {
   @objc public func configure(apiKey: Swift.String, baseURL: Swift.String, autoUpload: Swift.Bool = true)
   @objc public func setAutoUpload(enabled: Swift.Bool)
   @objc public func setVehicleId(_ vehicleId: Swift.String)
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func setDriverId(_ driverId: Swift.String?)
+  #endif
   @objc public func getVehicleId() -> Swift.String
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func getDriverId() -> Swift.String?
+  #endif
   @objc public func onAppBackground()
   @objc public func onAppForeground()
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func getCurrentLocation() -> Foundation.NSDictionary?
+  #endif
   @objc public func isTrackingActive() -> Swift.Bool
   @objc public func getTrackingStatus() -> Foundation.NSDictionary
   @objc public func requestLocationPermissions(completion: @escaping (Swift.String) -> Swift.Void)
   @objc public func requestAlwaysLocationPermissions(completion: @escaping (Swift.String) -> Swift.Void)
   @objc public func hasLocationPermissions() -> Swift.Bool
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func startTracking(enhancedBackgroundMode: Swift.Bool, intervalMs: Swift.Int, distanceFilter: Swift.Double, completion: @escaping (Swift.Bool, Swift.String?) -> Swift.Void)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func stopTracking(completion: @escaping (Swift.Bool, Swift.String?) -> Swift.Void)
+  #endif
   @objc public func turnOnAlert(completion: @escaping (Swift.Bool) -> Swift.Void)
   @objc public func turnOffAlert(completion: @escaping (Swift.Bool) -> Swift.Void)
   @objc public func configureAlertAPI(apiKey: Swift.String, apiID: Swift.String, url: Swift.String = "https://drive-api.vietmap.vn/fleetwork/api/Alert/v2/mpp")
@@ -119,18 +135,20 @@ public struct AlertConfig {
   @objc public func configureVehicle(vehicleId: Swift.String, vehicleType: Swift.Int, seats: Swift.Int, weight: Swift.Double, maxProvision: Swift.Int)
   @objc public func getVehicleConfiguration() -> Foundation.NSDictionary
   @objc public func processExternalLocation(latitude: Swift.Double, longitude: Swift.Double, speed: Swift.Double, heading: Swift.Double)
-  @objc public func processExternalLocation(_ location: CoreLocation.CLLocation)
+  @objc public func processExternalLocation(_ location: _LocationEssentials.CLLocation)
   @objc public func getCurrentLocationMode() -> VietmapTrackingSDK.VMLocationMode
   @objc public func isSpeedAlertCurrentlyActive() -> Swift.Bool
   @objc public func getCachedLocationsCount() -> Swift.Int
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func uploadCachedLocationsManually(completion: @escaping (Swift.Bool, Swift.String?) -> Swift.Void)
+  #endif
   @objc public func clearCachedLocations()
   @objc public func isNetworkConnected() -> Swift.Bool
   @objc public func getTrackingHealthStatus() -> Foundation.NSDictionary
 }
 extension VietmapTrackingSDK.VietmapTrackingManager : CoreLocation.CLLocationManagerDelegate {
-  @objc dynamic public func locationManager(_ manager: CoreLocation.CLLocationManager, didUpdateLocations locations: [CoreLocation.CLLocation])
-  @objc dynamic public func processSpeedAlertUsingCPP(location: CoreLocation.CLLocation, vehicleId: Swift.String, vehicleType: Swift.Int, seats: Swift.Int, weights: Swift.Double)
+  @objc dynamic public func locationManager(_ manager: CoreLocation.CLLocationManager, didUpdateLocations locations: [_LocationEssentials.CLLocation])
+  @objc dynamic public func processSpeedAlertUsingCPP(location: _LocationEssentials.CLLocation, vehicleId: Swift.String, vehicleType: Swift.Int, seats: Swift.Int, weights: Swift.Double)
   @objc dynamic public func locationManager(_ manager: CoreLocation.CLLocationManager, didFailWithError error: any Swift.Error)
   @objc dynamic public func locationManager(_ manager: CoreLocation.CLLocationManager, didChangeAuthorization status: CoreLocation.CLAuthorizationStatus)
 }
@@ -143,17 +161,21 @@ extension VietmapTrackingSDK.VietmapTrackingManager : AVFAudio.AVSpeechSynthesiz
 }
 @available(iOS 14.0, *)
 extension VietmapTrackingSDK.VietmapTrackingManager {
+  #if compiler(>=5.3) && $NonescapableTypes
   @available(iOS 14.0, *)
   @objc dynamic public func startEnhancedTracking(highAccuracyMode: Swift.Bool = false, completion: @escaping (Swift.Bool, Swift.String?) -> Swift.Void)
+  #endif
   @available(iOS 14.0, *)
   @objc dynamic public func getEnhancedLocationStatus() -> Foundation.NSDictionary
   @objc dynamic public func requestFullLocationAccuracy()
 }
 extension VietmapTrackingSDK.VietmapTrackingManager {
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc dynamic public func startTracking(backgroundMode: Swift.Bool, intervalMs: Swift.Int, forceUpdateBackground: Swift.Bool, distanceFilter: Swift.Double, completion: @escaping (Swift.Bool, Swift.String?) -> Swift.Void)
+  #endif
 }
 @_inheritsConvenienceInitializers @objc public class EnhancedLocationManager : ObjectiveC.NSObject {
-  @objc public var onLocationUpdate: ((CoreLocation.CLLocation, Swift.String, Swift.String) -> Swift.Void)?
+  @objc public var onLocationUpdate: ((_LocationEssentials.CLLocation, Swift.String, Swift.String) -> Swift.Void)?
   @objc public var onLocationError: ((Swift.String) -> Swift.Void)?
   @objc public var onAuthorizationChanged: ((CoreLocation.CLAuthorizationStatus) -> Swift.Void)?
   @objc override dynamic public init()
@@ -163,17 +185,19 @@ extension VietmapTrackingSDK.VietmapTrackingManager {
   @available(iOS 14.0, *)
   @objc public func requestLocationPermissions()
   @objc public func isTracking() -> Swift.Bool
-  @objc public func getLastKnownLocation() -> CoreLocation.CLLocation?
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public func getLastKnownLocation() -> _LocationEssentials.CLLocation?
+  #endif
   @available(iOS 14.0, *)
   @objc public func getLocationServicesStatus() -> Swift.String
   @objc public func requestFullAccuracy()
-  @objc public func setCustomAccuracy(_ accuracy: CoreLocation.CLLocationAccuracy, distanceFilter: CoreLocation.CLLocationDistance)
+  @objc public func setCustomAccuracy(_ accuracy: _LocationEssentials.CLLocationAccuracy, distanceFilter: _LocationEssentials.CLLocationDistance)
   @available(iOS 14.0, *)
   @objc public func enableBackgroundLocationUpdates(_ enable: Swift.Bool)
   @objc deinit
 }
 extension VietmapTrackingSDK.EnhancedLocationManager : CoreLocation.CLLocationManagerDelegate {
-  @objc dynamic public func locationManager(_ manager: CoreLocation.CLLocationManager, didUpdateLocations locations: [CoreLocation.CLLocation])
+  @objc dynamic public func locationManager(_ manager: CoreLocation.CLLocationManager, didUpdateLocations locations: [_LocationEssentials.CLLocation])
   @objc dynamic public func locationManager(_ manager: CoreLocation.CLLocationManager, didFailWithError error: any Swift.Error)
   @objc dynamic public func locationManager(_ manager: CoreLocation.CLLocationManager, didChangeAuthorization status: CoreLocation.CLAuthorizationStatus)
   @available(iOS 14.0, *)

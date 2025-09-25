@@ -5051,7 +5051,7 @@
               {
                 "kind": "TypeNominal",
                 "name": "CLLocation",
-                "printedName": "CoreLocation.CLLocation",
+                "printedName": "_LocationEssentials.CLLocation",
                 "usr": "c:objc(cs)CLLocation"
               }
             ],
@@ -5281,12 +5281,12 @@
               {
                 "kind": "TypeNominal",
                 "name": "Array",
-                "printedName": "[CoreLocation.CLLocation]",
+                "printedName": "[_LocationEssentials.CLLocation]",
                 "children": [
                   {
                     "kind": "TypeNominal",
                     "name": "CLLocation",
-                    "printedName": "CoreLocation.CLLocation",
+                    "printedName": "_LocationEssentials.CLLocation",
                     "usr": "c:objc(cs)CLLocation"
                   }
                 ],
@@ -5319,7 +5319,7 @@
               {
                 "kind": "TypeNominal",
                 "name": "CLLocation",
-                "printedName": "CoreLocation.CLLocation",
+                "printedName": "_LocationEssentials.CLLocation",
                 "usr": "c:objc(cs)CLLocation"
               },
               {
@@ -5906,6 +5906,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -5943,12 +5950,12 @@
               {
                 "kind": "TypeNominal",
                 "name": "Optional",
-                "printedName": "((CoreLocation.CLLocation, Swift.String, Swift.String) -> ())?",
+                "printedName": "((_LocationEssentials.CLLocation, Swift.String, Swift.String) -> ())?",
                 "children": [
                   {
                     "kind": "TypeFunc",
                     "name": "Function",
-                    "printedName": "(CoreLocation.CLLocation, Swift.String, Swift.String) -> ()",
+                    "printedName": "(_LocationEssentials.CLLocation, Swift.String, Swift.String) -> ()",
                     "children": [
                       {
                         "kind": "TypeNominal",
@@ -5958,12 +5965,12 @@
                       {
                         "kind": "TypeNominal",
                         "name": "Tuple",
-                        "printedName": "(CoreLocation.CLLocation, Swift.String, Swift.String)",
+                        "printedName": "(_LocationEssentials.CLLocation, Swift.String, Swift.String)",
                         "children": [
                           {
                             "kind": "TypeNominal",
                             "name": "CLLocation",
-                            "printedName": "CoreLocation.CLLocation",
+                            "printedName": "_LocationEssentials.CLLocation",
                             "usr": "c:objc(cs)CLLocation"
                           },
                           {
@@ -6007,12 +6014,12 @@
                   {
                     "kind": "TypeNominal",
                     "name": "Optional",
-                    "printedName": "((CoreLocation.CLLocation, Swift.String, Swift.String) -> ())?",
+                    "printedName": "((_LocationEssentials.CLLocation, Swift.String, Swift.String) -> ())?",
                     "children": [
                       {
                         "kind": "TypeFunc",
                         "name": "Function",
-                        "printedName": "(CoreLocation.CLLocation, Swift.String, Swift.String) -> ()",
+                        "printedName": "(_LocationEssentials.CLLocation, Swift.String, Swift.String) -> ()",
                         "children": [
                           {
                             "kind": "TypeNominal",
@@ -6022,12 +6029,12 @@
                           {
                             "kind": "TypeNominal",
                             "name": "Tuple",
-                            "printedName": "(CoreLocation.CLLocation, Swift.String, Swift.String)",
+                            "printedName": "(_LocationEssentials.CLLocation, Swift.String, Swift.String)",
                             "children": [
                               {
                                 "kind": "TypeNominal",
                                 "name": "CLLocation",
-                                "printedName": "CoreLocation.CLLocation",
+                                "printedName": "_LocationEssentials.CLLocation",
                                 "usr": "c:objc(cs)CLLocation"
                               },
                               {
@@ -6073,12 +6080,12 @@
                   {
                     "kind": "TypeNominal",
                     "name": "Optional",
-                    "printedName": "((CoreLocation.CLLocation, Swift.String, Swift.String) -> ())?",
+                    "printedName": "((_LocationEssentials.CLLocation, Swift.String, Swift.String) -> ())?",
                     "children": [
                       {
                         "kind": "TypeFunc",
                         "name": "Function",
-                        "printedName": "(CoreLocation.CLLocation, Swift.String, Swift.String) -> ()",
+                        "printedName": "(_LocationEssentials.CLLocation, Swift.String, Swift.String) -> ()",
                         "children": [
                           {
                             "kind": "TypeNominal",
@@ -6088,12 +6095,12 @@
                           {
                             "kind": "TypeNominal",
                             "name": "Tuple",
-                            "printedName": "(CoreLocation.CLLocation, Swift.String, Swift.String)",
+                            "printedName": "(_LocationEssentials.CLLocation, Swift.String, Swift.String)",
                             "children": [
                               {
                                 "kind": "TypeNominal",
                                 "name": "CLLocation",
-                                "printedName": "CoreLocation.CLLocation",
+                                "printedName": "_LocationEssentials.CLLocation",
                                 "usr": "c:objc(cs)CLLocation"
                               },
                               {
@@ -6586,12 +6593,12 @@
               {
                 "kind": "TypeNominal",
                 "name": "Optional",
-                "printedName": "CoreLocation.CLLocation?",
+                "printedName": "_LocationEssentials.CLLocation?",
                 "children": [
                   {
                     "kind": "TypeNominal",
                     "name": "CLLocation",
-                    "printedName": "CoreLocation.CLLocation",
+                    "printedName": "_LocationEssentials.CLLocation",
                     "usr": "c:objc(cs)CLLocation"
                   }
                 ],
@@ -6735,12 +6742,12 @@
               {
                 "kind": "TypeNominal",
                 "name": "Array",
-                "printedName": "[CoreLocation.CLLocation]",
+                "printedName": "[_LocationEssentials.CLLocation]",
                 "children": [
                   {
                     "kind": "TypeNominal",
                     "name": "CLLocation",
-                    "printedName": "CoreLocation.CLLocation",
+                    "printedName": "_LocationEssentials.CLLocation",
                     "usr": "c:objc(cs)CLLocation"
                   }
                 ],
