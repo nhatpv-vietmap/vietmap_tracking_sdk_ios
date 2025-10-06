@@ -429,9 +429,10 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VietmapTrack
 /// Process external location input for speed alerts
 /// This method allows feeding location data from external sources
 /// Auto-switches from GPS to external input mode when called
+/// @param speed Speed value (km/h preferred). Values ≤ 30 are treated as m/s and converted once.
 - (void)processExternalLocationWithLatitude:(double)latitude longitude:(double)longitude speed:(double)speed heading:(double)heading;
 /// Process external location input with CLLocation object
-/// Convenience method for existing CLLocation objects
+/// Convenience method for existing CLLocation objects (speed usually in m/s)
 - (void)processExternalLocation:(CLLocation * _Nonnull)location;
 /// Get current location mode
 - (enum VMLocationMode)getCurrentLocationMode SWIFT_WARN_UNUSED_RESULT;
@@ -918,9 +919,10 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VietmapTrack
 /// Process external location input for speed alerts
 /// This method allows feeding location data from external sources
 /// Auto-switches from GPS to external input mode when called
+/// @param speed Speed value (km/h preferred). Values ≤ 30 are treated as m/s and converted once.
 - (void)processExternalLocationWithLatitude:(double)latitude longitude:(double)longitude speed:(double)speed heading:(double)heading;
 /// Process external location input with CLLocation object
-/// Convenience method for existing CLLocation objects
+/// Convenience method for existing CLLocation objects (speed usually in m/s)
 - (void)processExternalLocation:(CLLocation * _Nonnull)location;
 /// Get current location mode
 - (enum VMLocationMode)getCurrentLocationMode SWIFT_WARN_UNUSED_RESULT;
