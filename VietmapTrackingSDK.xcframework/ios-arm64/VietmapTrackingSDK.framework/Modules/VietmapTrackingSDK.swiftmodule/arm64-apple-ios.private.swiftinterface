@@ -75,6 +75,9 @@ public struct AlertConfig {
   public var description: Swift.String {
     get
   }
+  public var displayName: Swift.String {
+    get
+  }
   public static func fromValue(_ value: Swift.Int) -> VietmapTrackingSDK.VMVehicleType
   #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
