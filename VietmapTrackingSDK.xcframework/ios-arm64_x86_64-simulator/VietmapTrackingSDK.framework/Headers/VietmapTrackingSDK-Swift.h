@@ -446,6 +446,13 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VietmapTrack
 - (NSDictionary * _Nonnull)getTrackingHealthStatus SWIFT_WARN_UNUSED_RESULT;
 @end
 
+/// Speed status enum matching C++ SpeedStatus
+typedef SWIFT_ENUM(NSInteger, SpeedStatus, open) {
+  SpeedStatusSafe = 0,
+  SpeedStatusNearLimit = 1,
+  SpeedStatusOverLimit = 2,
+};
+
 @interface VietmapTrackingManager (SWIFT_EXTENSION(VietmapTrackingSDK))
 - (void)startTrackingWithBackgroundMode:(BOOL)backgroundMode intervalMs:(NSInteger)intervalMs forceUpdateBackground:(BOOL)forceUpdateBackground distanceFilter:(double)distanceFilter completion:(void (^ _Nonnull)(BOOL, NSString * _Nullable))completion;
 @end
@@ -935,6 +942,13 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VietmapTrack
 /// Gets comprehensive tracking status for debugging
 - (NSDictionary * _Nonnull)getTrackingHealthStatus SWIFT_WARN_UNUSED_RESULT;
 @end
+
+/// Speed status enum matching C++ SpeedStatus
+typedef SWIFT_ENUM(NSInteger, SpeedStatus, open) {
+  SpeedStatusSafe = 0,
+  SpeedStatusNearLimit = 1,
+  SpeedStatusOverLimit = 2,
+};
 
 @interface VietmapTrackingManager (SWIFT_EXTENSION(VietmapTrackingSDK))
 - (void)startTrackingWithBackgroundMode:(BOOL)backgroundMode intervalMs:(NSInteger)intervalMs forceUpdateBackground:(BOOL)forceUpdateBackground distanceFilter:(double)distanceFilter completion:(void (^ _Nonnull)(BOOL, NSString * _Nullable))completion;

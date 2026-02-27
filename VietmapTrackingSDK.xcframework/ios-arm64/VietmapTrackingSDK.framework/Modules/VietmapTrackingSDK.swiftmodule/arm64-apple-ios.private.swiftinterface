@@ -94,6 +94,19 @@ public struct AlertConfig {
   @objc public var onError: ((Swift.String) -> Swift.Void)?
   @objc public var onPermissionChanged: ((Swift.String) -> Swift.Void)?
   @objc public var onRouteUpdate: ((Swift.Bool, Foundation.NSDictionary?) -> Swift.Void)?
+  @objc public enum SpeedStatus : Swift.Int {
+    case safe = 0
+    case nearLimit = 1
+    case overLimit = 2
+    #if compiler(>=5.3) && $NonescapableTypes
+    public init?(rawValue: Swift.Int)
+    #endif
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  public var onSpeedSignBitmapChanged: ((UIKit.UIImage?, VietmapTrackingSDK.VietmapTrackingManager.SpeedStatus, UIKit.UIImage?, Swift.Int, UIKit.UIImage?, Swift.Int, UIKit.UIImage?, Swift.Int) -> Swift.Void)?
   #if compiler(>=5.3) && $NonescapableTypes
   @objc convenience public init(apiKey: Swift.String? = nil)
   #endif
@@ -279,5 +292,8 @@ extension VietmapTrackingSDK.VMLocationMode : Swift.RawRepresentable {}
 extension VietmapTrackingSDK.VMVehicleType : Swift.Equatable {}
 extension VietmapTrackingSDK.VMVehicleType : Swift.Hashable {}
 extension VietmapTrackingSDK.VMVehicleType : Swift.RawRepresentable {}
+extension VietmapTrackingSDK.VietmapTrackingManager.SpeedStatus : Swift.Equatable {}
+extension VietmapTrackingSDK.VietmapTrackingManager.SpeedStatus : Swift.Hashable {}
+extension VietmapTrackingSDK.VietmapTrackingManager.SpeedStatus : Swift.RawRepresentable {}
 extension VietmapTrackingSDK.VMTransportMode : Swift.Equatable {}
 extension VietmapTrackingSDK.VMTransportMode : Swift.Hashable {}

@@ -27,6 +27,22 @@ NS_ASSUME_NONNULL_BEGIN
           maxProvision:(int)maxProvision
             completion:(void (^)(BOOL hasSpeedLimit, NSString * _Nullable speedLimitText))completion;
 
+// Speed status constants
+typedef NS_ENUM(NSInteger, VietmapSpeedStatus) {
+    VietmapSpeedStatusSafe = 0,
+    VietmapSpeedStatusNearLimit = 1,
+    VietmapSpeedStatusOverLimit = 2
+};
+
+// Speed sign bitmap callback - delivers bitmaps (priority: current speed → next speed → camera → toll):
+// currentBmpData/speedStatus: current link speed limit sign
+// nextBmpData/nextDistanceMeters: next upcoming speed sign
+// cameraBmpData/cameraDistanceMeters: next camera ahead
+// tollBmpData/tollDistanceMeters: next toll booth ahead
+typedef void (^SpeedSignBitmapBlock)(NSData * _Nullable currentBmpData, VietmapSpeedStatus speedStatus, NSData * _Nullable nextBmpData, int nextDistanceMeters, NSData * _Nullable cameraBmpData, int cameraDistanceMeters, NSData * _Nullable tollBmpData, int tollDistanceMeters);
+
+- (void)setSpeedSignBitmapCallback:(SpeedSignBitmapBlock _Nullable)callback;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -3904,6 +3904,660 @@
             ]
           },
           {
+            "kind": "TypeDecl",
+            "name": "SpeedStatus",
+            "printedName": "SpeedStatus",
+            "children": [
+              {
+                "kind": "Var",
+                "name": "safe",
+                "printedName": "safe",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(VietmapTrackingSDK.VietmapTrackingManager.SpeedStatus.Type) -> VietmapTrackingSDK.VietmapTrackingManager.SpeedStatus",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SpeedStatus",
+                        "printedName": "VietmapTrackingSDK.VietmapTrackingManager.SpeedStatus",
+                        "usr": "s:18VietmapTrackingSDK0aB7ManagerC11SpeedStatusO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Metatype",
+                        "printedName": "VietmapTrackingSDK.VietmapTrackingManager.SpeedStatus.Type",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "SpeedStatus",
+                            "printedName": "VietmapTrackingSDK.VietmapTrackingManager.SpeedStatus",
+                            "usr": "s:18VietmapTrackingSDK0aB7ManagerC11SpeedStatusO"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "EnumElement",
+                "usr": "s:18VietmapTrackingSDK0aB7ManagerC11SpeedStatusO4safeyA2EmF",
+                "mangledName": "$s18VietmapTrackingSDK0aB7ManagerC11SpeedStatusO4safeyA2EmF",
+                "moduleName": "VietmapTrackingSDK",
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "fixedbinaryorder": 0
+              },
+              {
+                "kind": "Var",
+                "name": "nearLimit",
+                "printedName": "nearLimit",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(VietmapTrackingSDK.VietmapTrackingManager.SpeedStatus.Type) -> VietmapTrackingSDK.VietmapTrackingManager.SpeedStatus",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SpeedStatus",
+                        "printedName": "VietmapTrackingSDK.VietmapTrackingManager.SpeedStatus",
+                        "usr": "s:18VietmapTrackingSDK0aB7ManagerC11SpeedStatusO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Metatype",
+                        "printedName": "VietmapTrackingSDK.VietmapTrackingManager.SpeedStatus.Type",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "SpeedStatus",
+                            "printedName": "VietmapTrackingSDK.VietmapTrackingManager.SpeedStatus",
+                            "usr": "s:18VietmapTrackingSDK0aB7ManagerC11SpeedStatusO"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "EnumElement",
+                "usr": "s:18VietmapTrackingSDK0aB7ManagerC11SpeedStatusO9nearLimityA2EmF",
+                "mangledName": "$s18VietmapTrackingSDK0aB7ManagerC11SpeedStatusO9nearLimityA2EmF",
+                "moduleName": "VietmapTrackingSDK",
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "fixedbinaryorder": 1
+              },
+              {
+                "kind": "Var",
+                "name": "overLimit",
+                "printedName": "overLimit",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(VietmapTrackingSDK.VietmapTrackingManager.SpeedStatus.Type) -> VietmapTrackingSDK.VietmapTrackingManager.SpeedStatus",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SpeedStatus",
+                        "printedName": "VietmapTrackingSDK.VietmapTrackingManager.SpeedStatus",
+                        "usr": "s:18VietmapTrackingSDK0aB7ManagerC11SpeedStatusO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Metatype",
+                        "printedName": "VietmapTrackingSDK.VietmapTrackingManager.SpeedStatus.Type",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "SpeedStatus",
+                            "printedName": "VietmapTrackingSDK.VietmapTrackingManager.SpeedStatus",
+                            "usr": "s:18VietmapTrackingSDK0aB7ManagerC11SpeedStatusO"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "EnumElement",
+                "usr": "s:18VietmapTrackingSDK0aB7ManagerC11SpeedStatusO9overLimityA2EmF",
+                "mangledName": "$s18VietmapTrackingSDK0aB7ManagerC11SpeedStatusO9overLimityA2EmF",
+                "moduleName": "VietmapTrackingSDK",
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "fixedbinaryorder": 2
+              },
+              {
+                "kind": "Constructor",
+                "name": "init",
+                "printedName": "init(rawValue:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "VietmapTrackingSDK.VietmapTrackingManager.SpeedStatus?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SpeedStatus",
+                        "printedName": "VietmapTrackingSDK.VietmapTrackingManager.SpeedStatus",
+                        "usr": "s:18VietmapTrackingSDK0aB7ManagerC11SpeedStatusO"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Constructor",
+                "usr": "s:18VietmapTrackingSDK0aB7ManagerC11SpeedStatusO8rawValueAESgSi_tcfc",
+                "mangledName": "$s18VietmapTrackingSDK0aB7ManagerC11SpeedStatusO8rawValueAESgSi_tcfc",
+                "moduleName": "VietmapTrackingSDK",
+                "implicit": true,
+                "init_kind": "Designated"
+              },
+              {
+                "kind": "Var",
+                "name": "rawValue",
+                "printedName": "rawValue",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:18VietmapTrackingSDK0aB7ManagerC11SpeedStatusO8rawValueSivp",
+                "mangledName": "$s18VietmapTrackingSDK0aB7ManagerC11SpeedStatusO8rawValueSivp",
+                "moduleName": "VietmapTrackingSDK",
+                "implicit": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Int",
+                        "printedName": "Swift.Int",
+                        "usr": "s:Si"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:18VietmapTrackingSDK0aB7ManagerC11SpeedStatusO8rawValueSivg",
+                    "mangledName": "$s18VietmapTrackingSDK0aB7ManagerC11SpeedStatusO8rawValueSivg",
+                    "moduleName": "VietmapTrackingSDK",
+                    "implicit": true,
+                    "accessorKind": "get"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Enum",
+            "usr": "s:18VietmapTrackingSDK0aB7ManagerC11SpeedStatusO",
+            "mangledName": "$s18VietmapTrackingSDK0aB7ManagerC11SpeedStatusO",
+            "moduleName": "VietmapTrackingSDK",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "enumRawTypeName": "Int",
+            "conformances": [
+              {
+                "kind": "Conformance",
+                "name": "Copyable",
+                "printedName": "Copyable",
+                "usr": "s:s8CopyableP",
+                "mangledName": "$ss8CopyableP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "Escapable",
+                "printedName": "Escapable",
+                "usr": "s:s9EscapableP",
+                "mangledName": "$ss9EscapableP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "Equatable",
+                "printedName": "Equatable",
+                "usr": "s:SQ",
+                "mangledName": "$sSQ"
+              },
+              {
+                "kind": "Conformance",
+                "name": "Hashable",
+                "printedName": "Hashable",
+                "usr": "s:SH",
+                "mangledName": "$sSH"
+              },
+              {
+                "kind": "Conformance",
+                "name": "RawRepresentable",
+                "printedName": "RawRepresentable",
+                "children": [
+                  {
+                    "kind": "TypeWitness",
+                    "name": "RawValue",
+                    "printedName": "RawValue",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Int",
+                        "printedName": "Swift.Int",
+                        "usr": "s:Si"
+                      }
+                    ]
+                  }
+                ],
+                "usr": "s:SY",
+                "mangledName": "$sSY"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "onSpeedSignBitmapChanged",
+            "printedName": "onSpeedSignBitmapChanged",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "((UIKit.UIImage?, VietmapTrackingSDK.VietmapTrackingManager.SpeedStatus, UIKit.UIImage?, Swift.Int, UIKit.UIImage?, Swift.Int, UIKit.UIImage?, Swift.Int) -> ())?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(UIKit.UIImage?, VietmapTrackingSDK.VietmapTrackingManager.SpeedStatus, UIKit.UIImage?, Swift.Int, UIKit.UIImage?, Swift.Int, UIKit.UIImage?, Swift.Int) -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(UIKit.UIImage?, VietmapTrackingSDK.VietmapTrackingManager.SpeedStatus, UIKit.UIImage?, Swift.Int, UIKit.UIImage?, Swift.Int, UIKit.UIImage?, Swift.Int)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "UIKit.UIImage?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "UIImage",
+                                "printedName": "UIKit.UIImage",
+                                "usr": "c:objc(cs)UIImage"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "SpeedStatus",
+                            "printedName": "VietmapTrackingSDK.VietmapTrackingManager.SpeedStatus",
+                            "usr": "s:18VietmapTrackingSDK0aB7ManagerC11SpeedStatusO"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "UIKit.UIImage?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "UIImage",
+                                "printedName": "UIKit.UIImage",
+                                "usr": "c:objc(cs)UIImage"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Int",
+                            "printedName": "Swift.Int",
+                            "usr": "s:Si"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "UIKit.UIImage?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "UIImage",
+                                "printedName": "UIKit.UIImage",
+                                "usr": "c:objc(cs)UIImage"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Int",
+                            "printedName": "Swift.Int",
+                            "usr": "s:Si"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "UIKit.UIImage?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "UIImage",
+                                "printedName": "UIKit.UIImage",
+                                "usr": "c:objc(cs)UIImage"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Int",
+                            "printedName": "Swift.Int",
+                            "usr": "s:Si"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18VietmapTrackingSDK0aB7ManagerC24onSpeedSignBitmapChangedySo7UIImageCSg_AC0F6StatusOAGSiAGSiAGSitcSgvp",
+            "mangledName": "$s18VietmapTrackingSDK0aB7ManagerC24onSpeedSignBitmapChangedySo7UIImageCSg_AC0F6StatusOAGSiAGSiAGSitcSgvp",
+            "moduleName": "VietmapTrackingSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "((UIKit.UIImage?, VietmapTrackingSDK.VietmapTrackingManager.SpeedStatus, UIKit.UIImage?, Swift.Int, UIKit.UIImage?, Swift.Int, UIKit.UIImage?, Swift.Int) -> ())?",
+                    "children": [
+                      {
+                        "kind": "TypeFunc",
+                        "name": "Function",
+                        "printedName": "(UIKit.UIImage?, VietmapTrackingSDK.VietmapTrackingManager.SpeedStatus, UIKit.UIImage?, Swift.Int, UIKit.UIImage?, Swift.Int, UIKit.UIImage?, Swift.Int) -> ()",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Void",
+                            "printedName": "()"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Tuple",
+                            "printedName": "(UIKit.UIImage?, VietmapTrackingSDK.VietmapTrackingManager.SpeedStatus, UIKit.UIImage?, Swift.Int, UIKit.UIImage?, Swift.Int, UIKit.UIImage?, Swift.Int)",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Optional",
+                                "printedName": "UIKit.UIImage?",
+                                "children": [
+                                  {
+                                    "kind": "TypeNominal",
+                                    "name": "UIImage",
+                                    "printedName": "UIKit.UIImage",
+                                    "usr": "c:objc(cs)UIImage"
+                                  }
+                                ],
+                                "usr": "s:Sq"
+                              },
+                              {
+                                "kind": "TypeNominal",
+                                "name": "SpeedStatus",
+                                "printedName": "VietmapTrackingSDK.VietmapTrackingManager.SpeedStatus",
+                                "usr": "s:18VietmapTrackingSDK0aB7ManagerC11SpeedStatusO"
+                              },
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Optional",
+                                "printedName": "UIKit.UIImage?",
+                                "children": [
+                                  {
+                                    "kind": "TypeNominal",
+                                    "name": "UIImage",
+                                    "printedName": "UIKit.UIImage",
+                                    "usr": "c:objc(cs)UIImage"
+                                  }
+                                ],
+                                "usr": "s:Sq"
+                              },
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Int",
+                                "printedName": "Swift.Int",
+                                "usr": "s:Si"
+                              },
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Optional",
+                                "printedName": "UIKit.UIImage?",
+                                "children": [
+                                  {
+                                    "kind": "TypeNominal",
+                                    "name": "UIImage",
+                                    "printedName": "UIKit.UIImage",
+                                    "usr": "c:objc(cs)UIImage"
+                                  }
+                                ],
+                                "usr": "s:Sq"
+                              },
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Int",
+                                "printedName": "Swift.Int",
+                                "usr": "s:Si"
+                              },
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Optional",
+                                "printedName": "UIKit.UIImage?",
+                                "children": [
+                                  {
+                                    "kind": "TypeNominal",
+                                    "name": "UIImage",
+                                    "printedName": "UIKit.UIImage",
+                                    "usr": "c:objc(cs)UIImage"
+                                  }
+                                ],
+                                "usr": "s:Sq"
+                              },
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Int",
+                                "printedName": "Swift.Int",
+                                "usr": "s:Si"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18VietmapTrackingSDK0aB7ManagerC24onSpeedSignBitmapChangedySo7UIImageCSg_AC0F6StatusOAGSiAGSiAGSitcSgvg",
+                "mangledName": "$s18VietmapTrackingSDK0aB7ManagerC24onSpeedSignBitmapChangedySo7UIImageCSg_AC0F6StatusOAGSiAGSiAGSitcSgvg",
+                "moduleName": "VietmapTrackingSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "((UIKit.UIImage?, VietmapTrackingSDK.VietmapTrackingManager.SpeedStatus, UIKit.UIImage?, Swift.Int, UIKit.UIImage?, Swift.Int, UIKit.UIImage?, Swift.Int) -> ())?",
+                    "children": [
+                      {
+                        "kind": "TypeFunc",
+                        "name": "Function",
+                        "printedName": "(UIKit.UIImage?, VietmapTrackingSDK.VietmapTrackingManager.SpeedStatus, UIKit.UIImage?, Swift.Int, UIKit.UIImage?, Swift.Int, UIKit.UIImage?, Swift.Int) -> ()",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Void",
+                            "printedName": "()"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Tuple",
+                            "printedName": "(UIKit.UIImage?, VietmapTrackingSDK.VietmapTrackingManager.SpeedStatus, UIKit.UIImage?, Swift.Int, UIKit.UIImage?, Swift.Int, UIKit.UIImage?, Swift.Int)",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Optional",
+                                "printedName": "UIKit.UIImage?",
+                                "children": [
+                                  {
+                                    "kind": "TypeNominal",
+                                    "name": "UIImage",
+                                    "printedName": "UIKit.UIImage",
+                                    "usr": "c:objc(cs)UIImage"
+                                  }
+                                ],
+                                "usr": "s:Sq"
+                              },
+                              {
+                                "kind": "TypeNominal",
+                                "name": "SpeedStatus",
+                                "printedName": "VietmapTrackingSDK.VietmapTrackingManager.SpeedStatus",
+                                "usr": "s:18VietmapTrackingSDK0aB7ManagerC11SpeedStatusO"
+                              },
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Optional",
+                                "printedName": "UIKit.UIImage?",
+                                "children": [
+                                  {
+                                    "kind": "TypeNominal",
+                                    "name": "UIImage",
+                                    "printedName": "UIKit.UIImage",
+                                    "usr": "c:objc(cs)UIImage"
+                                  }
+                                ],
+                                "usr": "s:Sq"
+                              },
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Int",
+                                "printedName": "Swift.Int",
+                                "usr": "s:Si"
+                              },
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Optional",
+                                "printedName": "UIKit.UIImage?",
+                                "children": [
+                                  {
+                                    "kind": "TypeNominal",
+                                    "name": "UIImage",
+                                    "printedName": "UIKit.UIImage",
+                                    "usr": "c:objc(cs)UIImage"
+                                  }
+                                ],
+                                "usr": "s:Sq"
+                              },
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Int",
+                                "printedName": "Swift.Int",
+                                "usr": "s:Si"
+                              },
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Optional",
+                                "printedName": "UIKit.UIImage?",
+                                "children": [
+                                  {
+                                    "kind": "TypeNominal",
+                                    "name": "UIImage",
+                                    "printedName": "UIKit.UIImage",
+                                    "usr": "c:objc(cs)UIImage"
+                                  }
+                                ],
+                                "usr": "s:Sq"
+                              },
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Int",
+                                "printedName": "Swift.Int",
+                                "usr": "s:Si"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18VietmapTrackingSDK0aB7ManagerC24onSpeedSignBitmapChangedySo7UIImageCSg_AC0F6StatusOAGSiAGSiAGSitcSgvs",
+                "mangledName": "$s18VietmapTrackingSDK0aB7ManagerC24onSpeedSignBitmapChangedySo7UIImageCSg_AC0F6StatusOAGSiAGSiAGSitcSgvs",
+                "moduleName": "VietmapTrackingSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18VietmapTrackingSDK0aB7ManagerC24onSpeedSignBitmapChangedySo7UIImageCSg_AC0F6StatusOAGSiAGSiAGSitcSgvM",
+                "mangledName": "$s18VietmapTrackingSDK0aB7ManagerC24onSpeedSignBitmapChangedySo7UIImageCSg_AC0F6StatusOAGSiAGSiAGSitcSgvM",
+                "moduleName": "VietmapTrackingSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
             "kind": "Constructor",
             "name": "init",
             "printedName": "init(apiKey:)",
@@ -10716,78 +11370,120 @@
     },
     {
       "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
-      "kind": "Array",
-      "offset": 8295,
-      "length": 2,
-      "value": "[]"
-    },
-    {
-      "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
-      "kind": "BooleanLiteral",
-      "offset": 9734,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
-      "kind": "StringLiteral",
-      "offset": 24478,
-      "length": 57,
-      "value": "\"https:\/\/drive-api.vietmap.vn\/fleetwork\/api\/Alert\/v2\/mpp\""
-    },
-    {
-      "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
-      "kind": "StringLiteral",
-      "offset": 25818,
-      "length": 3,
-      "value": "\"1\""
-    },
-    {
-      "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "IntegerLiteral",
-      "offset": 25961,
+      "offset": 8202,
       "length": 1,
-      "value": "5"
-    },
-    {
-      "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
-      "kind": "FloatLiteral",
-      "offset": 26027,
-      "length": 6,
-      "value": "1500.0"
-    },
-    {
-      "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
-      "kind": "StringLiteral",
-      "offset": 27257,
-      "length": 3,
-      "value": "\"1\""
+      "value": "0"
     },
     {
       "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "IntegerLiteral",
-      "offset": 27334,
+      "offset": 8229,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "IntegerLiteral",
-      "offset": 27403,
+      "offset": 8256,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
+      "kind": "IntegerLiteral",
+      "offset": 9011,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
+      "kind": "IntegerLiteral",
+      "offset": 9111,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
+      "kind": "IntegerLiteral",
+      "offset": 9207,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
+      "kind": "Array",
+      "offset": 9412,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
+      "kind": "BooleanLiteral",
+      "offset": 10851,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
+      "kind": "StringLiteral",
+      "offset": 25595,
+      "length": 57,
+      "value": "\"https:\/\/drive-api.vietmap.vn\/fleetwork\/api\/Alert\/v2\/mpp\""
+    },
+    {
+      "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
+      "kind": "StringLiteral",
+      "offset": 26935,
+      "length": 3,
+      "value": "\"1\""
+    },
+    {
+      "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
+      "kind": "IntegerLiteral",
+      "offset": 27078,
       "length": 1,
       "value": "5"
     },
     {
       "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "FloatLiteral",
-      "offset": 27477,
+      "offset": 27144,
+      "length": 6,
+      "value": "1500.0"
+    },
+    {
+      "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
+      "kind": "StringLiteral",
+      "offset": 28374,
+      "length": 3,
+      "value": "\"1\""
+    },
+    {
+      "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
+      "kind": "IntegerLiteral",
+      "offset": 28451,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
+      "kind": "IntegerLiteral",
+      "offset": 28520,
+      "length": 1,
+      "value": "5"
+    },
+    {
+      "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
+      "kind": "FloatLiteral",
+      "offset": 28594,
       "length": 6,
       "value": "1500.0"
     },
     {
       "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "BooleanLiteral",
-      "offset": 90145,
+      "offset": 93771,
       "length": 5,
       "value": "false"
     },
