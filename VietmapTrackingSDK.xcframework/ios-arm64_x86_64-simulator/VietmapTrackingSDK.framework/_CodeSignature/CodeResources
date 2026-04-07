@@ -6,7 +6,11 @@
 	<dict>
 		<key>Headers/VietmapAlertBridge.h</key>
 		<data>
-		HzCZ9JvT6gBFgdm3G9yI303txMQ=
+		uksHXQQfekndLAbpupiLDov1fQ0=
+		</data>
+		<key>Headers/VietmapGraphBridgeV2.h</key>
+		<data>
+		Zf+aesVRZUF1r/C01l6kcwE5gMQ=
 		</data>
 		<key>Headers/VietmapTrackingSDK-Public.h</key>
 		<data>
@@ -14,59 +18,59 @@
 		</data>
 		<key>Headers/VietmapTrackingSDK-Swift.h</key>
 		<data>
-		BjGFIx/Xo8uxOqKxmg5KD4t7ZEQ=
+		vOUXRGWfBAtyUbFtkbgk3eeUZHA=
 		</data>
 		<key>Headers/VietmapTrackingSDK.h</key>
 		<data>
-		V6yvo4JPYYmaKJcU5i9PXpFgiUc=
+		9p85uFypRKC/VmgOokmVaC3otb8=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		3iP/Lpn/arrF/eFruUhde8Yii9M=
+		YQMPiSE8MCujSY1Rq3I0PZxa94I=
 		</data>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		9DQcsFG8kjtblPlBjAMUYcpE9v0=
+		7IxHz06tzV+ovYwDFvzgzsSTwE4=
 		</data>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		zSqxHc4S7jmRWzH1vi0jmci8MNw=
+		sgDMldpaDlssWIwAKciRJrCZE9s=
 		</data>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		AnGv27KNtdxk6fQ+4ohzh3rOuS8=
+		pClh8uQxUNvlpQ6evwhulu0EvUA=
 		</data>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		zSqxHc4S7jmRWzH1vi0jmci8MNw=
+		sgDMldpaDlssWIwAKciRJrCZE9s=
 		</data>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		j0a20OtX1qTB+Q8vkq2ErdqDc8s=
+		sRerN+U2r8gSezc2P2zrw5YChmk=
 		</data>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		9DQcsFG8kjtblPlBjAMUYcpE9v0=
+		7IxHz06tzV+ovYwDFvzgzsSTwE4=
 		</data>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		UfF6t5lDNT5+bl4nxf2LdlrTm8c=
+		1qtzxFj9SwObXTtJUbMK5Ib2Juo=
 		</data>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		OjYlb6bPDKvEcv2VK9XUvVQdcvc=
+		wRHkmHUks4zVXx+VAMfp/WoBkb8=
 		</data>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		UfF6t5lDNT5+bl4nxf2LdlrTm8c=
+		1qtzxFj9SwObXTtJUbMK5Ib2Juo=
 		</data>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		6q3/5EQvy2i9xRapnhRlqGWuT3Y=
+		Xald8+EhTt2GC9tCugByDWbvqFY=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
-		qDVQw6wHtwvhGgrbCPNpebgaGZg=
+		QvsN8di799nQR1r/cRzSpC53ic4=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -75,7 +79,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			KE9Kn9P5WWVpiAt+k1PFuKdnj1QrkdvmZdJkxdZE7jU=
+			JbSyVczpHNphgMRFttJoBkJ7z88px6e5EqUpEuL2JOU=
+			</data>
+		</dict>
+		<key>Headers/VietmapGraphBridgeV2.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			rT3Vcm2hMg9D//S3Y/0i8+dBu4gowLNGublNNOdxPWg=
 			</data>
 		</dict>
 		<key>Headers/VietmapTrackingSDK-Public.h</key>
@@ -89,91 +100,91 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			RTBPgXT4Ex3oGxCHcoqrU4L3BuwnbqxLItl+MTvzX8o=
+			v1uAwTZmik1cepmKqDQJ8wAaOE/b5GSwroaufigO1uc=
 			</data>
 		</dict>
 		<key>Headers/VietmapTrackingSDK.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			DlsFX6CvhDGxYAYYwavXpoL77EHWHAygPbbVniaajK8=
+			FZ76SUCGW8JTgj7Nz7x2nWI7oNeAcDjVWynsSifMEjo=
 			</data>
 		</dict>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			FR1OxjpNMBL5SBL196wY26od7nGUvhxxZFR5a4NJdkM=
+			+3k2drZ+VZ7AqTIF3Z47soXn7awPEgFMyBqeW1b95uM=
 			</data>
 		</dict>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			thGESssv1bUpK9zM6IA+XKTpX1pYpILt1evTA4Of7gk=
+			MIM0Y2NtifrAyLtyDIvR15aqPAZ7iydZNc4w7o8sGn0=
 			</data>
 		</dict>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			JLyO+ov9bsKYm1WEZ8Nt8F5TV4TerS+y5EiqjdZhhLc=
+			LLhXWt67gmDmedK0DcJ7iFPTks+dDu3IciBBG7YVAVs=
 			</data>
 		</dict>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			thGESssv1bUpK9zM6IA+XKTpX1pYpILt1evTA4Of7gk=
+			MIM0Y2NtifrAyLtyDIvR15aqPAZ7iydZNc4w7o8sGn0=
 			</data>
 		</dict>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			oTIJ16kJc2aNqyez6P6frc34S6GWiqFYlDBBZ175w7Y=
+			RR6M2knfq/zSPGQhD4dQDOFNrYhcJDMSjMeSrlSGDVA=
 			</data>
 		</dict>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			FR1OxjpNMBL5SBL196wY26od7nGUvhxxZFR5a4NJdkM=
+			+3k2drZ+VZ7AqTIF3Z47soXn7awPEgFMyBqeW1b95uM=
 			</data>
 		</dict>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			5r33hoQspyPSlO/Js4u0LL8ozFIAKF7wjKpzGVncA7s=
+			YX7f3kcvfEJHLnsEa5ZTiU6uY3SRWiCguGIrCYUjNaI=
 			</data>
 		</dict>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			X9Au13S3lWvJgPSjHGqAylGPBZmtnUXF/RNCVsh/1ys=
+			Pu3417BOjKuwTJkegb5aB71MCfIkjwYse9l602m97ok=
 			</data>
 		</dict>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			5r33hoQspyPSlO/Js4u0LL8ozFIAKF7wjKpzGVncA7s=
+			YX7f3kcvfEJHLnsEa5ZTiU6uY3SRWiCguGIrCYUjNaI=
 			</data>
 		</dict>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			RC6qnofo4Yh2ftM1C5OT4G8+cvVpQ3EBRGtAdbBIWyU=
+			DdX1WWDus5KJMa7wr1/p6BkL37KPOr6Ast4JFf/sUxY=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			cSQXCxO0KFtDgTBapIuXg647d9ct/e8Cs3bqRg40SpA=
+			Wrp7TWdR429nAKCMFFs1ObLRXsWhBXlv30IexVGDKW4=
 			</data>
 		</dict>
 	</dict>

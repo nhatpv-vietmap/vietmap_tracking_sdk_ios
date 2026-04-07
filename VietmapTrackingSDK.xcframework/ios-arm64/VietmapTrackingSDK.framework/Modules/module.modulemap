@@ -7,5 +7,4 @@ framework module VietmapTrackingSDK {
 
 module VietmapTrackingSDK.Swift {
   header "VietmapTrackingSDK-Swift.h"
-  requires objc
 }
