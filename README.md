@@ -18,3 +18,9 @@ Add to your `Podfile`:
 
 ```ruby
 pod 'VietmapTrackingSDK', '~> 1.0.0'
+
+# Lint
+pod spec lint VietmapTrackingSDK.podspec --allow-warnings
+
+#Push
+pod trunk push VietmapTrackingSDK.podspec --allow-warnings
