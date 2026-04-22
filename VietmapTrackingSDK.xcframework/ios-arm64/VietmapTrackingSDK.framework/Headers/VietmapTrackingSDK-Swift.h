@@ -399,6 +399,14 @@ SWIFT_CLASS("_TtC18VietmapTrackingSDK23EnhancedLocationManager")
 - (void)locationManagerDidChangeAuthorization:(CLLocationManager * _Nonnull)manager SWIFT_AVAILABILITY(ios,introduced=14.0);
 @end
 
+/// Authentication mode for outgoing HTTP requests.
+/// <code>.header</code> (default): apiKey is sent in the <code>X-API-Key</code> request header.
+/// <code>.queryParam</code>: apiKey is appended as <code>?apikey=...</code> query parameter.
+typedef SWIFT_ENUM(NSInteger, VMAuthMode, open) {
+  VMAuthModeHeader = 0,
+  VMAuthModeQueryParam = 1,
+};
+
 typedef SWIFT_ENUM(NSInteger, VMLocationMode, open) {
   VMLocationModeGpsCallback = 0,
   VMLocationModeExternalInput = 1,
@@ -427,6 +435,10 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VietmapTrack
 @property (nonatomic, copy) void (^ _Nullable onError)(NSString * _Nonnull);
 @property (nonatomic, copy) void (^ _Nullable onPermissionChanged)(NSString * _Nonnull);
 @property (nonatomic, copy) void (^ _Nullable onRouteUpdate)(BOOL, NSDictionary * _Nullable);
+/// Fired when a fake/simulated GPS location is detected.
+/// SDK chỉ fire callback — application layer quyết định cách xử lý.
+/// Payload keys: “isFake” (Bool), “reason” (String), “lat”, “lng”, “timestamp”
+@property (nonatomic, copy) void (^ _Nullable onFakeGPSDetected)(NSDictionary * _Nonnull);
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 - (nonnull instancetype)initWithApiKey:(NSString * _Nullable)apiKey;
@@ -437,6 +449,34 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VietmapTrack
 - (void)setTrackingStatus:(NSString * _Nonnull)status;
 - (void)configureWithApiKey:(NSString * _Nonnull)apiKey baseURL:(NSString * _Nonnull)baseURL autoUpload:(BOOL)autoUpload;
 - (void)setAutoUploadWithEnabled:(BOOL)enabled;
+/// Set authentication mode. Must be called before the first network request.
+/// Default is <code>.header</code> (X-API-Key header).
+- (void)configureWithAuthMode:(enum VMAuthMode)authMode;
+/// Set the path used for single GPS point upload. Default: /gps-tracking.
+- (void)configureWithGpsTrackingEndpoint:(NSString * _Nonnull)gpsTrackingEndpoint;
+/// Set the path used for bulk GPS upload. Default: /gps-tracking/bulk.
+- (void)configureWithGpsBulkEndpoint:(NSString * _Nonnull)gpsBulkEndpoint;
+- (void)getHistoryWithUserId:(NSString * _Nonnull)userId fromTime:(int64_t)fromTime toTime:(int64_t)toTime pageNumber:(NSInteger)pageNumber pageSize:(NSInteger)pageSize sortBy:(NSString * _Nonnull)sortBy sortDescending:(BOOL)sortDescending endpoint:(NSString * _Nullable)endpoint completion:(void (^ _Nonnull)(NSString * _Nullable, NSString * _Nullable, NSString * _Nullable))completion;
+/// Get the latest location for a given device ID.
+/// \param deviceId the device ID
+///
+/// \param endpoint optional path override. Pass nil to use default (/gps-tracking/latest/devices).
+///
+/// \param completion (jsonString?, errorCode?, errorMessage?)
+///
+- (void)getLatestLocationByDeviceWithDeviceId:(NSString * _Nonnull)deviceId endpoint:(NSString * _Nullable)endpoint completion:(void (^ _Nonnull)(NSString * _Nullable, NSString * _Nullable, NSString * _Nullable))completion;
+/// Get the latest location for a given vehicle ID.
+/// \param vehicleId the vehicle ID
+///
+/// \param endpoint optional path override. Pass nil to use default (/gps-tracking/latest/vehicle).
+///
+- (void)getLatestLocationByVehicleWithVehicleId:(NSString * _Nonnull)vehicleId endpoint:(NSString * _Nullable)endpoint completion:(void (^ _Nonnull)(NSString * _Nullable, NSString * _Nullable, NSString * _Nullable))completion;
+/// Get the latest location for a given user ID.
+/// \param userId the user ID
+///
+/// \param endpoint optional path override. Pass nil to use default (/gps-tracking/latest/users).
+///
+- (void)getLatestLocationByUserWithUserId:(NSString * _Nonnull)userId endpoint:(NSString * _Nullable)endpoint completion:(void (^ _Nonnull)(NSString * _Nullable, NSString * _Nullable, NSString * _Nullable))completion;
 - (void)setVehicleId:(NSString * _Nonnull)vehicleId;
 - (void)setDriverId:(NSString * _Nullable)driverId;
 - (NSString * _Nonnull)getVehicleId SWIFT_WARN_UNUSED_RESULT;
@@ -472,25 +512,26 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VietmapTrack
 - (void)configureZoneNetworkV2WithBaseUrl:(NSString * _Nonnull)baseUrl;
 /// Xóa cache và reset engine v2 (dùng khi thay đổi vehicleType/seats/weights).
 - (void)resetZoneNetworkV2;
-/// @param latitude Latitude coordinate
-/// @param longitude Longitude coordinate<br/>
+/// Process location with vehicle type for speed alerts
+/// @param lat Latitude coordinate
+/// @param lng Longitude coordinate
 /// @param speed Current speed in m/s
 /// @param heading Current heading in degrees
 /// @param vehicleId Unique identifier for the vehicle (default: 1)
 /// @param vehicleType Type of vehicle using VMVehicleType enum (default: .car)
 /// @param seats Number of seats in the vehicle (default: 5)
 /// @param weights Vehicle weight in kg (default: 1500.0)
-- (void)processLocationWithVehicleTypeLatitude:(double)latitude longitude:(double)longitude speed:(double)speed heading:(double)heading vehicleId:(NSString * _Nonnull)vehicleId vehicleTypeEnum:(enum VMVehicleType)vehicleType seats:(NSInteger)seats weights:(double)weights;
+- (void)processLocationWithVehicleTypeLat:(double)lat lng:(double)lng speed:(double)speed heading:(double)heading vehicleId:(NSString * _Nonnull)vehicleId vehicleTypeEnum:(enum VMVehicleType)vehicleType seats:(NSInteger)seats weights:(double)weights;
 /// Process location with custom vehicle parameters for speed alerts (backward compatibility)
-/// @param latitude Latitude coordinate
-/// @param longitude Longitude coordinate<br/>
+/// @param lat Latitude coordinate
+/// @param lng Longitude coordinate
 /// @param speed Current speed in m/s
 /// @param heading Current heading in degrees
 /// @param vehicleId Unique identifier for the vehicle (default: 1)
 /// @param vehicleType Type of vehicle - 1=Car, 2=Truck, etc. (default: 1)
 /// @param seats Number of seats in the vehicle (default: 5)
 /// @param weights Vehicle weight in kg (default: 1500.0)
-- (void)processLocationWithVehicleParamsWithLatitude:(double)latitude longitude:(double)longitude speed:(double)speed heading:(double)heading vehicleId:(NSString * _Nonnull)vehicleId vehicleType:(NSInteger)vehicleType seats:(NSInteger)seats weights:(double)weights;
+- (void)processLocationWithVehicleParamsWithLat:(double)lat lng:(double)lng speed:(double)speed heading:(double)heading vehicleId:(NSString * _Nonnull)vehicleId vehicleType:(NSInteger)vehicleType seats:(NSInteger)seats weights:(double)weights;
 /// Configure vehicle information for speed alerts (using VMVehicleType enum)
 /// @param vehicleId Unique identifier for the vehicle
 /// @param vehicleType Type of vehicle using VMVehicleType enum
@@ -511,7 +552,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VietmapTrack
 /// This method allows feeding location data from external sources
 /// Auto-switches from GPS to external input mode when called
 /// @param speed Speed value (km/h preferred). Values ≤ 30 are treated as m/s and converted once.
-- (void)processExternalLocationWithLatitude:(double)latitude longitude:(double)longitude speed:(double)speed heading:(double)heading;
+- (void)processExternalLocationWithLat:(double)lat lng:(double)lng speed:(double)speed heading:(double)heading;
 /// Process external location input with CLLocation object
 /// Convenience method for existing CLLocation objects (speed usually in m/s)
 - (void)processExternalLocation:(CLLocation * _Nonnull)location;
@@ -522,9 +563,30 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VietmapTrack
 - (NSInteger)getCachedLocationsCount SWIFT_WARN_UNUSED_RESULT;
 - (void)uploadCachedLocationsManuallyWithCompletion:(void (^ _Nonnull)(BOOL, NSString * _Nullable))completion;
 - (void)clearCachedLocations;
+/// Configure database retention limits.
+/// \param maxRecords max cached rows (0 = unlimited, default 10 000)
+///
+/// \param maxDbSizeBytes max database file size in bytes (0 = unlimited, default 50 MB)
+///
+/// \param batchSize rows per upload batch (default 50)
+///
+- (void)configureCacheLimitsWithMaxRecords:(NSInteger)maxRecords maxDbSizeBytes:(int64_t)maxDbSizeBytes batchSize:(NSInteger)batchSize;
+/// Get current SQLite database file size in bytes.
+- (int64_t)getDatabaseSizeBytes SWIFT_WARN_UNUSED_RESULT;
 - (BOOL)isNetworkConnected SWIFT_WARN_UNUSED_RESULT;
+/// Force-refresh network status by restarting NWPathMonitor.
+/// Per Apple docs, a cancelled NWPathMonitor cannot be restarted — must create new instance.
+/// The new monitor’s pathUpdateHandler fires immediately with the current path,
+/// updating isNetworkAvailable and triggering uploadPendingBatch if online.
+- (void)refreshNetworkStatus;
 /// Gets comprehensive tracking status for debugging
 - (NSDictionary * _Nonnull)getTrackingHealthStatus SWIFT_WARN_UNUSED_RESULT;
+/// Set the policy the SDK applies automatically whenever a fake GPS location is detected.
+/// Call once during app initialisation (e.g. from Flutter layer).
+/// \param policy one of “skip” | “warn” | “stopTracking” | “logToServer”
+/// Invalid values are ignored and the policy falls back to “skip”.
+///
+- (void)setFakeGPSPolicy:(NSString * _Nonnull)policy;
 @end
 
 /// Speed status enum matching C++ SpeedStatus
@@ -558,7 +620,7 @@ SWIFT_AVAILABILITY(ios,introduced=14.0)
 - (void)locationManager:(CLLocationManager * _Nonnull)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status;
 @end
 
-/// Public wrapper to avoid module naming conflicts
+/// Public wrapper class exposed to Objective-C / Swift consumers.
 SWIFT_CLASS("_TtC18VietmapTrackingSDK18VietmapTrackingSDK")
 @interface VietmapTrackingSDK : NSObject
 /// Singleton instance
@@ -573,6 +635,17 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VietmapTrack
 - (void)setTrackingStatus:(NSString * _Nonnull)status;
 - (void)configureWithApiKey:(NSString * _Nonnull)apiKey baseURL:(NSString * _Nonnull)baseURL autoUpload:(BOOL)autoUpload;
 - (void)setAutoUploadWithEnabled:(BOOL)enabled;
+/// Set authentication mode (must be called before the first network request).
+/// Default is <code>.header</code> (X-API-Key header).
+- (void)configureWithAuthMode:(enum VMAuthMode)authMode;
+/// Set the path used for single GPS point upload. Default: /gps-tracking.
+- (void)configureWithGpsTrackingEndpoint:(NSString * _Nonnull)gpsTrackingEndpoint;
+/// Set the path used for bulk GPS upload. Default: /gps-tracking/bulk.
+- (void)configureWithGpsBulkEndpoint:(NSString * _Nonnull)gpsBulkEndpoint;
+- (void)getHistoryWithUserId:(NSString * _Nonnull)userId fromTime:(int64_t)fromTime toTime:(int64_t)toTime pageNumber:(NSInteger)pageNumber pageSize:(NSInteger)pageSize sortBy:(NSString * _Nonnull)sortBy sortDescending:(BOOL)sortDescending endpoint:(NSString * _Nullable)endpoint completion:(void (^ _Nonnull)(NSString * _Nullable, NSString * _Nullable, NSString * _Nullable))completion;
+- (void)getLatestLocationByDeviceWithDeviceId:(NSString * _Nonnull)deviceId endpoint:(NSString * _Nullable)endpoint completion:(void (^ _Nonnull)(NSString * _Nullable, NSString * _Nullable, NSString * _Nullable))completion;
+- (void)getLatestLocationByVehicleWithVehicleId:(NSString * _Nonnull)vehicleId endpoint:(NSString * _Nullable)endpoint completion:(void (^ _Nonnull)(NSString * _Nullable, NSString * _Nullable, NSString * _Nullable))completion;
+- (void)getLatestLocationByUserWithUserId:(NSString * _Nonnull)userId endpoint:(NSString * _Nullable)endpoint completion:(void (^ _Nonnull)(NSString * _Nullable, NSString * _Nullable, NSString * _Nullable))completion;
 - (NSDictionary * _Nullable)getCurrentLocation SWIFT_WARN_UNUSED_RESULT;
 - (BOOL)isTrackingActive SWIFT_WARN_UNUSED_RESULT;
 - (NSDictionary * _Nonnull)getTrackingStatus SWIFT_WARN_UNUSED_RESULT;
@@ -583,10 +656,12 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VietmapTrack
 - (void)stopTrackingWithCompletion:(void (^ _Nonnull)(BOOL, NSString * _Nullable))completion;
 - (void)turnOnAlertWithCompletion:(void (^ _Nonnull)(BOOL))completion;
 - (void)turnOffAlertWithCompletion:(void (^ _Nonnull)(BOOL))completion;
-- (void)processExternalLocationWithLatitude:(double)latitude longitude:(double)longitude speed:(double)speed heading:(double)heading;
+- (void)processExternalLocationWithLat:(double)lat lng:(double)lng speed:(double)speed heading:(double)heading;
 - (void)processExternalLocation:(CLLocation * _Nonnull)location;
 - (enum VMLocationMode)getCurrentLocationMode SWIFT_WARN_UNUSED_RESULT;
 - (BOOL)isSpeedAlertCurrentlyActive SWIFT_WARN_UNUSED_RESULT;
+- (void)configureZoneNetworkV2WithBaseUrl:(NSString * _Nonnull)baseUrl;
+- (void)resetZoneNetworkV2;
 - (void)configureAlertAPIWithUrl:(NSString * _Nonnull)url apiKey:(NSString * _Nonnull)apiKey apiID:(NSString * _Nonnull)apiID;
 - (NSInteger)getCachedLocationsCount SWIFT_WARN_UNUSED_RESULT;
 - (void)uploadCachedLocationsManuallyWithCompletion:(void (^ _Nonnull)(BOOL, NSString * _Nullable))completion;
