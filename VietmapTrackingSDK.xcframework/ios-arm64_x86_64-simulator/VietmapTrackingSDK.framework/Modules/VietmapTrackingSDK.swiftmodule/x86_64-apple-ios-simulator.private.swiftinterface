@@ -123,14 +123,9 @@ public struct AlertConfig {
   @objc public func configure(apiKey: Swift.String, baseURL: Swift.String, autoUpload: Swift.Bool = true)
   @objc public func setAutoUpload(enabled: Swift.Bool)
   @objc public func configure(authMode: VietmapTrackingSDK.VMAuthMode)
-  @objc public func configure(gpsTrackingEndpoint: Swift.String)
-  @objc public func configure(gpsBulkEndpoint: Swift.String)
-  @objc public func getHistory(userId: Swift.String, fromTime: Swift.Int64, toTime: Swift.Int64, pageNumber: Swift.Int, pageSize: Swift.Int, sortBy: Swift.String, sortDescending: Swift.Bool, endpoint: Swift.String? = nil, completion: @escaping (Swift.String?, Swift.String?, Swift.String?) -> Swift.Void)
-  @objc public func getLatestLocationByDevice(deviceId: Swift.String, endpoint: Swift.String? = nil, completion: @escaping (Swift.String?, Swift.String?, Swift.String?) -> Swift.Void)
-  @objc public func getLatestLocationByVehicle(vehicleId: Swift.String, endpoint: Swift.String? = nil, completion: @escaping (Swift.String?, Swift.String?, Swift.String?) -> Swift.Void)
-  @objc public func getLatestLocationByUser(userId: Swift.String, endpoint: Swift.String? = nil, completion: @escaping (Swift.String?, Swift.String?, Swift.String?) -> Swift.Void)
   @objc public func setVehicleId(_ vehicleId: Swift.String)
   @objc public func setDriverId(_ driverId: Swift.String?)
+  @objc public func setMessagePackData(_ payload: Foundation.NSDictionary?)
   @objc public func getVehicleId() -> Swift.String
   @objc public func getDriverId() -> Swift.String?
   @objc public func onAppBackground()
@@ -164,6 +159,7 @@ public struct AlertConfig {
   public func setRetentionCallback(_ callback: @escaping (_ deletedCount: Swift.Int, _ reason: Swift.String, _ currentCount: Swift.Int, _ currentSizeBytes: Swift.Int64) -> Swift.Void)
   @objc public func getDatabaseSizeBytes() -> Swift.Int64
   @objc public func isNetworkConnected() -> Swift.Bool
+  @objc public func getHistory(userId: Swift.String, fromTime: Swift.Int64, toTime: Swift.Int64, pageNumber: Swift.Int, pageSize: Swift.Int, sortBy: Swift.String, sortDescending: Swift.Bool, completion: @escaping (Swift.String?, Swift.String?, Swift.String?) -> Swift.Void)
   @objc public func refreshNetworkStatus()
   @objc public func getTrackingHealthStatus() -> Foundation.NSDictionary
   @objc public func setFakeGPSPolicy(_ policy: Swift.String)
@@ -289,22 +285,16 @@ public class VMSpeedAlertState {
   @objc public func reset()
   @objc deinit
 }
-@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class VietmapTrackingSDK : ObjectiveC.NSObject {
-  @objc public static let shared: VietmapTrackingSDK.VietmapTrackingSDK
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class VietmapTracking : ObjectiveC.NSObject {
+  @objc public static let shared: VietmapTrackingSDK.VietmapTracking
   @objc public func initialize(apiKey: Swift.String, baseURL: Swift.String)
   @objc public func configure(apiKey: Swift.String)
   @objc public func configure(baseURL: Swift.String)
   @objc public func configure(apiVersion: Swift.String)
   @objc public func setTrackingStatus(_ status: Swift.String)
   @objc public func configure(apiKey: Swift.String, baseURL: Swift.String, autoUpload: Swift.Bool = true)
+  @objc public func setMessagePackData(_ payload: Foundation.NSDictionary?)
   @objc public func setAutoUpload(enabled: Swift.Bool)
-  @objc public func configure(authMode: VietmapTrackingSDK.VMAuthMode)
-  @objc public func configure(gpsTrackingEndpoint: Swift.String)
-  @objc public func configure(gpsBulkEndpoint: Swift.String)
-  @objc public func getHistory(userId: Swift.String, fromTime: Swift.Int64, toTime: Swift.Int64, pageNumber: Swift.Int, pageSize: Swift.Int, sortBy: Swift.String, sortDescending: Swift.Bool, endpoint: Swift.String? = nil, completion: @escaping (Swift.String?, Swift.String?, Swift.String?) -> Swift.Void)
-  @objc public func getLatestLocationByDevice(deviceId: Swift.String, endpoint: Swift.String? = nil, completion: @escaping (Swift.String?, Swift.String?, Swift.String?) -> Swift.Void)
-  @objc public func getLatestLocationByVehicle(vehicleId: Swift.String, endpoint: Swift.String? = nil, completion: @escaping (Swift.String?, Swift.String?, Swift.String?) -> Swift.Void)
-  @objc public func getLatestLocationByUser(userId: Swift.String, endpoint: Swift.String? = nil, completion: @escaping (Swift.String?, Swift.String?, Swift.String?) -> Swift.Void)
   @objc public func getCurrentLocation() -> Foundation.NSDictionary?
   @objc public func isTrackingActive() -> Swift.Bool
   @objc public func getTrackingStatus() -> Foundation.NSDictionary
