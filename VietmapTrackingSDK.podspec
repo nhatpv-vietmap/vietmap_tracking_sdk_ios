@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = "VietmapTrackingSDK"
-  spec.version      = "1.3.4"
+  spec.version      = "1.3.5"
   spec.summary      = "Vietmap Tracking SDK with Alert Client integration"
   spec.description  = <<-DESC
     VietmapTrackingSDK provides comprehensive location tracking and speed alert functionality
