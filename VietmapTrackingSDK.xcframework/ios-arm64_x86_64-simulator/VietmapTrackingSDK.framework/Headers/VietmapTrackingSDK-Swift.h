@@ -423,54 +423,6 @@ typedef SWIFT_ENUM(NSInteger, VMVehicleType, open) {
 };
 
 @class NSDictionary;
-/// Public wrapper — named <code>VietmapTracking</code> (not <code>VietmapTrackingSDK</code>)
-/// to avoid the Swift module-name == class-name conflict that breaks
-/// <code>.swiftinterface</code> resolution for other types in this module.
-SWIFT_CLASS("_TtC18VietmapTrackingSDK15VietmapTracking")
-@interface VietmapTracking : NSObject
-/// Singleton instance
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VietmapTracking * _Nonnull shared;)
-+ (VietmapTracking * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-- (void)initializeWithApiKey:(NSString * _Nonnull)apiKey baseURL:(NSString * _Nonnull)baseURL;
-- (void)configureWithApiKey:(NSString * _Nonnull)apiKey;
-- (void)configureWithBaseURL:(NSString * _Nonnull)baseURL;
-- (void)configureWithApiVersion:(NSString * _Nonnull)apiVersion;
-- (void)setTrackingStatus:(NSString * _Nonnull)status;
-- (void)configureWithApiKey:(NSString * _Nonnull)apiKey baseURL:(NSString * _Nonnull)baseURL autoUpload:(BOOL)autoUpload;
-- (void)setMessagePackData:(NSDictionary * _Nullable)payload;
-- (void)setAutoUploadWithEnabled:(BOOL)enabled;
-- (NSDictionary * _Nullable)getCurrentLocation SWIFT_WARN_UNUSED_RESULT;
-- (BOOL)isTrackingActive SWIFT_WARN_UNUSED_RESULT;
-- (NSDictionary * _Nonnull)getTrackingStatus SWIFT_WARN_UNUSED_RESULT;
-- (void)requestLocationPermissionsWithCompletion:(void (^ _Nonnull)(NSString * _Nonnull))completion;
-- (void)requestAlwaysLocationPermissionsWithCompletion:(void (^ _Nonnull)(NSString * _Nonnull))completion;
-- (BOOL)hasLocationPermissions SWIFT_WARN_UNUSED_RESULT;
-- (void)startTrackingWithEnhancedBackgroundMode:(BOOL)enhancedBackgroundMode intervalMs:(NSInteger)intervalMs distanceFilter:(double)distanceFilter completion:(void (^ _Nonnull)(BOOL, NSString * _Nullable))completion;
-- (void)stopTrackingWithCompletion:(void (^ _Nonnull)(BOOL, NSString * _Nullable))completion;
-- (void)turnOnAlertWithCompletion:(void (^ _Nonnull)(BOOL))completion;
-- (void)turnOffAlertWithCompletion:(void (^ _Nonnull)(BOOL))completion;
-- (void)processExternalLocationWithLat:(double)lat lng:(double)lng speed:(double)speed heading:(double)heading;
-- (void)processExternalLocation:(CLLocation * _Nonnull)location;
-- (enum VMLocationMode)getCurrentLocationMode SWIFT_WARN_UNUSED_RESULT;
-- (BOOL)isSpeedAlertCurrentlyActive SWIFT_WARN_UNUSED_RESULT;
-- (void)configureZoneNetworkV2WithBaseUrl:(NSString * _Nonnull)baseUrl;
-- (void)resetZoneNetworkV2;
-- (void)configureAlertAPIWithUrl:(NSString * _Nonnull)url apiKey:(NSString * _Nonnull)apiKey apiID:(NSString * _Nonnull)apiID;
-- (NSInteger)getCachedLocationsCount SWIFT_WARN_UNUSED_RESULT;
-- (void)uploadCachedLocationsManuallyWithCompletion:(void (^ _Nonnull)(BOOL, NSString * _Nullable))completion;
-- (void)clearCachedLocations;
-- (BOOL)isNetworkConnected SWIFT_WARN_UNUSED_RESULT;
-- (NSDictionary * _Nonnull)getTrackingHealthStatus SWIFT_WARN_UNUSED_RESULT;
-@property (nonatomic, copy) void (^ _Nullable onLocationUpdate)(NSDictionary * _Nonnull);
-@property (nonatomic, copy) void (^ _Nullable onTrackingStatusChanged)(NSDictionary * _Nonnull);
-@property (nonatomic, copy) void (^ _Nullable onError)(NSString * _Nonnull);
-@property (nonatomic, copy) void (^ _Nullable onPermissionChanged)(NSString * _Nonnull);
-@property (nonatomic, copy) void (^ _Nullable onRouteUpdate)(BOOL, NSDictionary * _Nullable);
-- (void)startTrackingWithBackgroundMode:(BOOL)backgroundMode intervalMs:(NSInteger)intervalMs forceUpdateBackground:(BOOL)forceUpdateBackground distanceFilter:(double)distanceFilter completion:(void (^ _Nonnull)(BOOL, NSString * _Nullable))completion;
-@end
-
 SWIFT_CLASS("_TtC18VietmapTrackingSDK22VietmapTrackingManager")
 @interface VietmapTrackingManager : NSObject
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VietmapTrackingManager * _Nonnull shared;)
@@ -655,6 +607,54 @@ SWIFT_AVAILABILITY(ios,introduced=14.0)
 - (void)processSpeedAlertUsingCPPWithLocation:(CLLocation * _Nonnull)location vehicleId:(NSString * _Nonnull)vehicleId vehicleType:(NSInteger)vehicleType seats:(NSInteger)seats weights:(double)weights;
 - (void)locationManager:(CLLocationManager * _Nonnull)manager didFailWithError:(NSError * _Nonnull)error;
 - (void)locationManager:(CLLocationManager * _Nonnull)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status;
+@end
+
+/// Public wrapper — named <code>VietmapTracking</code> (not <code>VietmapTrackingSDK</code>)
+/// to avoid the Swift module-name == class-name conflict that breaks
+/// <code>.swiftinterface</code> resolution for other types in this module.
+SWIFT_CLASS("_TtC18VietmapTrackingSDK18VietmapTrackingSDK")
+@interface VietmapTrackingSDK : NSObject
+/// Singleton instance
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VietmapTrackingSDK * _Nonnull shared;)
++ (VietmapTrackingSDK * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+- (void)initializeWithApiKey:(NSString * _Nonnull)apiKey baseURL:(NSString * _Nonnull)baseURL;
+- (void)configureWithApiKey:(NSString * _Nonnull)apiKey;
+- (void)configureWithBaseURL:(NSString * _Nonnull)baseURL;
+- (void)configureWithApiVersion:(NSString * _Nonnull)apiVersion;
+- (void)setTrackingStatus:(NSString * _Nonnull)status;
+- (void)configureWithApiKey:(NSString * _Nonnull)apiKey baseURL:(NSString * _Nonnull)baseURL autoUpload:(BOOL)autoUpload;
+- (void)setMessagePackData:(NSDictionary * _Nullable)payload;
+- (void)setAutoUploadWithEnabled:(BOOL)enabled;
+- (NSDictionary * _Nullable)getCurrentLocation SWIFT_WARN_UNUSED_RESULT;
+- (BOOL)isTrackingActive SWIFT_WARN_UNUSED_RESULT;
+- (NSDictionary * _Nonnull)getTrackingStatus SWIFT_WARN_UNUSED_RESULT;
+- (void)requestLocationPermissionsWithCompletion:(void (^ _Nonnull)(NSString * _Nonnull))completion;
+- (void)requestAlwaysLocationPermissionsWithCompletion:(void (^ _Nonnull)(NSString * _Nonnull))completion;
+- (BOOL)hasLocationPermissions SWIFT_WARN_UNUSED_RESULT;
+- (void)startTrackingWithEnhancedBackgroundMode:(BOOL)enhancedBackgroundMode intervalMs:(NSInteger)intervalMs distanceFilter:(double)distanceFilter completion:(void (^ _Nonnull)(BOOL, NSString * _Nullable))completion;
+- (void)stopTrackingWithCompletion:(void (^ _Nonnull)(BOOL, NSString * _Nullable))completion;
+- (void)turnOnAlertWithCompletion:(void (^ _Nonnull)(BOOL))completion;
+- (void)turnOffAlertWithCompletion:(void (^ _Nonnull)(BOOL))completion;
+- (void)processExternalLocationWithLat:(double)lat lng:(double)lng speed:(double)speed heading:(double)heading;
+- (void)processExternalLocation:(CLLocation * _Nonnull)location;
+- (enum VMLocationMode)getCurrentLocationMode SWIFT_WARN_UNUSED_RESULT;
+- (BOOL)isSpeedAlertCurrentlyActive SWIFT_WARN_UNUSED_RESULT;
+- (void)configureZoneNetworkV2WithBaseUrl:(NSString * _Nonnull)baseUrl;
+- (void)resetZoneNetworkV2;
+- (void)configureAlertAPIWithUrl:(NSString * _Nonnull)url apiKey:(NSString * _Nonnull)apiKey apiID:(NSString * _Nonnull)apiID;
+- (NSInteger)getCachedLocationsCount SWIFT_WARN_UNUSED_RESULT;
+- (void)uploadCachedLocationsManuallyWithCompletion:(void (^ _Nonnull)(BOOL, NSString * _Nullable))completion;
+- (void)clearCachedLocations;
+- (BOOL)isNetworkConnected SWIFT_WARN_UNUSED_RESULT;
+- (NSDictionary * _Nonnull)getTrackingHealthStatus SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, copy) void (^ _Nullable onLocationUpdate)(NSDictionary * _Nonnull);
+@property (nonatomic, copy) void (^ _Nullable onTrackingStatusChanged)(NSDictionary * _Nonnull);
+@property (nonatomic, copy) void (^ _Nullable onError)(NSString * _Nonnull);
+@property (nonatomic, copy) void (^ _Nullable onPermissionChanged)(NSString * _Nonnull);
+@property (nonatomic, copy) void (^ _Nullable onRouteUpdate)(BOOL, NSDictionary * _Nullable);
+- (void)startTrackingWithBackgroundMode:(BOOL)backgroundMode intervalMs:(NSInteger)intervalMs forceUpdateBackground:(BOOL)forceUpdateBackground distanceFilter:(double)distanceFilter completion:(void (^ _Nonnull)(BOOL, NSString * _Nullable))completion;
 @end
 
 /// ZoneNetworkManagerV2 — thin Swift wrapper around VietmapGraphBridgeV2.
@@ -1114,54 +1114,6 @@ typedef SWIFT_ENUM(NSInteger, VMVehicleType, open) {
 };
 
 @class NSDictionary;
-/// Public wrapper — named <code>VietmapTracking</code> (not <code>VietmapTrackingSDK</code>)
-/// to avoid the Swift module-name == class-name conflict that breaks
-/// <code>.swiftinterface</code> resolution for other types in this module.
-SWIFT_CLASS("_TtC18VietmapTrackingSDK15VietmapTracking")
-@interface VietmapTracking : NSObject
-/// Singleton instance
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VietmapTracking * _Nonnull shared;)
-+ (VietmapTracking * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-- (void)initializeWithApiKey:(NSString * _Nonnull)apiKey baseURL:(NSString * _Nonnull)baseURL;
-- (void)configureWithApiKey:(NSString * _Nonnull)apiKey;
-- (void)configureWithBaseURL:(NSString * _Nonnull)baseURL;
-- (void)configureWithApiVersion:(NSString * _Nonnull)apiVersion;
-- (void)setTrackingStatus:(NSString * _Nonnull)status;
-- (void)configureWithApiKey:(NSString * _Nonnull)apiKey baseURL:(NSString * _Nonnull)baseURL autoUpload:(BOOL)autoUpload;
-- (void)setMessagePackData:(NSDictionary * _Nullable)payload;
-- (void)setAutoUploadWithEnabled:(BOOL)enabled;
-- (NSDictionary * _Nullable)getCurrentLocation SWIFT_WARN_UNUSED_RESULT;
-- (BOOL)isTrackingActive SWIFT_WARN_UNUSED_RESULT;
-- (NSDictionary * _Nonnull)getTrackingStatus SWIFT_WARN_UNUSED_RESULT;
-- (void)requestLocationPermissionsWithCompletion:(void (^ _Nonnull)(NSString * _Nonnull))completion;
-- (void)requestAlwaysLocationPermissionsWithCompletion:(void (^ _Nonnull)(NSString * _Nonnull))completion;
-- (BOOL)hasLocationPermissions SWIFT_WARN_UNUSED_RESULT;
-- (void)startTrackingWithEnhancedBackgroundMode:(BOOL)enhancedBackgroundMode intervalMs:(NSInteger)intervalMs distanceFilter:(double)distanceFilter completion:(void (^ _Nonnull)(BOOL, NSString * _Nullable))completion;
-- (void)stopTrackingWithCompletion:(void (^ _Nonnull)(BOOL, NSString * _Nullable))completion;
-- (void)turnOnAlertWithCompletion:(void (^ _Nonnull)(BOOL))completion;
-- (void)turnOffAlertWithCompletion:(void (^ _Nonnull)(BOOL))completion;
-- (void)processExternalLocationWithLat:(double)lat lng:(double)lng speed:(double)speed heading:(double)heading;
-- (void)processExternalLocation:(CLLocation * _Nonnull)location;
-- (enum VMLocationMode)getCurrentLocationMode SWIFT_WARN_UNUSED_RESULT;
-- (BOOL)isSpeedAlertCurrentlyActive SWIFT_WARN_UNUSED_RESULT;
-- (void)configureZoneNetworkV2WithBaseUrl:(NSString * _Nonnull)baseUrl;
-- (void)resetZoneNetworkV2;
-- (void)configureAlertAPIWithUrl:(NSString * _Nonnull)url apiKey:(NSString * _Nonnull)apiKey apiID:(NSString * _Nonnull)apiID;
-- (NSInteger)getCachedLocationsCount SWIFT_WARN_UNUSED_RESULT;
-- (void)uploadCachedLocationsManuallyWithCompletion:(void (^ _Nonnull)(BOOL, NSString * _Nullable))completion;
-- (void)clearCachedLocations;
-- (BOOL)isNetworkConnected SWIFT_WARN_UNUSED_RESULT;
-- (NSDictionary * _Nonnull)getTrackingHealthStatus SWIFT_WARN_UNUSED_RESULT;
-@property (nonatomic, copy) void (^ _Nullable onLocationUpdate)(NSDictionary * _Nonnull);
-@property (nonatomic, copy) void (^ _Nullable onTrackingStatusChanged)(NSDictionary * _Nonnull);
-@property (nonatomic, copy) void (^ _Nullable onError)(NSString * _Nonnull);
-@property (nonatomic, copy) void (^ _Nullable onPermissionChanged)(NSString * _Nonnull);
-@property (nonatomic, copy) void (^ _Nullable onRouteUpdate)(BOOL, NSDictionary * _Nullable);
-- (void)startTrackingWithBackgroundMode:(BOOL)backgroundMode intervalMs:(NSInteger)intervalMs forceUpdateBackground:(BOOL)forceUpdateBackground distanceFilter:(double)distanceFilter completion:(void (^ _Nonnull)(BOOL, NSString * _Nullable))completion;
-@end
-
 SWIFT_CLASS("_TtC18VietmapTrackingSDK22VietmapTrackingManager")
 @interface VietmapTrackingManager : NSObject
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VietmapTrackingManager * _Nonnull shared;)
@@ -1346,6 +1298,54 @@ SWIFT_AVAILABILITY(ios,introduced=14.0)
 - (void)processSpeedAlertUsingCPPWithLocation:(CLLocation * _Nonnull)location vehicleId:(NSString * _Nonnull)vehicleId vehicleType:(NSInteger)vehicleType seats:(NSInteger)seats weights:(double)weights;
 - (void)locationManager:(CLLocationManager * _Nonnull)manager didFailWithError:(NSError * _Nonnull)error;
 - (void)locationManager:(CLLocationManager * _Nonnull)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status;
+@end
+
+/// Public wrapper — named <code>VietmapTracking</code> (not <code>VietmapTrackingSDK</code>)
+/// to avoid the Swift module-name == class-name conflict that breaks
+/// <code>.swiftinterface</code> resolution for other types in this module.
+SWIFT_CLASS("_TtC18VietmapTrackingSDK18VietmapTrackingSDK")
+@interface VietmapTrackingSDK : NSObject
+/// Singleton instance
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VietmapTrackingSDK * _Nonnull shared;)
++ (VietmapTrackingSDK * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+- (void)initializeWithApiKey:(NSString * _Nonnull)apiKey baseURL:(NSString * _Nonnull)baseURL;
+- (void)configureWithApiKey:(NSString * _Nonnull)apiKey;
+- (void)configureWithBaseURL:(NSString * _Nonnull)baseURL;
+- (void)configureWithApiVersion:(NSString * _Nonnull)apiVersion;
+- (void)setTrackingStatus:(NSString * _Nonnull)status;
+- (void)configureWithApiKey:(NSString * _Nonnull)apiKey baseURL:(NSString * _Nonnull)baseURL autoUpload:(BOOL)autoUpload;
+- (void)setMessagePackData:(NSDictionary * _Nullable)payload;
+- (void)setAutoUploadWithEnabled:(BOOL)enabled;
+- (NSDictionary * _Nullable)getCurrentLocation SWIFT_WARN_UNUSED_RESULT;
+- (BOOL)isTrackingActive SWIFT_WARN_UNUSED_RESULT;
+- (NSDictionary * _Nonnull)getTrackingStatus SWIFT_WARN_UNUSED_RESULT;
+- (void)requestLocationPermissionsWithCompletion:(void (^ _Nonnull)(NSString * _Nonnull))completion;
+- (void)requestAlwaysLocationPermissionsWithCompletion:(void (^ _Nonnull)(NSString * _Nonnull))completion;
+- (BOOL)hasLocationPermissions SWIFT_WARN_UNUSED_RESULT;
+- (void)startTrackingWithEnhancedBackgroundMode:(BOOL)enhancedBackgroundMode intervalMs:(NSInteger)intervalMs distanceFilter:(double)distanceFilter completion:(void (^ _Nonnull)(BOOL, NSString * _Nullable))completion;
+- (void)stopTrackingWithCompletion:(void (^ _Nonnull)(BOOL, NSString * _Nullable))completion;
+- (void)turnOnAlertWithCompletion:(void (^ _Nonnull)(BOOL))completion;
+- (void)turnOffAlertWithCompletion:(void (^ _Nonnull)(BOOL))completion;
+- (void)processExternalLocationWithLat:(double)lat lng:(double)lng speed:(double)speed heading:(double)heading;
+- (void)processExternalLocation:(CLLocation * _Nonnull)location;
+- (enum VMLocationMode)getCurrentLocationMode SWIFT_WARN_UNUSED_RESULT;
+- (BOOL)isSpeedAlertCurrentlyActive SWIFT_WARN_UNUSED_RESULT;
+- (void)configureZoneNetworkV2WithBaseUrl:(NSString * _Nonnull)baseUrl;
+- (void)resetZoneNetworkV2;
+- (void)configureAlertAPIWithUrl:(NSString * _Nonnull)url apiKey:(NSString * _Nonnull)apiKey apiID:(NSString * _Nonnull)apiID;
+- (NSInteger)getCachedLocationsCount SWIFT_WARN_UNUSED_RESULT;
+- (void)uploadCachedLocationsManuallyWithCompletion:(void (^ _Nonnull)(BOOL, NSString * _Nullable))completion;
+- (void)clearCachedLocations;
+- (BOOL)isNetworkConnected SWIFT_WARN_UNUSED_RESULT;
+- (NSDictionary * _Nonnull)getTrackingHealthStatus SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, copy) void (^ _Nullable onLocationUpdate)(NSDictionary * _Nonnull);
+@property (nonatomic, copy) void (^ _Nullable onTrackingStatusChanged)(NSDictionary * _Nonnull);
+@property (nonatomic, copy) void (^ _Nullable onError)(NSString * _Nonnull);
+@property (nonatomic, copy) void (^ _Nullable onPermissionChanged)(NSString * _Nonnull);
+@property (nonatomic, copy) void (^ _Nullable onRouteUpdate)(BOOL, NSDictionary * _Nullable);
+- (void)startTrackingWithBackgroundMode:(BOOL)backgroundMode intervalMs:(NSInteger)intervalMs forceUpdateBackground:(BOOL)forceUpdateBackground distanceFilter:(double)distanceFilter completion:(void (^ _Nonnull)(BOOL, NSString * _Nullable))completion;
 @end
 
 /// ZoneNetworkManagerV2 — thin Swift wrapper around VietmapGraphBridgeV2.
