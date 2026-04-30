@@ -34,15 +34,17 @@ public struct RouteData {
   public var speedLimits: [Swift.Double]
   public init()
 }
-public struct TrackingConfig {
-  public var updateInterval: Foundation.TimeInterval
-  public var minDistanceFilter: Swift.Double
-  public var enableSpeedAlerts: Swift.Bool
-  public var speedThreshold: Swift.Double
-  public var accuracy: Swift.String
-  public var enableBackgroundMode: Swift.Bool
-  public var distanceFilter: Swift.Double
-  public init()
+@_inheritsConvenienceInitializers @objc public class TrackingConfig : ObjectiveC.NSObject {
+  @objc public var updateInterval: Foundation.TimeInterval
+  @objc public var minDistanceFilter: Swift.Double
+  @objc public var enableSpeedAlerts: Swift.Bool
+  @objc public var allowMockLocation: Swift.Bool
+  @objc public var speedThreshold: Swift.Double
+  @objc public var accuracy: Swift.String
+  @objc public var enableBackgroundMode: Swift.Bool
+  @objc public var distanceFilter: Swift.Double
+  @objc override dynamic public init()
+  @objc deinit
 }
 public struct AlertConfig {
   public var speedAlertEnabled: Swift.Bool
@@ -123,10 +125,11 @@ public struct AlertConfig {
   @objc public func configure(apiKey: Swift.String, baseURL: Swift.String, autoUpload: Swift.Bool = true)
   @objc public func setAutoUpload(enabled: Swift.Bool)
   @objc public func configure(authMode: VietmapTrackingSDK.VMAuthMode)
+  @objc public func configure(config: VietmapTrackingSDK.TrackingConfig)
   @objc public func setVehicleId(_ vehicleId: Swift.String)
   @objc public func setDriverId(_ driverId: Swift.String?)
   @objc public func setMessagePackData(_ payload: Foundation.NSDictionary?)
-  @objc public func getVehicleId() -> Swift.String
+  @objc public func getVehicleId() -> Swift.String?
   @objc public func getDriverId() -> Swift.String?
   @objc public func onAppBackground()
   @objc public func onAppForeground()
@@ -148,6 +151,7 @@ public struct AlertConfig {
   @objc(configureVehicleWithVehicleId:vehicleTypeEnum:seats:weight:) public func configureVehicleWithType(vehicleId: Swift.String, vehicleType: VietmapTrackingSDK.VMVehicleType, seats: Swift.Int, weight: Swift.Double)
   @objc public func configureVehicle(vehicleId: Swift.String, vehicleType: Swift.Int, seats: Swift.Int, weight: Swift.Double, maxProvision: Swift.Int)
   @objc public func getVehicleConfiguration() -> Foundation.NSDictionary
+  @objc public func setAllowMockLocation(_ allow: Swift.Bool)
   @objc public func processExternalLocation(lat: Swift.Double, lng: Swift.Double, speed: Swift.Double, heading: Swift.Double)
   @objc public func processExternalLocation(_ location: _LocationEssentials.CLLocation)
   @objc public func getCurrentLocationMode() -> VietmapTrackingSDK.VMLocationMode

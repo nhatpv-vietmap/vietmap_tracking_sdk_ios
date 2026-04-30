@@ -399,6 +399,19 @@ SWIFT_CLASS("_TtC18VietmapTrackingSDK23EnhancedLocationManager")
 - (void)locationManagerDidChangeAuthorization:(CLLocationManager * _Nonnull)manager SWIFT_AVAILABILITY(ios,introduced=14.0);
 @end
 
+SWIFT_CLASS("_TtC18VietmapTrackingSDK14TrackingConfig")
+@interface TrackingConfig : NSObject
+@property (nonatomic) NSTimeInterval updateInterval;
+@property (nonatomic) double minDistanceFilter;
+@property (nonatomic) BOOL enableSpeedAlerts;
+@property (nonatomic) BOOL allowMockLocation;
+@property (nonatomic) double speedThreshold;
+@property (nonatomic, copy) NSString * _Nonnull accuracy;
+@property (nonatomic) BOOL enableBackgroundMode;
+@property (nonatomic) double distanceFilter;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
 typedef SWIFT_ENUM(NSInteger, VMAuthMode, open) {
   VMAuthModeHeader = 0,
   VMAuthModeQueryParam = 1,
@@ -447,10 +460,11 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VietmapTrack
 - (void)configureWithApiKey:(NSString * _Nonnull)apiKey baseURL:(NSString * _Nonnull)baseURL autoUpload:(BOOL)autoUpload;
 - (void)setAutoUploadWithEnabled:(BOOL)enabled;
 - (void)configureWithAuthMode:(enum VMAuthMode)authMode;
+- (void)configureWithConfig:(TrackingConfig * _Nonnull)config;
 - (void)setVehicleId:(NSString * _Nonnull)vehicleId;
 - (void)setDriverId:(NSString * _Nullable)driverId;
 - (void)setMessagePackData:(NSDictionary * _Nullable)payload;
-- (NSString * _Nonnull)getVehicleId SWIFT_WARN_UNUSED_RESULT;
+- (NSString * _Nullable)getVehicleId SWIFT_WARN_UNUSED_RESULT;
 - (NSString * _Nullable)getDriverId SWIFT_WARN_UNUSED_RESULT;
 - (void)onAppBackground;
 - (void)onAppForeground;
@@ -519,6 +533,10 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VietmapTrack
 - (void)configureVehicleWithVehicleId:(NSString * _Nonnull)vehicleId vehicleType:(NSInteger)vehicleType seats:(NSInteger)seats weight:(double)weight maxProvision:(NSInteger)maxProvision;
 /// Get current vehicle configuration
 - (NSDictionary * _Nonnull)getVehicleConfiguration SWIFT_WARN_UNUSED_RESULT;
+/// Enable or disable mock location tracking.
+/// If false (default), mock locations are rejected/dropped based on fakeGPSPolicy.
+/// If true, mock locations are treated as valid and uploaded normally.
+- (void)setAllowMockLocation:(BOOL)allow;
 /// Process external location input for speed alerts
 /// This method allows feeding location data from external sources
 /// Auto-switches from GPS to external input mode when called
