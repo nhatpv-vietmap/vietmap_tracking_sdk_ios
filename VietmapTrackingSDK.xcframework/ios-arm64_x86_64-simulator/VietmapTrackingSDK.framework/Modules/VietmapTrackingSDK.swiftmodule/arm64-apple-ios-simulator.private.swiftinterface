@@ -289,8 +289,8 @@ public class VMSpeedAlertState {
   @objc public func reset()
   @objc deinit
 }
-@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class VietmapTrackingSDK : ObjectiveC.NSObject {
-  @objc public static let shared: VietmapTrackingSDK.VietmapTrackingSDK
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class VietmapTracking : ObjectiveC.NSObject {
+  @objc public static let shared: VietmapTrackingSDK.VietmapTracking
   @objc public func initialize(apiKey: Swift.String, baseURL: Swift.String)
   @objc public func configure(apiKey: Swift.String)
   @objc public func configure(baseURL: Swift.String)

@@ -13012,8 +13012,8 @@
       },
       {
         "kind": "TypeDecl",
-        "name": "VietmapTrackingSDK",
-        "printedName": "VietmapTrackingSDK",
+        "name": "VietmapTracking",
+        "printedName": "VietmapTracking",
         "children": [
           {
             "kind": "Var",
@@ -13022,14 +13022,14 @@
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "VietmapTrackingSDK",
-                "printedName": "VietmapTrackingSDK.VietmapTrackingSDK",
-                "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTrackingSDK"
+                "name": "VietmapTracking",
+                "printedName": "VietmapTrackingSDK.VietmapTracking",
+                "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTracking"
               }
             ],
             "declKind": "Var",
-            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTrackingSDK(cpy)shared",
-            "mangledName": "$s18VietmapTrackingSDKAAC6sharedABvpZ",
+            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTracking(cpy)shared",
+            "mangledName": "$s18VietmapTrackingSDK0aB0C6sharedACvpZ",
             "moduleName": "VietmapTrackingSDK",
             "static": true,
             "declAttributes": [
@@ -13050,14 +13050,14 @@
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "VietmapTrackingSDK",
-                    "printedName": "VietmapTrackingSDK.VietmapTrackingSDK",
-                    "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTrackingSDK"
+                    "name": "VietmapTracking",
+                    "printedName": "VietmapTrackingSDK.VietmapTracking",
+                    "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTracking"
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTrackingSDK(cm)shared",
-                "mangledName": "$s18VietmapTrackingSDKAAC6sharedABvgZ",
+                "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTracking(cm)shared",
+                "mangledName": "$s18VietmapTrackingSDK0aB0C6sharedACvgZ",
                 "moduleName": "VietmapTrackingSDK",
                 "static": true,
                 "implicit": true,
@@ -13093,8 +13093,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTrackingSDK(im)initializeWithApiKey:baseURL:",
-            "mangledName": "$s18VietmapTrackingSDKAAC10initialize6apiKey7baseURLySS_SStF",
+            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTracking(im)initializeWithApiKey:baseURL:",
+            "mangledName": "$s18VietmapTrackingSDK0aB0C10initialize6apiKey7baseURLySS_SStF",
             "moduleName": "VietmapTrackingSDK",
             "objc_name": "initializeWithApiKey:baseURL:",
             "declAttributes": [
@@ -13122,8 +13122,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTrackingSDK(im)configureWithApiKey:",
-            "mangledName": "$s18VietmapTrackingSDKAAC9configure6apiKeyySS_tF",
+            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTracking(im)configureWithApiKey:",
+            "mangledName": "$s18VietmapTrackingSDK0aB0C9configure6apiKeyySS_tF",
             "moduleName": "VietmapTrackingSDK",
             "objc_name": "configureWithApiKey:",
             "declAttributes": [
@@ -13150,8 +13150,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTrackingSDK(im)configureWithBaseURL:",
-            "mangledName": "$s18VietmapTrackingSDKAAC9configure7baseURLySS_tF",
+            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTracking(im)configureWithBaseURL:",
+            "mangledName": "$s18VietmapTrackingSDK0aB0C9configure7baseURLySS_tF",
             "moduleName": "VietmapTrackingSDK",
             "objc_name": "configureWithBaseURL:",
             "declAttributes": [
@@ -13178,8 +13178,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTrackingSDK(im)configureWithApiVersion:",
-            "mangledName": "$s18VietmapTrackingSDKAAC9configure10apiVersionySS_tF",
+            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTracking(im)configureWithApiVersion:",
+            "mangledName": "$s18VietmapTrackingSDK0aB0C9configure10apiVersionySS_tF",
             "moduleName": "VietmapTrackingSDK",
             "objc_name": "configureWithApiVersion:",
             "declAttributes": [
@@ -13206,8 +13206,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTrackingSDK(im)setTrackingStatus:",
-            "mangledName": "$s18VietmapTrackingSDKAAC03setB6StatusyySSF",
+            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTracking(im)setTrackingStatus:",
+            "mangledName": "$s18VietmapTrackingSDK0aB0C03setB6StatusyySSF",
             "moduleName": "VietmapTrackingSDK",
             "declAttributes": [
               "AccessControl",
@@ -13246,8 +13246,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTrackingSDK(im)configureWithApiKey:baseURL:autoUpload:",
-            "mangledName": "$s18VietmapTrackingSDKAAC9configure6apiKey7baseURL10autoUploadySS_SSSbtF",
+            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTracking(im)configureWithApiKey:baseURL:autoUpload:",
+            "mangledName": "$s18VietmapTrackingSDK0aB0C9configure6apiKey7baseURL10autoUploadySS_SSSbtF",
             "moduleName": "VietmapTrackingSDK",
             "objc_name": "configureWithApiKey:baseURL:autoUpload:",
             "declAttributes": [
@@ -13282,8 +13282,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTrackingSDK(im)setMessagePackData:",
-            "mangledName": "$s18VietmapTrackingSDKAAC18setMessagePackDatayySo12NSDictionaryCSgF",
+            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTracking(im)setMessagePackData:",
+            "mangledName": "$s18VietmapTrackingSDK0aB0C18setMessagePackDatayySo12NSDictionaryCSgF",
             "moduleName": "VietmapTrackingSDK",
             "declAttributes": [
               "AccessControl",
@@ -13309,8 +13309,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTrackingSDK(im)setAutoUploadWithEnabled:",
-            "mangledName": "$s18VietmapTrackingSDKAAC13setAutoUpload7enabledySb_tF",
+            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTracking(im)setAutoUploadWithEnabled:",
+            "mangledName": "$s18VietmapTrackingSDK0aB0C13setAutoUpload7enabledySb_tF",
             "moduleName": "VietmapTrackingSDK",
             "objc_name": "setAutoUploadWithEnabled:",
             "declAttributes": [
@@ -13340,8 +13340,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTrackingSDK(im)getCurrentLocation",
-            "mangledName": "$s18VietmapTrackingSDKAAC18getCurrentLocationSo12NSDictionaryCSgyF",
+            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTracking(im)getCurrentLocation",
+            "mangledName": "$s18VietmapTrackingSDK0aB0C18getCurrentLocationSo12NSDictionaryCSgyF",
             "moduleName": "VietmapTrackingSDK",
             "declAttributes": [
               "AccessControl",
@@ -13362,8 +13362,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTrackingSDK(im)isTrackingActive",
-            "mangledName": "$s18VietmapTrackingSDKAAC02isB6ActiveSbyF",
+            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTracking(im)isTrackingActive",
+            "mangledName": "$s18VietmapTrackingSDK0aB0C02isB6ActiveSbyF",
             "moduleName": "VietmapTrackingSDK",
             "declAttributes": [
               "AccessControl",
@@ -13384,8 +13384,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTrackingSDK(im)getTrackingStatus",
-            "mangledName": "$s18VietmapTrackingSDKAAC03getB6StatusSo12NSDictionaryCyF",
+            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTracking(im)getTrackingStatus",
+            "mangledName": "$s18VietmapTrackingSDK0aB0C03getB6StatusSo12NSDictionaryCyF",
             "moduleName": "VietmapTrackingSDK",
             "declAttributes": [
               "AccessControl",
@@ -13423,8 +13423,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTrackingSDK(im)requestLocationPermissionsWithCompletion:",
-            "mangledName": "$s18VietmapTrackingSDKAAC26requestLocationPermissions10completionyySSc_tF",
+            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTracking(im)requestLocationPermissionsWithCompletion:",
+            "mangledName": "$s18VietmapTrackingSDK0aB0C26requestLocationPermissions10completionyySSc_tF",
             "moduleName": "VietmapTrackingSDK",
             "objc_name": "requestLocationPermissionsWithCompletion:",
             "declAttributes": [
@@ -13463,8 +13463,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTrackingSDK(im)requestAlwaysLocationPermissionsWithCompletion:",
-            "mangledName": "$s18VietmapTrackingSDKAAC32requestAlwaysLocationPermissions10completionyySSc_tF",
+            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTracking(im)requestAlwaysLocationPermissionsWithCompletion:",
+            "mangledName": "$s18VietmapTrackingSDK0aB0C32requestAlwaysLocationPermissions10completionyySSc_tF",
             "moduleName": "VietmapTrackingSDK",
             "objc_name": "requestAlwaysLocationPermissionsWithCompletion:",
             "declAttributes": [
@@ -13486,8 +13486,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTrackingSDK(im)hasLocationPermissions",
-            "mangledName": "$s18VietmapTrackingSDKAAC22hasLocationPermissionsSbyF",
+            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTracking(im)hasLocationPermissions",
+            "mangledName": "$s18VietmapTrackingSDK0aB0C22hasLocationPermissionsSbyF",
             "moduleName": "VietmapTrackingSDK",
             "declAttributes": [
               "AccessControl",
@@ -13564,8 +13564,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTrackingSDK(im)startTrackingWithEnhancedBackgroundMode:intervalMs:distanceFilter:completion:",
-            "mangledName": "$s18VietmapTrackingSDKAAC05startB022enhancedBackgroundMode10intervalMs14distanceFilter10completionySb_SiSdySb_SSSgtctF",
+            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTracking(im)startTrackingWithEnhancedBackgroundMode:intervalMs:distanceFilter:completion:",
+            "mangledName": "$s18VietmapTrackingSDK0aB0C05startB022enhancedBackgroundMode10intervalMs14distanceFilter10completionySb_SiSdySb_SSSgtctF",
             "moduleName": "VietmapTrackingSDK",
             "objc_name": "startTrackingWithEnhancedBackgroundMode:intervalMs:distanceFilter:completion:",
             "declAttributes": [
@@ -13625,8 +13625,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTrackingSDK(im)stopTrackingWithCompletion:",
-            "mangledName": "$s18VietmapTrackingSDKAAC04stopB010completionyySb_SSSgtc_tF",
+            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTracking(im)stopTrackingWithCompletion:",
+            "mangledName": "$s18VietmapTrackingSDK0aB0C04stopB010completionyySb_SSSgtc_tF",
             "moduleName": "VietmapTrackingSDK",
             "objc_name": "stopTrackingWithCompletion:",
             "declAttributes": [
@@ -13665,8 +13665,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTrackingSDK(im)turnOnAlertWithCompletion:",
-            "mangledName": "$s18VietmapTrackingSDKAAC11turnOnAlert10completionyySbc_tF",
+            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTracking(im)turnOnAlertWithCompletion:",
+            "mangledName": "$s18VietmapTrackingSDK0aB0C11turnOnAlert10completionyySbc_tF",
             "moduleName": "VietmapTrackingSDK",
             "objc_name": "turnOnAlertWithCompletion:",
             "declAttributes": [
@@ -13705,8 +13705,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTrackingSDK(im)turnOffAlertWithCompletion:",
-            "mangledName": "$s18VietmapTrackingSDKAAC12turnOffAlert10completionyySbc_tF",
+            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTracking(im)turnOffAlertWithCompletion:",
+            "mangledName": "$s18VietmapTrackingSDK0aB0C12turnOffAlert10completionyySbc_tF",
             "moduleName": "VietmapTrackingSDK",
             "objc_name": "turnOffAlertWithCompletion:",
             "declAttributes": [
@@ -13752,8 +13752,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTrackingSDK(im)processExternalLocationWithLat:lng:speed:heading:",
-            "mangledName": "$s18VietmapTrackingSDKAAC23processExternalLocation3lat3lng5speed7headingySd_S3dtF",
+            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTracking(im)processExternalLocationWithLat:lng:speed:heading:",
+            "mangledName": "$s18VietmapTrackingSDK0aB0C23processExternalLocation3lat3lng5speed7headingySd_S3dtF",
             "moduleName": "VietmapTrackingSDK",
             "objc_name": "processExternalLocationWithLat:lng:speed:heading:",
             "declAttributes": [
@@ -13780,8 +13780,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTrackingSDK(im)processExternalLocation:",
-            "mangledName": "$s18VietmapTrackingSDKAAC23processExternalLocationyySo10CLLocationCF",
+            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTracking(im)processExternalLocation:",
+            "mangledName": "$s18VietmapTrackingSDK0aB0C23processExternalLocationyySo10CLLocationCF",
             "moduleName": "VietmapTrackingSDK",
             "declAttributes": [
               "AccessControl",
@@ -13802,8 +13802,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTrackingSDK(im)getCurrentLocationMode",
-            "mangledName": "$s18VietmapTrackingSDKAAC22getCurrentLocationModeAA010VMLocationG0OyF",
+            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTracking(im)getCurrentLocationMode",
+            "mangledName": "$s18VietmapTrackingSDK0aB0C22getCurrentLocationModeAA010VMLocationG0OyF",
             "moduleName": "VietmapTrackingSDK",
             "declAttributes": [
               "AccessControl",
@@ -13824,8 +13824,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTrackingSDK(im)isSpeedAlertCurrentlyActive",
-            "mangledName": "$s18VietmapTrackingSDKAAC27isSpeedAlertCurrentlyActiveSbyF",
+            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTracking(im)isSpeedAlertCurrentlyActive",
+            "mangledName": "$s18VietmapTrackingSDK0aB0C27isSpeedAlertCurrentlyActiveSbyF",
             "moduleName": "VietmapTrackingSDK",
             "declAttributes": [
               "AccessControl",
@@ -13851,8 +13851,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTrackingSDK(im)configureZoneNetworkV2WithBaseUrl:",
-            "mangledName": "$s18VietmapTrackingSDKAAC22configureZoneNetworkV27baseUrlySS_tF",
+            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTracking(im)configureZoneNetworkV2WithBaseUrl:",
+            "mangledName": "$s18VietmapTrackingSDK0aB0C22configureZoneNetworkV27baseUrlySS_tF",
             "moduleName": "VietmapTrackingSDK",
             "objc_name": "configureZoneNetworkV2WithBaseUrl:",
             "declAttributes": [
@@ -13874,8 +13874,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTrackingSDK(im)resetZoneNetworkV2",
-            "mangledName": "$s18VietmapTrackingSDKAAC18resetZoneNetworkV2yyF",
+            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTracking(im)resetZoneNetworkV2",
+            "mangledName": "$s18VietmapTrackingSDK0aB0C18resetZoneNetworkV2yyF",
             "moduleName": "VietmapTrackingSDK",
             "declAttributes": [
               "AccessControl",
@@ -13913,8 +13913,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTrackingSDK(im)configureAlertAPIWithUrl:apiKey:apiID:",
-            "mangledName": "$s18VietmapTrackingSDKAAC17configureAlertAPI3url6apiKey0H2IDySS_S2StF",
+            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTracking(im)configureAlertAPIWithUrl:apiKey:apiID:",
+            "mangledName": "$s18VietmapTrackingSDK0aB0C17configureAlertAPI3url6apiKey0H2IDySS_S2StF",
             "moduleName": "VietmapTrackingSDK",
             "objc_name": "configureAlertAPIWithUrl:apiKey:apiID:",
             "declAttributes": [
@@ -13937,8 +13937,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTrackingSDK(im)getCachedLocationsCount",
-            "mangledName": "$s18VietmapTrackingSDKAAC23getCachedLocationsCountSiyF",
+            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTracking(im)getCachedLocationsCount",
+            "mangledName": "$s18VietmapTrackingSDK0aB0C23getCachedLocationsCountSiyF",
             "moduleName": "VietmapTrackingSDK",
             "declAttributes": [
               "AccessControl",
@@ -13997,8 +13997,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTrackingSDK(im)uploadCachedLocationsManuallyWithCompletion:",
-            "mangledName": "$s18VietmapTrackingSDKAAC29uploadCachedLocationsManually10completionyySb_SSSgtc_tF",
+            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTracking(im)uploadCachedLocationsManuallyWithCompletion:",
+            "mangledName": "$s18VietmapTrackingSDK0aB0C29uploadCachedLocationsManually10completionyySb_SSSgtc_tF",
             "moduleName": "VietmapTrackingSDK",
             "objc_name": "uploadCachedLocationsManuallyWithCompletion:",
             "declAttributes": [
@@ -14019,8 +14019,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTrackingSDK(im)clearCachedLocations",
-            "mangledName": "$s18VietmapTrackingSDKAAC20clearCachedLocationsyyF",
+            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTracking(im)clearCachedLocations",
+            "mangledName": "$s18VietmapTrackingSDK0aB0C20clearCachedLocationsyyF",
             "moduleName": "VietmapTrackingSDK",
             "declAttributes": [
               "AccessControl",
@@ -14041,8 +14041,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTrackingSDK(im)isNetworkConnected",
-            "mangledName": "$s18VietmapTrackingSDKAAC18isNetworkConnectedSbyF",
+            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTracking(im)isNetworkConnected",
+            "mangledName": "$s18VietmapTrackingSDK0aB0C18isNetworkConnectedSbyF",
             "moduleName": "VietmapTrackingSDK",
             "declAttributes": [
               "AccessControl",
@@ -14063,8 +14063,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTrackingSDK(im)getTrackingHealthStatus",
-            "mangledName": "$s18VietmapTrackingSDKAAC03getB12HealthStatusSo12NSDictionaryCyF",
+            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTracking(im)getTrackingHealthStatus",
+            "mangledName": "$s18VietmapTrackingSDK0aB0C03getB12HealthStatusSo12NSDictionaryCyF",
             "moduleName": "VietmapTrackingSDK",
             "declAttributes": [
               "AccessControl",
@@ -14105,8 +14105,8 @@
               }
             ],
             "declKind": "Var",
-            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTrackingSDK(py)onLocationUpdate",
-            "mangledName": "$s18VietmapTrackingSDKAAC16onLocationUpdateySo12NSDictionaryCcSgvp",
+            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTracking(py)onLocationUpdate",
+            "mangledName": "$s18VietmapTrackingSDK0aB0C16onLocationUpdateySo12NSDictionaryCcSgvp",
             "moduleName": "VietmapTrackingSDK",
             "declAttributes": [
               "AccessControl",
@@ -14147,8 +14147,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTrackingSDK(im)onLocationUpdate",
-                "mangledName": "$s18VietmapTrackingSDKAAC16onLocationUpdateySo12NSDictionaryCcSgvg",
+                "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTracking(im)onLocationUpdate",
+                "mangledName": "$s18VietmapTrackingSDK0aB0C16onLocationUpdateySo12NSDictionaryCcSgvg",
                 "moduleName": "VietmapTrackingSDK",
                 "declAttributes": [
                   "ObjC"
@@ -14193,8 +14193,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTrackingSDK(im)setOnLocationUpdate:",
-                "mangledName": "$s18VietmapTrackingSDKAAC16onLocationUpdateySo12NSDictionaryCcSgvs",
+                "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTracking(im)setOnLocationUpdate:",
+                "mangledName": "$s18VietmapTrackingSDK0aB0C16onLocationUpdateySo12NSDictionaryCcSgvs",
                 "moduleName": "VietmapTrackingSDK",
                 "declAttributes": [
                   "ObjC"
@@ -14213,8 +14213,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:18VietmapTrackingSDKAAC16onLocationUpdateySo12NSDictionaryCcSgvM",
-                "mangledName": "$s18VietmapTrackingSDKAAC16onLocationUpdateySo12NSDictionaryCcSgvM",
+                "usr": "s:18VietmapTrackingSDK0aB0C16onLocationUpdateySo12NSDictionaryCcSgvM",
+                "mangledName": "$s18VietmapTrackingSDK0aB0C16onLocationUpdateySo12NSDictionaryCcSgvM",
                 "moduleName": "VietmapTrackingSDK",
                 "implicit": true,
                 "accessorKind": "_modify"
@@ -14254,8 +14254,8 @@
               }
             ],
             "declKind": "Var",
-            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTrackingSDK(py)onTrackingStatusChanged",
-            "mangledName": "$s18VietmapTrackingSDKAAC02onB13StatusChangedySo12NSDictionaryCcSgvp",
+            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTracking(py)onTrackingStatusChanged",
+            "mangledName": "$s18VietmapTrackingSDK0aB0C02onB13StatusChangedySo12NSDictionaryCcSgvp",
             "moduleName": "VietmapTrackingSDK",
             "declAttributes": [
               "AccessControl",
@@ -14295,8 +14295,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTrackingSDK(im)onTrackingStatusChanged",
-                "mangledName": "$s18VietmapTrackingSDKAAC02onB13StatusChangedySo12NSDictionaryCcSgvg",
+                "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTracking(im)onTrackingStatusChanged",
+                "mangledName": "$s18VietmapTrackingSDK0aB0C02onB13StatusChangedySo12NSDictionaryCcSgvg",
                 "moduleName": "VietmapTrackingSDK",
                 "declAttributes": [
                   "ObjC"
@@ -14341,8 +14341,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTrackingSDK(im)setOnTrackingStatusChanged:",
-                "mangledName": "$s18VietmapTrackingSDKAAC02onB13StatusChangedySo12NSDictionaryCcSgvs",
+                "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTracking(im)setOnTrackingStatusChanged:",
+                "mangledName": "$s18VietmapTrackingSDK0aB0C02onB13StatusChangedySo12NSDictionaryCcSgvs",
                 "moduleName": "VietmapTrackingSDK",
                 "declAttributes": [
                   "ObjC"
@@ -14361,8 +14361,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:18VietmapTrackingSDKAAC02onB13StatusChangedySo12NSDictionaryCcSgvM",
-                "mangledName": "$s18VietmapTrackingSDKAAC02onB13StatusChangedySo12NSDictionaryCcSgvM",
+                "usr": "s:18VietmapTrackingSDK0aB0C02onB13StatusChangedySo12NSDictionaryCcSgvM",
+                "mangledName": "$s18VietmapTrackingSDK0aB0C02onB13StatusChangedySo12NSDictionaryCcSgvM",
                 "moduleName": "VietmapTrackingSDK",
                 "implicit": true,
                 "accessorKind": "_modify"
@@ -14402,8 +14402,8 @@
               }
             ],
             "declKind": "Var",
-            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTrackingSDK(py)onError",
-            "mangledName": "$s18VietmapTrackingSDKAAC7onErrorySScSgvp",
+            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTracking(py)onError",
+            "mangledName": "$s18VietmapTrackingSDK0aB0C7onErrorySScSgvp",
             "moduleName": "VietmapTrackingSDK",
             "declAttributes": [
               "AccessControl",
@@ -14443,8 +14443,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTrackingSDK(im)onError",
-                "mangledName": "$s18VietmapTrackingSDKAAC7onErrorySScSgvg",
+                "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTracking(im)onError",
+                "mangledName": "$s18VietmapTrackingSDK0aB0C7onErrorySScSgvg",
                 "moduleName": "VietmapTrackingSDK",
                 "declAttributes": [
                   "ObjC"
@@ -14489,8 +14489,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTrackingSDK(im)setOnError:",
-                "mangledName": "$s18VietmapTrackingSDKAAC7onErrorySScSgvs",
+                "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTracking(im)setOnError:",
+                "mangledName": "$s18VietmapTrackingSDK0aB0C7onErrorySScSgvs",
                 "moduleName": "VietmapTrackingSDK",
                 "declAttributes": [
                   "ObjC"
@@ -14509,8 +14509,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:18VietmapTrackingSDKAAC7onErrorySScSgvM",
-                "mangledName": "$s18VietmapTrackingSDKAAC7onErrorySScSgvM",
+                "usr": "s:18VietmapTrackingSDK0aB0C7onErrorySScSgvM",
+                "mangledName": "$s18VietmapTrackingSDK0aB0C7onErrorySScSgvM",
                 "moduleName": "VietmapTrackingSDK",
                 "implicit": true,
                 "accessorKind": "_modify"
@@ -14550,8 +14550,8 @@
               }
             ],
             "declKind": "Var",
-            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTrackingSDK(py)onPermissionChanged",
-            "mangledName": "$s18VietmapTrackingSDKAAC19onPermissionChangedySScSgvp",
+            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTracking(py)onPermissionChanged",
+            "mangledName": "$s18VietmapTrackingSDK0aB0C19onPermissionChangedySScSgvp",
             "moduleName": "VietmapTrackingSDK",
             "declAttributes": [
               "AccessControl",
@@ -14591,8 +14591,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTrackingSDK(im)onPermissionChanged",
-                "mangledName": "$s18VietmapTrackingSDKAAC19onPermissionChangedySScSgvg",
+                "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTracking(im)onPermissionChanged",
+                "mangledName": "$s18VietmapTrackingSDK0aB0C19onPermissionChangedySScSgvg",
                 "moduleName": "VietmapTrackingSDK",
                 "declAttributes": [
                   "ObjC"
@@ -14637,8 +14637,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTrackingSDK(im)setOnPermissionChanged:",
-                "mangledName": "$s18VietmapTrackingSDKAAC19onPermissionChangedySScSgvs",
+                "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTracking(im)setOnPermissionChanged:",
+                "mangledName": "$s18VietmapTrackingSDK0aB0C19onPermissionChangedySScSgvs",
                 "moduleName": "VietmapTrackingSDK",
                 "declAttributes": [
                   "ObjC"
@@ -14657,8 +14657,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:18VietmapTrackingSDKAAC19onPermissionChangedySScSgvM",
-                "mangledName": "$s18VietmapTrackingSDKAAC19onPermissionChangedySScSgvM",
+                "usr": "s:18VietmapTrackingSDK0aB0C19onPermissionChangedySScSgvM",
+                "mangledName": "$s18VietmapTrackingSDK0aB0C19onPermissionChangedySScSgvM",
                 "moduleName": "VietmapTrackingSDK",
                 "implicit": true,
                 "accessorKind": "_modify"
@@ -14719,8 +14719,8 @@
               }
             ],
             "declKind": "Var",
-            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTrackingSDK(py)onRouteUpdate",
-            "mangledName": "$s18VietmapTrackingSDKAAC13onRouteUpdateySb_So12NSDictionaryCSgtcSgvp",
+            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTracking(py)onRouteUpdate",
+            "mangledName": "$s18VietmapTrackingSDK0aB0C13onRouteUpdateySb_So12NSDictionaryCSgtcSgvp",
             "moduleName": "VietmapTrackingSDK",
             "declAttributes": [
               "AccessControl",
@@ -14781,8 +14781,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTrackingSDK(im)onRouteUpdate",
-                "mangledName": "$s18VietmapTrackingSDKAAC13onRouteUpdateySb_So12NSDictionaryCSgtcSgvg",
+                "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTracking(im)onRouteUpdate",
+                "mangledName": "$s18VietmapTrackingSDK0aB0C13onRouteUpdateySb_So12NSDictionaryCSgtcSgvg",
                 "moduleName": "VietmapTrackingSDK",
                 "declAttributes": [
                   "ObjC"
@@ -14848,8 +14848,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTrackingSDK(im)setOnRouteUpdate:",
-                "mangledName": "$s18VietmapTrackingSDKAAC13onRouteUpdateySb_So12NSDictionaryCSgtcSgvs",
+                "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTracking(im)setOnRouteUpdate:",
+                "mangledName": "$s18VietmapTrackingSDK0aB0C13onRouteUpdateySb_So12NSDictionaryCSgtcSgvs",
                 "moduleName": "VietmapTrackingSDK",
                 "declAttributes": [
                   "ObjC"
@@ -14868,8 +14868,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:18VietmapTrackingSDKAAC13onRouteUpdateySb_So12NSDictionaryCSgtcSgvM",
-                "mangledName": "$s18VietmapTrackingSDKAAC13onRouteUpdateySb_So12NSDictionaryCSgtcSgvM",
+                "usr": "s:18VietmapTrackingSDK0aB0C13onRouteUpdateySb_So12NSDictionaryCSgtcSgvM",
+                "mangledName": "$s18VietmapTrackingSDK0aB0C13onRouteUpdateySb_So12NSDictionaryCSgtcSgvM",
                 "moduleName": "VietmapTrackingSDK",
                 "implicit": true,
                 "accessorKind": "_modify"
@@ -14951,8 +14951,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTrackingSDK(im)startTrackingWithBackgroundMode:intervalMs:forceUpdateBackground:distanceFilter:completion:",
-            "mangledName": "$s18VietmapTrackingSDKAAC05startB014backgroundMode10intervalMs21forceUpdateBackground14distanceFilter10completionySb_SiSbSdySb_SSSgtctF",
+            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTracking(im)startTrackingWithBackgroundMode:intervalMs:forceUpdateBackground:distanceFilter:completion:",
+            "mangledName": "$s18VietmapTrackingSDK0aB0C05startB014backgroundMode10intervalMs21forceUpdateBackground14distanceFilter10completionySb_SiSbSdySb_SSSgtctF",
             "moduleName": "VietmapTrackingSDK",
             "objc_name": "startTrackingWithBackgroundMode:intervalMs:forceUpdateBackground:distanceFilter:completion:",
             "declAttributes": [
@@ -14964,8 +14964,8 @@
           }
         ],
         "declKind": "Class",
-        "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTrackingSDK",
-        "mangledName": "$s18VietmapTrackingSDKAAC",
+        "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTracking",
+        "mangledName": "$s18VietmapTrackingSDK0aB0C",
         "moduleName": "VietmapTrackingSDK",
         "declAttributes": [
           "AccessControl",
@@ -15849,7 +15849,7 @@
     {
       "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingWrapper.swift",
       "kind": "BooleanLiteral",
-      "offset": 1244,
+      "offset": 1256,
       "length": 4,
       "value": "true"
     },
