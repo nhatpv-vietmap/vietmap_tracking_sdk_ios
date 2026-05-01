@@ -129,6 +129,9 @@ public struct AlertConfig {
   @objc public func setVehicleId(_ vehicleId: Swift.String)
   @objc public func setDriverId(_ driverId: Swift.String?)
   @objc public func setMessagePackData(_ payload: Foundation.NSDictionary?)
+  @objc public func setMetadata(_ metadata: Foundation.NSDictionary?)
+  @objc public func validateApiKey(apiKey: Swift.String, baseURL: Swift.String?, completion: @escaping ((any Swift.Error)?) -> Swift.Void)
+  @objc public func initializeWithValidation(apiKey: Swift.String, baseURL: Swift.String?, completion: @escaping ((any Swift.Error)?) -> Swift.Void)
   @objc public func getVehicleId() -> Swift.String?
   @objc public func getDriverId() -> Swift.String?
   @objc public func onAppBackground()
@@ -139,7 +142,7 @@ public struct AlertConfig {
   @objc public func requestLocationPermissions(completion: @escaping (Swift.String) -> Swift.Void)
   @objc public func requestAlwaysLocationPermissions(completion: @escaping (Swift.String) -> Swift.Void)
   @objc public func hasLocationPermissions() -> Swift.Bool
-  @objc public func startTracking(enhancedBackgroundMode: Swift.Bool, intervalMs: Swift.Int, distanceFilter: Swift.Double, completion: @escaping (Swift.Bool, Swift.String?) -> Swift.Void)
+  @objc public func startTracking(enhancedBackgroundMode: Swift.Bool, intervalMs: Foundation.NSNumber? = nil, distanceFilter: Foundation.NSNumber? = nil, completion: @escaping (Swift.Bool, Swift.String?) -> Swift.Void)
   @objc public func stopTracking(completion: @escaping (Swift.Bool, Swift.String?) -> Swift.Void)
   @objc public func turnOnAlert(completion: @escaping (Swift.Bool) -> Swift.Void)
   @objc public func turnOffAlert(completion: @escaping (Swift.Bool) -> Swift.Void)
@@ -298,6 +301,8 @@ public class VMSpeedAlertState {
   @objc public func setTrackingStatus(_ status: Swift.String)
   @objc public func configure(apiKey: Swift.String, baseURL: Swift.String, autoUpload: Swift.Bool = true)
   @objc public func setMessagePackData(_ payload: Foundation.NSDictionary?)
+  @objc public func setMetadata(_ metadata: Foundation.NSDictionary?)
+  @objc public func initializeWithValidation(apiKey: Swift.String, baseURL: Swift.String?, completion: @escaping ((any Swift.Error)?) -> Swift.Void)
   @objc public func setAutoUpload(enabled: Swift.Bool)
   @objc public func getCurrentLocation() -> Foundation.NSDictionary?
   @objc public func isTrackingActive() -> Swift.Bool
@@ -305,7 +310,7 @@ public class VMSpeedAlertState {
   @objc public func requestLocationPermissions(completion: @escaping (Swift.String) -> Swift.Void)
   @objc public func requestAlwaysLocationPermissions(completion: @escaping (Swift.String) -> Swift.Void)
   @objc public func hasLocationPermissions() -> Swift.Bool
-  @objc public func startTracking(enhancedBackgroundMode: Swift.Bool, intervalMs: Swift.Int, distanceFilter: Swift.Double, completion: @escaping (Swift.Bool, Swift.String?) -> Swift.Void)
+  @objc public func startTracking(enhancedBackgroundMode: Swift.Bool, intervalMs: Foundation.NSNumber? = nil, distanceFilter: Foundation.NSNumber? = nil, completion: @escaping (Swift.Bool, Swift.String?) -> Swift.Void)
   @objc public func stopTracking(completion: @escaping (Swift.Bool, Swift.String?) -> Swift.Void)
   @objc public func turnOnAlert(completion: @escaping (Swift.Bool) -> Swift.Void)
   @objc public func turnOffAlert(completion: @escaping (Swift.Bool) -> Swift.Void)

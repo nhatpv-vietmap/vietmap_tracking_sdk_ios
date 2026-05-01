@@ -436,6 +436,7 @@ typedef SWIFT_ENUM(NSInteger, VMVehicleType, open) {
 };
 
 @class NSDictionary;
+@class NSNumber;
 /// Public Swift wrapper uses a name that does not collide with the module name.
 /// The Swift name must stay distinct from the framework module name so the
 /// generated <code>.swiftinterface</code> can qualify top-level symbols safely.
@@ -453,6 +454,11 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VietmapTrack
 - (void)setTrackingStatus:(NSString * _Nonnull)status;
 - (void)configureWithApiKey:(NSString * _Nonnull)apiKey baseURL:(NSString * _Nonnull)baseURL autoUpload:(BOOL)autoUpload;
 - (void)setMessagePackData:(NSDictionary * _Nullable)payload;
+/// Set arbitrary metadata to be included in every GPS post under the “metadata” key.
+- (void)setMetadata:(NSDictionary * _Nullable)metadata;
+/// Validate the tracking API key and initialize the SDK if valid.
+/// Throws an NSError on the completion block if the key is rejected.
+- (void)initializeWithValidationWithApiKey:(NSString * _Nonnull)apiKey baseURL:(NSString * _Nullable)baseURL completion:(void (^ _Nonnull)(NSError * _Nullable))completion;
 - (void)setAutoUploadWithEnabled:(BOOL)enabled;
 - (NSDictionary * _Nullable)getCurrentLocation SWIFT_WARN_UNUSED_RESULT;
 - (BOOL)isTrackingActive SWIFT_WARN_UNUSED_RESULT;
@@ -460,7 +466,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VietmapTrack
 - (void)requestLocationPermissionsWithCompletion:(void (^ _Nonnull)(NSString * _Nonnull))completion;
 - (void)requestAlwaysLocationPermissionsWithCompletion:(void (^ _Nonnull)(NSString * _Nonnull))completion;
 - (BOOL)hasLocationPermissions SWIFT_WARN_UNUSED_RESULT;
-- (void)startTrackingWithEnhancedBackgroundMode:(BOOL)enhancedBackgroundMode intervalMs:(NSInteger)intervalMs distanceFilter:(double)distanceFilter completion:(void (^ _Nonnull)(BOOL, NSString * _Nullable))completion;
+- (void)startTrackingWithEnhancedBackgroundMode:(BOOL)enhancedBackgroundMode intervalMs:(NSNumber * _Nullable)intervalMs distanceFilter:(NSNumber * _Nullable)distanceFilter completion:(void (^ _Nonnull)(BOOL, NSString * _Nullable))completion;
 - (void)stopTrackingWithCompletion:(void (^ _Nonnull)(BOOL, NSString * _Nullable))completion;
 - (void)turnOnAlertWithCompletion:(void (^ _Nonnull)(BOOL))completion;
 - (void)turnOffAlertWithCompletion:(void (^ _Nonnull)(BOOL))completion;
@@ -512,6 +518,27 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VietmapTrack
 - (void)setVehicleId:(NSString * _Nonnull)vehicleId;
 - (void)setDriverId:(NSString * _Nullable)driverId;
 - (void)setMessagePackData:(NSDictionary * _Nullable)payload;
+/// Set arbitrary metadata to be included in every GPS post under the “metadata” key.
+/// Call this before startTracking(). Can be updated at any time during tracking.
+- (void)setMetadata:(NSDictionary * _Nullable)metadata;
+/// Validate the tracking API key by calling GET {baseURL}/gps-tracking/users.
+/// Network call runs on a background thread; completion is delivered on the main thread.
+/// \param apiKey The API key to validate.
+///
+/// \param baseURL The base URL of the tracking server.
+///
+/// \param completion Called with <code>nil</code> on success or an <code>NSError</code> on failure.
+///
+- (void)validateApiKeyWithApiKey:(NSString * _Nonnull)apiKey baseURL:(NSString * _Nullable)baseURL completion:(void (^ _Nonnull)(NSError * _Nullable))completion;
+/// Validate the API key and, if valid, configure the SDK with the given credentials.
+/// On success, the SDK is ready to use (equivalent to calling configure(apiKey:baseURL:)).
+/// \param apiKey The API key to validate and configure.
+///
+/// \param baseURL The base URL of the tracking server.
+///
+/// \param completion Called with <code>nil</code> on success or an <code>NSError</code> on failure.
+///
+- (void)initializeWithValidationWithApiKey:(NSString * _Nonnull)apiKey baseURL:(NSString * _Nullable)baseURL completion:(void (^ _Nonnull)(NSError * _Nullable))completion;
 - (NSString * _Nullable)getVehicleId SWIFT_WARN_UNUSED_RESULT;
 - (NSString * _Nullable)getDriverId SWIFT_WARN_UNUSED_RESULT;
 - (void)onAppBackground;
@@ -522,7 +549,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VietmapTrack
 - (void)requestLocationPermissionsWithCompletion:(void (^ _Nonnull)(NSString * _Nonnull))completion;
 - (void)requestAlwaysLocationPermissionsWithCompletion:(void (^ _Nonnull)(NSString * _Nonnull))completion;
 - (BOOL)hasLocationPermissions SWIFT_WARN_UNUSED_RESULT;
-- (void)startTrackingWithEnhancedBackgroundMode:(BOOL)enhancedBackgroundMode intervalMs:(NSInteger)intervalMs distanceFilter:(double)distanceFilter completion:(void (^ _Nonnull)(BOOL, NSString * _Nullable))completion;
+- (void)startTrackingWithEnhancedBackgroundMode:(BOOL)enhancedBackgroundMode intervalMs:(NSNumber * _Nullable)intervalMs distanceFilter:(NSNumber * _Nullable)distanceFilter completion:(void (^ _Nonnull)(BOOL, NSString * _Nullable))completion;
 - (void)stopTrackingWithCompletion:(void (^ _Nonnull)(BOOL, NSString * _Nullable))completion;
 - (void)turnOnAlertWithCompletion:(void (^ _Nonnull)(BOOL))completion;
 - (void)turnOffAlertWithCompletion:(void (^ _Nonnull)(BOOL))completion;

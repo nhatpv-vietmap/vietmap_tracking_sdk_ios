@@ -5565,6 +5565,180 @@
           },
           {
             "kind": "Function",
+            "name": "setMetadata",
+            "printedName": "setMetadata(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Foundation.NSDictionary?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSDictionary",
+                    "printedName": "Foundation.NSDictionary",
+                    "usr": "c:objc(cs)NSDictionary"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTrackingManager(im)setMetadata:",
+            "mangledName": "$s18VietmapTrackingSDK0aB7ManagerC11setMetadatayySo12NSDictionaryCSgF",
+            "moduleName": "VietmapTrackingSDK",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "validateApiKey",
+            "printedName": "validateApiKey(apiKey:baseURL:completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "((any Swift.Error)?) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "(any Swift.Error)?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Error",
+                        "printedName": "any Swift.Error",
+                        "usr": "s:s5ErrorP"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTrackingManager(im)validateApiKeyWithApiKey:baseURL:completion:",
+            "mangledName": "$s18VietmapTrackingSDK0aB7ManagerC14validateApiKey03apiG07baseURL10completionySS_SSSgys5Error_pSgctF",
+            "moduleName": "VietmapTrackingSDK",
+            "objc_name": "validateApiKeyWithApiKey:baseURL:completion:",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "initializeWithValidation",
+            "printedName": "initializeWithValidation(apiKey:baseURL:completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "((any Swift.Error)?) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "(any Swift.Error)?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Error",
+                        "printedName": "any Swift.Error",
+                        "usr": "s:s5ErrorP"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTrackingManager(im)initializeWithValidationWithApiKey:baseURL:completion:",
+            "mangledName": "$s18VietmapTrackingSDK0aB7ManagerC24initializeWithValidation6apiKey7baseURL10completionySS_SSSgys5Error_pSgctF",
+            "moduleName": "VietmapTrackingSDK",
+            "objc_name": "initializeWithValidationWithApiKey:baseURL:completion:",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "getVehicleId",
             "printedName": "getVehicleId()",
             "children": [
@@ -5862,15 +6036,33 @@
               },
               {
                 "kind": "TypeNominal",
-                "name": "Int",
-                "printedName": "Swift.Int",
-                "usr": "s:Si"
+                "name": "Optional",
+                "printedName": "Foundation.NSNumber?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSNumber",
+                    "printedName": "Foundation.NSNumber",
+                    "usr": "c:objc(cs)NSNumber"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
               },
               {
                 "kind": "TypeNominal",
-                "name": "Double",
-                "printedName": "Swift.Double",
-                "usr": "s:Sd"
+                "name": "Optional",
+                "printedName": "Foundation.NSNumber?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSNumber",
+                    "printedName": "Foundation.NSNumber",
+                    "usr": "c:objc(cs)NSNumber"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
               },
               {
                 "kind": "TypeFunc",
@@ -5914,7 +6106,7 @@
             ],
             "declKind": "Func",
             "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTrackingManager(im)startTrackingWithEnhancedBackgroundMode:intervalMs:distanceFilter:completion:",
-            "mangledName": "$s18VietmapTrackingSDK0aB7ManagerC05startB022enhancedBackgroundMode10intervalMs14distanceFilter10completionySb_SiSdySb_SSSgtctF",
+            "mangledName": "$s18VietmapTrackingSDK0aB7ManagerC05startB022enhancedBackgroundMode10intervalMs14distanceFilter10completionySb_So8NSNumberCSgAKySb_SSSgtctF",
             "moduleName": "VietmapTrackingSDK",
             "objc_name": "startTrackingWithEnhancedBackgroundMode:intervalMs:distanceFilter:completion:",
             "declAttributes": [
@@ -13293,6 +13485,111 @@
           },
           {
             "kind": "Function",
+            "name": "setMetadata",
+            "printedName": "setMetadata(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Foundation.NSDictionary?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSDictionary",
+                    "printedName": "Foundation.NSDictionary",
+                    "usr": "c:objc(cs)NSDictionary"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTracking(im)setMetadata:",
+            "mangledName": "$s18VietmapTrackingSDK0aB0C11setMetadatayySo12NSDictionaryCSgF",
+            "moduleName": "VietmapTrackingSDK",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "initializeWithValidation",
+            "printedName": "initializeWithValidation(apiKey:baseURL:completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "((any Swift.Error)?) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "(any Swift.Error)?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Error",
+                        "printedName": "any Swift.Error",
+                        "usr": "s:s5ErrorP"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTracking(im)initializeWithValidationWithApiKey:baseURL:completion:",
+            "mangledName": "$s18VietmapTrackingSDK0aB0C24initializeWithValidation6apiKey7baseURL10completionySS_SSSgys5Error_pSgctF",
+            "moduleName": "VietmapTrackingSDK",
+            "objc_name": "initializeWithValidationWithApiKey:baseURL:completion:",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "setAutoUpload",
             "printedName": "setAutoUpload(enabled:)",
             "children": [
@@ -13513,15 +13810,33 @@
               },
               {
                 "kind": "TypeNominal",
-                "name": "Int",
-                "printedName": "Swift.Int",
-                "usr": "s:Si"
+                "name": "Optional",
+                "printedName": "Foundation.NSNumber?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSNumber",
+                    "printedName": "Foundation.NSNumber",
+                    "usr": "c:objc(cs)NSNumber"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
               },
               {
                 "kind": "TypeNominal",
-                "name": "Double",
-                "printedName": "Swift.Double",
-                "usr": "s:Sd"
+                "name": "Optional",
+                "printedName": "Foundation.NSNumber?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSNumber",
+                    "printedName": "Foundation.NSNumber",
+                    "usr": "c:objc(cs)NSNumber"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
               },
               {
                 "kind": "TypeFunc",
@@ -13565,7 +13880,7 @@
             ],
             "declKind": "Func",
             "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTracking(im)startTrackingWithEnhancedBackgroundMode:intervalMs:distanceFilter:completion:",
-            "mangledName": "$s18VietmapTrackingSDK0aB0C05startB022enhancedBackgroundMode10intervalMs14distanceFilter10completionySb_SiSdySb_SSSgtctF",
+            "mangledName": "$s18VietmapTrackingSDK0aB0C05startB022enhancedBackgroundMode10intervalMs14distanceFilter10completionySb_So8NSNumberCSgAKySb_SSSgtctF",
             "moduleName": "VietmapTrackingSDK",
             "objc_name": "startTrackingWithEnhancedBackgroundMode:intervalMs:distanceFilter:completion:",
             "declAttributes": [
@@ -15499,70 +15814,70 @@
     {
       "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "StringLiteral",
-      "offset": 36694,
+      "offset": 40920,
       "length": 57,
       "value": "\"https:\/\/drive-api.vietmap.vn\/fleetwork\/api\/Alert\/v2\/mpp\""
     },
     {
       "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "StringLiteral",
-      "offset": 39296,
+      "offset": 43525,
       "length": 3,
       "value": "\"1\""
     },
     {
       "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "IntegerLiteral",
-      "offset": 39439,
+      "offset": 43668,
       "length": 1,
       "value": "5"
     },
     {
       "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "FloatLiteral",
-      "offset": 39505,
+      "offset": 43734,
       "length": 6,
       "value": "1500.0"
     },
     {
       "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "StringLiteral",
-      "offset": 40689,
+      "offset": 44918,
       "length": 3,
       "value": "\"1\""
     },
     {
       "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "IntegerLiteral",
-      "offset": 40766,
+      "offset": 44995,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "IntegerLiteral",
-      "offset": 40835,
+      "offset": 45064,
       "length": 1,
       "value": "5"
     },
     {
       "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "FloatLiteral",
-      "offset": 40909,
+      "offset": 45138,
       "length": 6,
       "value": "1500.0"
     },
     {
       "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "BooleanLiteral",
-      "offset": 93603,
+      "offset": 98102,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Volumes\/SSD550\/backup\/driver-connect\/tracking-sdk\/react-native\/vietmap_tracking_plugin\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "BooleanLiteral",
-      "offset": 134828,
+      "offset": 139473,
       "length": 5,
       "value": "false"
     },
