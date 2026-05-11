@@ -149,8 +149,8 @@ public struct AlertConfig {
   @objc public func configureAlertAPI(apiKey: Swift.String, apiID: Swift.String, url: Swift.String = "https://drive-api.vietmap.vn/fleetwork/api/Alert/v2/mpp")
   @objc public func configureZoneNetworkV2(baseUrl: Swift.String)
   @objc public func resetZoneNetworkV2()
-  @objc(processLocationWithVehicleTypeLat:lng:speed:heading:vehicleId:vehicleTypeEnum:seats:weights:) public func processLocationWithVehicleType(lat: Swift.Double, lng: Swift.Double, speed: Swift.Double, heading: Swift.Double, vehicleId: Swift.String = "1", vehicleType: VietmapTrackingSDK.VMVehicleType = .car, seats: Swift.Int = 5, weights: Swift.Double = 1500.0)
-  @objc public func processLocationWithVehicleParams(lat: Swift.Double, lng: Swift.Double, speed: Swift.Double, heading: Swift.Double, vehicleId: Swift.String = "1", vehicleType: Swift.Int = 1, seats: Swift.Int = 5, weights: Swift.Double = 1500.0)
+  @objc(processLocationWithVehicleTypeLat:lng:speed:heading:vehicleId:vehicleTypeEnum:seats:weights:) public func processLocationWithVehicleType(lat: Swift.Double, lng: Swift.Double, speed: Swift.Double, heading: Swift.Double, vehicleId: Swift.String? = nil, vehicleType: VietmapTrackingSDK.VMVehicleType = .car, seats: Swift.Int = 5, weights: Swift.Double = 1500.0)
+  @objc public func processLocationWithVehicleParams(lat: Swift.Double, lng: Swift.Double, speed: Swift.Double, heading: Swift.Double, vehicleId: Swift.String? = nil, vehicleType: Swift.Int = 1, seats: Swift.Int = 5, weights: Swift.Double = 1500.0)
   @objc(configureVehicleWithVehicleId:vehicleTypeEnum:seats:weight:) public func configureVehicleWithType(vehicleId: Swift.String, vehicleType: VietmapTrackingSDK.VMVehicleType, seats: Swift.Int, weight: Swift.Double)
   @objc public func configureVehicle(vehicleId: Swift.String, vehicleType: Swift.Int, seats: Swift.Int, weight: Swift.Double, maxProvision: Swift.Int)
   @objc public func getVehicleConfiguration() -> Foundation.NSDictionary
@@ -170,6 +170,7 @@ public struct AlertConfig {
   @objc public func refreshNetworkStatus()
   @objc public func getTrackingHealthStatus() -> Foundation.NSDictionary
   @objc public func setFakeGPSPolicy(_ policy: Swift.String)
+  @objc public func setFakeGPSNotificationConfig(title: Swift.String, body: Swift.String)
 }
 extension VietmapTrackingSDK.VietmapTrackingManager : CoreLocation.CLLocationManagerDelegate {
   @objc dynamic public func locationManager(_ manager: CoreLocation.CLLocationManager, didUpdateLocations locations: [_LocationEssentials.CLLocation])

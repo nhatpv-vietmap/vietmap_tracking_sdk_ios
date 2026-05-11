@@ -581,7 +581,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VietmapTrack
 /// @param vehicleType Type of vehicle using VMVehicleType enum (default: .car)
 /// @param seats Number of seats in the vehicle (default: 5)
 /// @param weights Vehicle weight in kg (default: 1500.0)
-- (void)processLocationWithVehicleTypeLat:(double)lat lng:(double)lng speed:(double)speed heading:(double)heading vehicleId:(NSString * _Nonnull)vehicleId vehicleTypeEnum:(enum VMVehicleType)vehicleType seats:(NSInteger)seats weights:(double)weights;
+- (void)processLocationWithVehicleTypeLat:(double)lat lng:(double)lng speed:(double)speed heading:(double)heading vehicleId:(NSString * _Nullable)vehicleId vehicleTypeEnum:(enum VMVehicleType)vehicleType seats:(NSInteger)seats weights:(double)weights;
 /// Process location with custom vehicle parameters for speed alerts (backward compatibility)
 /// @param lat Latitude coordinate
 /// @param lng Longitude coordinate
@@ -591,7 +591,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VietmapTrack
 /// @param vehicleType Type of vehicle - 1=Car, 2=Truck, etc. (default: 1)
 /// @param seats Number of seats in the vehicle (default: 5)
 /// @param weights Vehicle weight in kg (default: 1500.0)
-- (void)processLocationWithVehicleParamsWithLat:(double)lat lng:(double)lng speed:(double)speed heading:(double)heading vehicleId:(NSString * _Nonnull)vehicleId vehicleType:(NSInteger)vehicleType seats:(NSInteger)seats weights:(double)weights;
+- (void)processLocationWithVehicleParamsWithLat:(double)lat lng:(double)lng speed:(double)speed heading:(double)heading vehicleId:(NSString * _Nullable)vehicleId vehicleType:(NSInteger)vehicleType seats:(NSInteger)seats weights:(double)weights;
 /// Configure vehicle information for speed alerts (using VMVehicleType enum)
 /// @param vehicleId Unique identifier for the vehicle
 /// @param vehicleType Type of vehicle using VMVehicleType enum
@@ -667,6 +667,9 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VietmapTrack
 /// Invalid values are ignored and the policy falls back to “skip”.
 ///
 - (void)setFakeGPSPolicy:(NSString * _Nonnull)policy;
+/// Configure the title and body of the fake-GPS local notification.
+/// Call before (or after) <code>setFakeGPSPolicy("warn")</code> takes effect.
+- (void)setFakeGPSNotificationConfigWithTitle:(NSString * _Nonnull)title body:(NSString * _Nonnull)body;
 @end
 
 /// Speed status enum matching C++ SpeedStatus
