@@ -519,6 +519,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VietmapTrack
 - (void)configureWithBaseURL:(NSString * _Nonnull)baseURL;
 - (void)configureWithApiVersion:(NSString * _Nonnull)apiVersion;
 - (void)setTrackingStatus:(NSString * _Nonnull)status;
+- (void)setAppSignature:(NSString * _Nonnull)signature;
 - (void)configureWithApiKey:(NSString * _Nonnull)apiKey baseURL:(NSString * _Nonnull)baseURL autoUpload:(BOOL)autoUpload;
 - (void)setAutoUploadWithEnabled:(BOOL)enabled;
 - (void)configureWithAuthMode:(enum VMAuthMode)authMode;
@@ -1267,6 +1268,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VietmapTrack
 - (void)configureWithBaseURL:(NSString * _Nonnull)baseURL;
 - (void)configureWithApiVersion:(NSString * _Nonnull)apiVersion;
 - (void)setTrackingStatus:(NSString * _Nonnull)status;
+- (void)setAppSignature:(NSString * _Nonnull)signature;
 - (void)configureWithApiKey:(NSString * _Nonnull)apiKey baseURL:(NSString * _Nonnull)baseURL autoUpload:(BOOL)autoUpload;
 - (void)setAutoUploadWithEnabled:(BOOL)enabled;
 - (void)configureWithAuthMode:(enum VMAuthMode)authMode;

@@ -18,7 +18,7 @@
 		</data>
 		<key>Headers/VietmapTrackingSDK-Swift.h</key>
 		<data>
-		hR6mqNnxv3uFNBH1F0BnQdqO17k=
+		jdHVOZZ2ugU4OKWVnLiVN5ujawc=
 		</data>
 		<key>Headers/VietmapTrackingSDK.h</key>
 		<data>
@@ -30,11 +30,11 @@
 		</data>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		bAKr5bWS/O3sOdcKiShJYs8+zYE=
+		xjUEABj0OhVkgqFJM8ZBfixRb1U=
 		</data>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		wm8GiIBun61NYjFbP7c76jZzXEc=
+		lbybxkLhRLY+0SZ1MBlmz0ff8HM=
 		</data>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -42,19 +42,19 @@
 		</data>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		wm8GiIBun61NYjFbP7c76jZzXEc=
+		lbybxkLhRLY+0SZ1MBlmz0ff8HM=
 		</data>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		zlfYFPg00xWfHex3WkEfZDgw7ww=
+		tCsHOUxZ7ZimPy+zEavK1Uib44w=
 		</data>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		bAKr5bWS/O3sOdcKiShJYs8+zYE=
+		xjUEABj0OhVkgqFJM8ZBfixRb1U=
 		</data>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		fJxEPhOdKRutTKknk3aDEfCNEDc=
+		XM1JzuoozQjRyWJ73Td1rCI8YMA=
 		</data>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -62,11 +62,11 @@
 		</data>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		fJxEPhOdKRutTKknk3aDEfCNEDc=
+		XM1JzuoozQjRyWJ73Td1rCI8YMA=
 		</data>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		m0ykqsJK8GTg9MY7nydJC2FJbIg=
+		15bPan8VFP8AD36h67E9pfDMwAk=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -100,7 +100,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			8tM7HMyapWrqq0/8UxFOyF8tUPnB1jx91gX+dRjYHHU=
+			iAJCNTQ7hjZ04+q+9PWVkLiV0dr8amXN6kp6lNhkv2U=
 			</data>
 		</dict>
 		<key>Headers/VietmapTrackingSDK.h</key>
@@ -114,14 +114,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			sRQJHYBGR6Up+vmW4xOB9qIAAWlv2r7aHgyuNUia2b8=
+			NcxixW7Ba2SCYdsKZ9pJfVNt0NXS/d7c8UE9aIEChVg=
 			</data>
 		</dict>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			X22wF1EYvvhJQQlUSg0cKN01ts/ORAzjqrP4df3h6SM=
+			Y9a58lmGo7X6iezu0/k0Csbgy8HOVmJBxFO2zPSR9mo=
 			</data>
 		</dict>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
@@ -135,28 +135,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			X22wF1EYvvhJQQlUSg0cKN01ts/ORAzjqrP4df3h6SM=
+			Y9a58lmGo7X6iezu0/k0Csbgy8HOVmJBxFO2zPSR9mo=
 			</data>
 		</dict>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			lRJpktvWmxqqur5qw4CjBLeI/UXTnca6Z8R5+iVPK7g=
+			dHflZHRwcuCJcHtmsrU2yH1uymoisKvOuqm7F3hRS8s=
 			</data>
 		</dict>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			sRQJHYBGR6Up+vmW4xOB9qIAAWlv2r7aHgyuNUia2b8=
+			NcxixW7Ba2SCYdsKZ9pJfVNt0NXS/d7c8UE9aIEChVg=
 			</data>
 		</dict>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			1d4Dwvt0nHuTJGGoW5QPE84DCN/uQime4Wmi1KLe0Ng=
+			kLygLTbiovUy8czklMIkmKBpanxUVHb8krzxlGvsCIg=
 			</data>
 		</dict>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -170,14 +170,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			1d4Dwvt0nHuTJGGoW5QPE84DCN/uQime4Wmi1KLe0Ng=
+			kLygLTbiovUy8czklMIkmKBpanxUVHb8krzxlGvsCIg=
 			</data>
 		</dict>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			lw5/h4MALu9WhcpaMwNxy9TUll2eLnzZG+wavnFvVjM=
+			D3EVwtEagNqcKNJgBAscnfWlGWLhKiKIXQnxX0Ff0iY=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

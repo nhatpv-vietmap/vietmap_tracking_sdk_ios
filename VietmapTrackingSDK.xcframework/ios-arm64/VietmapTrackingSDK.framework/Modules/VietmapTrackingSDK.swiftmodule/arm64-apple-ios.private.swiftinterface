@@ -127,6 +127,7 @@ public struct AlertConfig {
   @objc public func configure(baseURL: Swift.String)
   @objc public func configure(apiVersion: Swift.String)
   @objc public func setTrackingStatus(_ status: Swift.String)
+  @objc public func setAppSignature(_ signature: Swift.String)
   @objc public func configure(apiKey: Swift.String, baseURL: Swift.String, autoUpload: Swift.Bool = true)
   @objc public func setAutoUpload(enabled: Swift.Bool)
   @objc public func configure(authMode: VietmapTrackingSDK.VMAuthMode)
