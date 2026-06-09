@@ -460,6 +460,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VietmapTrack
 /// Throws an NSError on the completion block if the key is rejected.
 - (void)initializeWithValidationWithApiKey:(NSString * _Nonnull)apiKey baseURL:(NSString * _Nullable)baseURL completion:(void (^ _Nonnull)(NSError * _Nullable))completion;
 - (void)setAutoUploadWithEnabled:(BOOL)enabled;
+- (void)getHistoryWithUserId:(NSString * _Nonnull)userId fromTime:(int64_t)fromTime toTime:(int64_t)toTime pageNumber:(NSInteger)pageNumber pageSize:(NSInteger)pageSize sortBy:(NSString * _Nonnull)sortBy sortDescending:(BOOL)sortDescending completion:(void (^ _Nonnull)(NSString * _Nullable, NSString * _Nullable, NSString * _Nullable))completion;
 - (NSDictionary * _Nullable)getCurrentLocation SWIFT_WARN_UNUSED_RESULT;
 - (BOOL)isTrackingActive SWIFT_WARN_UNUSED_RESULT;
 - (NSDictionary * _Nonnull)getTrackingStatus SWIFT_WARN_UNUSED_RESULT;
@@ -494,6 +495,13 @@ SWIFT_CLASS("_TtC18VietmapTrackingSDK22VietmapTrackingManager")
 @interface VietmapTrackingManager : NSObject
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VietmapTrackingManager * _Nonnull shared;)
 + (VietmapTrackingManager * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
+/// Set SPKI fingerprints for SSL pinning on the GPS tracking upload session.
+/// Stateless — not persisted by SDK. Plugin layer is responsible for persistence.
+/// Format: “sha256/BASE64=” matching OkHttp CertificatePinner format.
+/// Pass empty array to disable pinning (backward compatible).
+- (void)setSslFingerprints:(NSArray<NSString *> * _Nonnull)fingerprints;
+- (void)fetchAppConfig;
+- (void)fetchAppConfigWithForce:(BOOL)force;
 @property (nonatomic, copy) void (^ _Nullable onLocationUpdate)(NSDictionary * _Nonnull);
 @property (nonatomic, copy) void (^ _Nullable onTrackingStatusChanged)(NSDictionary * _Nonnull);
 @property (nonatomic, copy) void (^ _Nullable onError)(NSString * _Nonnull);
@@ -653,12 +661,15 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VietmapTrack
 ///
 /// \param completion (historyJson?, errorCode?, errorMessage?)
 ///
-- (void)getHistoryWithUserId:(NSString * _Nonnull)userId fromTime:(int64_t)fromTime toTime:(int64_t)toTime pageNumber:(NSInteger)pageNumber pageSize:(NSInteger)pageSize sortDescending:(BOOL)sortDescending completion:(void (^ _Nonnull)(NSString * _Nullable, NSString * _Nullable, NSString * _Nullable))completion;
+- (void)getHistoryWithUserId:(NSString * _Nonnull)userId fromTime:(int64_t)fromTime toTime:(int64_t)toTime pageNumber:(NSInteger)pageNumber pageSize:(NSInteger)pageSize sortBy:(NSString * _Nonnull)sortBy sortDescending:(BOOL)sortDescending completion:(void (^ _Nonnull)(NSString * _Nullable, NSString * _Nullable, NSString * _Nullable))completion;
 /// Force-refresh network status by restarting NWPathMonitor.
 /// Per Apple docs, a cancelled NWPathMonitor cannot be restarted — must create new instance.
 /// The new monitor’s pathUpdateHandler fires immediately with the current path,
 /// updating isNetworkAvailable and triggering uploadPendingBatch if online.
 - (void)refreshNetworkStatus;
+/// Clear all SDK credentials from the Keychain.
+/// Call on user sign-out or SDK reset.
+- (void)clearStoredCredentials;
 /// Gets comprehensive tracking status for debugging
 - (NSDictionary * _Nonnull)getTrackingHealthStatus SWIFT_WARN_UNUSED_RESULT;
 /// Set the policy the SDK applies automatically whenever a fake GPS location is detected.

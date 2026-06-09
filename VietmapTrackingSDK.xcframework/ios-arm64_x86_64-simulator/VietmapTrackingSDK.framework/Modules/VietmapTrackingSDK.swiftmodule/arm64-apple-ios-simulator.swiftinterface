@@ -4,10 +4,12 @@
 // swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.3.1
 import AVFoundation
 import BackgroundTasks
+import CommonCrypto
 import CoreLocation
 import Foundation
 import Network
 import SQLite3
+import Security
 import Swift
 import UIKit
 import UserNotifications
@@ -98,6 +100,9 @@ public struct AlertConfig {
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class VietmapTrackingManager : ObjectiveC.NSObject {
   @objc public static let shared: VietmapTrackingSDK.VietmapTrackingManager
+  @objc public func setSslFingerprints(_ fingerprints: [Swift.String])
+  @objc public func fetchAppConfig()
+  @objc public func fetchAppConfig(force: Swift.Bool)
   @objc public var onLocationUpdate: ((Foundation.NSDictionary) -> Swift.Void)?
   @objc public var onTrackingStatusChanged: ((Foundation.NSDictionary) -> Swift.Void)?
   @objc public var onError: ((Swift.String) -> Swift.Void)?
@@ -166,8 +171,9 @@ public struct AlertConfig {
   public func setRetentionCallback(_ callback: @escaping (_ deletedCount: Swift.Int, _ reason: Swift.String, _ currentCount: Swift.Int, _ currentSizeBytes: Swift.Int64) -> Swift.Void)
   @objc public func getDatabaseSizeBytes() -> Swift.Int64
   @objc public func isNetworkConnected() -> Swift.Bool
-  @objc public func getHistory(userId: Swift.String, fromTime: Swift.Int64, toTime: Swift.Int64, pageNumber: Swift.Int, pageSize: Swift.Int, sortDescending: Swift.Bool, completion: @escaping (Swift.String?, Swift.String?, Swift.String?) -> Swift.Void)
+  @objc public func getHistory(userId: Swift.String, fromTime: Swift.Int64, toTime: Swift.Int64, pageNumber: Swift.Int, pageSize: Swift.Int, sortBy: Swift.String, sortDescending: Swift.Bool, completion: @escaping (Swift.String?, Swift.String?, Swift.String?) -> Swift.Void)
   @objc public func refreshNetworkStatus()
+  @objc public func clearStoredCredentials()
   @objc public func getTrackingHealthStatus() -> Foundation.NSDictionary
   @objc public func setFakeGPSPolicy(_ policy: Swift.String)
   @objc public func setFakeGPSNotificationConfig(title: Swift.String, body: Swift.String)
@@ -305,6 +311,7 @@ public class VMSpeedAlertState {
   @objc public func setMetadata(_ metadata: Foundation.NSDictionary?)
   @objc public func initializeWithValidation(apiKey: Swift.String, baseURL: Swift.String?, completion: @escaping ((any Swift.Error)?) -> Swift.Void)
   @objc public func setAutoUpload(enabled: Swift.Bool)
+  @objc public func getHistory(userId: Swift.String, fromTime: Swift.Int64, toTime: Swift.Int64, pageNumber: Swift.Int, pageSize: Swift.Int, sortBy: Swift.String, sortDescending: Swift.Bool, completion: @escaping (Swift.String?, Swift.String?, Swift.String?) -> Swift.Void)
   @objc public func getCurrentLocation() -> Foundation.NSDictionary?
   @objc public func isTrackingActive() -> Swift.Bool
   @objc public func getTrackingStatus() -> Foundation.NSDictionary
