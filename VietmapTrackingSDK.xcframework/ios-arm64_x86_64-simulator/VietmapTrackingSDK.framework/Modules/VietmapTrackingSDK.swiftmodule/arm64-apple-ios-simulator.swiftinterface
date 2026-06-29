@@ -45,6 +45,7 @@ public struct RouteData {
   @objc public var accuracy: Swift.String
   @objc public var enableBackgroundMode: Swift.Bool
   @objc public var distanceFilter: Swift.Double
+  @objc public var enableSpeedFallback: Swift.Bool
   @objc override dynamic public init()
   @objc deinit
 }
@@ -132,6 +133,7 @@ public struct AlertConfig {
   @objc public func setAutoUpload(enabled: Swift.Bool)
   @objc public func configure(authMode: VietmapTrackingSDK.VMAuthMode)
   @objc public func configure(config: VietmapTrackingSDK.TrackingConfig)
+  @objc public func setEnableSpeedFallback(_ enabled: Swift.Bool)
   @objc public func setVehicleId(_ vehicleId: Swift.String)
   @objc public func setDriverId(_ driverId: Swift.String?)
   @objc public func setMessagePackData(_ payload: Foundation.NSDictionary?)
@@ -310,6 +312,7 @@ public class VMSpeedAlertState {
   @objc public func configure(apiKey: Swift.String, baseURL: Swift.String, autoUpload: Swift.Bool = true)
   @objc public func setMessagePackData(_ payload: Foundation.NSDictionary?)
   @objc public func setMetadata(_ metadata: Foundation.NSDictionary?)
+  @objc public func setEnableSpeedFallback(_ enabled: Swift.Bool)
   @objc public func initializeWithValidation(apiKey: Swift.String, baseURL: Swift.String?, completion: @escaping ((any Swift.Error)?) -> Swift.Void)
   @objc public func setAutoUpload(enabled: Swift.Bool)
   @objc public func getHistory(userId: Swift.String, fromTime: Swift.Int64, toTime: Swift.Int64, pageNumber: Swift.Int, pageSize: Swift.Int, sortBy: Swift.String, sortDescending: Swift.Bool, completion: @escaping (Swift.String?, Swift.String?, Swift.String?) -> Swift.Void)

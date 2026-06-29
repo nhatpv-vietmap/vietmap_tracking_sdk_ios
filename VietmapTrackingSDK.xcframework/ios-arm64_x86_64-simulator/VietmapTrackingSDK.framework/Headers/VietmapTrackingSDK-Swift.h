@@ -409,6 +409,7 @@ SWIFT_CLASS("_TtC18VietmapTrackingSDK14TrackingConfig")
 @property (nonatomic, copy) NSString * _Nonnull accuracy;
 @property (nonatomic) BOOL enableBackgroundMode;
 @property (nonatomic) double distanceFilter;
+@property (nonatomic) BOOL enableSpeedFallback;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -456,6 +457,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VietmapTrack
 - (void)setMessagePackData:(NSDictionary * _Nullable)payload;
 /// Set arbitrary metadata to be included in every GPS post under the “metadata” key.
 - (void)setMetadata:(NSDictionary * _Nullable)metadata;
+/// Enable/disable Haversine speed fallback (compute speed when the OS omits it).
+- (void)setEnableSpeedFallback:(BOOL)enabled;
 /// Validate the tracking API key and initialize the SDK if valid.
 /// Throws an NSError on the completion block if the key is rejected.
 - (void)initializeWithValidationWithApiKey:(NSString * _Nonnull)apiKey baseURL:(NSString * _Nullable)baseURL completion:(void (^ _Nonnull)(NSError * _Nullable))completion;
@@ -524,6 +527,9 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VietmapTrack
 - (void)setAutoUploadWithEnabled:(BOOL)enabled;
 - (void)configureWithAuthMode:(enum VMAuthMode)authMode;
 - (void)configureWithConfig:(TrackingConfig * _Nonnull)config;
+/// Enable/disable Haversine speed fallback (compute speed when the OS omits it).
+/// Default on; can be turned off for devices/fleets that should keep raw OS speed.
+- (void)setEnableSpeedFallback:(BOOL)enabled;
 - (void)setVehicleId:(NSString * _Nonnull)vehicleId;
 - (void)setDriverId:(NSString * _Nullable)driverId;
 - (void)setMessagePackData:(NSDictionary * _Nullable)payload;
@@ -1158,6 +1164,7 @@ SWIFT_CLASS("_TtC18VietmapTrackingSDK14TrackingConfig")
 @property (nonatomic, copy) NSString * _Nonnull accuracy;
 @property (nonatomic) BOOL enableBackgroundMode;
 @property (nonatomic) double distanceFilter;
+@property (nonatomic) BOOL enableSpeedFallback;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -1205,6 +1212,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VietmapTrack
 - (void)setMessagePackData:(NSDictionary * _Nullable)payload;
 /// Set arbitrary metadata to be included in every GPS post under the “metadata” key.
 - (void)setMetadata:(NSDictionary * _Nullable)metadata;
+/// Enable/disable Haversine speed fallback (compute speed when the OS omits it).
+- (void)setEnableSpeedFallback:(BOOL)enabled;
 /// Validate the tracking API key and initialize the SDK if valid.
 /// Throws an NSError on the completion block if the key is rejected.
 - (void)initializeWithValidationWithApiKey:(NSString * _Nonnull)apiKey baseURL:(NSString * _Nullable)baseURL completion:(void (^ _Nonnull)(NSError * _Nullable))completion;
@@ -1273,6 +1282,9 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VietmapTrack
 - (void)setAutoUploadWithEnabled:(BOOL)enabled;
 - (void)configureWithAuthMode:(enum VMAuthMode)authMode;
 - (void)configureWithConfig:(TrackingConfig * _Nonnull)config;
+/// Enable/disable Haversine speed fallback (compute speed when the OS omits it).
+/// Default on; can be turned off for devices/fleets that should keep raw OS speed.
+- (void)setEnableSpeedFallback:(BOOL)enabled;
 - (void)setVehicleId:(NSString * _Nonnull)vehicleId;
 - (void)setDriverId:(NSString * _Nullable)driverId;
 - (void)setMessagePackData:(NSDictionary * _Nullable)payload;

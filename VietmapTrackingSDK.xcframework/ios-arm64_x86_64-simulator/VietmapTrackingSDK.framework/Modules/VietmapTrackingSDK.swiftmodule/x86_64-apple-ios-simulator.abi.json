@@ -1767,6 +1767,99 @@
             ]
           },
           {
+            "kind": "Var",
+            "name": "enableSpeedFallback",
+            "printedName": "enableSpeedFallback",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@VietmapTrackingSDK@objc(cs)TrackingConfig(py)enableSpeedFallback",
+            "mangledName": "$s18VietmapTrackingSDK0B6ConfigC19enableSpeedFallbackSbvp",
+            "moduleName": "VietmapTrackingSDK",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@VietmapTrackingSDK@objc(cs)TrackingConfig(im)enableSpeedFallback",
+                "mangledName": "$s18VietmapTrackingSDK0B6ConfigC19enableSpeedFallbackSbvg",
+                "moduleName": "VietmapTrackingSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@VietmapTrackingSDK@objc(cs)TrackingConfig(im)setEnableSpeedFallback:",
+                "mangledName": "$s18VietmapTrackingSDK0B6ConfigC19enableSpeedFallbackSbvs",
+                "moduleName": "VietmapTrackingSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18VietmapTrackingSDK0B6ConfigC19enableSpeedFallbackSbvM",
+                "mangledName": "$s18VietmapTrackingSDK0B6ConfigC19enableSpeedFallbackSbvM",
+                "moduleName": "VietmapTrackingSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
             "kind": "Constructor",
             "name": "init",
             "printedName": "init()",
@@ -5581,6 +5674,34 @@
             "declAttributes": [
               "AccessControl",
               "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setEnableSpeedFallback",
+            "printedName": "setEnableSpeedFallback(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTrackingManager(im)setEnableSpeedFallback:",
+            "mangledName": "$s18VietmapTrackingSDK0aB7ManagerC22setEnableSpeedFallbackyySbF",
+            "moduleName": "VietmapTrackingSDK",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
             ],
             "funcSelfKind": "NonMutating"
           },
@@ -13712,6 +13833,34 @@
           },
           {
             "kind": "Function",
+            "name": "setEnableSpeedFallback",
+            "printedName": "setEnableSpeedFallback(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@VietmapTrackingSDK@objc(cs)VietmapTracking(im)setEnableSpeedFallback:",
+            "mangledName": "$s18VietmapTrackingSDK0aB0C22setEnableSpeedFallbackyySbF",
+            "moduleName": "VietmapTrackingSDK",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "initializeWithValidation",
             "printedName": "initializeWithValidation(apiKey:baseURL:completion:)",
             "children": [
@@ -15745,476 +15894,539 @@
     {
       "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "IntegerLiteral",
-      "offset": 16201,
+      "offset": 16368,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "IntegerLiteral",
-      "offset": 16270,
+      "offset": 16437,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "IntegerLiteral",
-      "offset": 16413,
+      "offset": 16580,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "IntegerLiteral",
-      "offset": 16482,
+      "offset": 16649,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "IntegerLiteral",
-      "offset": 16603,
+      "offset": 16770,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "IntegerLiteral",
-      "offset": 16644,
+      "offset": 16811,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "IntegerLiteral",
-      "offset": 16681,
+      "offset": 16848,
       "length": 1,
       "value": "3"
     },
     {
       "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "IntegerLiteral",
-      "offset": 16720,
+      "offset": 16887,
       "length": 1,
       "value": "4"
     },
     {
       "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "IntegerLiteral",
-      "offset": 16760,
+      "offset": 16927,
       "length": 1,
       "value": "5"
     },
     {
       "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "IntegerLiteral",
-      "offset": 16801,
+      "offset": 16968,
       "length": 1,
       "value": "6"
     },
     {
       "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "IntegerLiteral",
-      "offset": 16839,
+      "offset": 17006,
       "length": 1,
       "value": "7"
     },
     {
       "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "IntegerLiteral",
-      "offset": 16879,
+      "offset": 17046,
       "length": 1,
       "value": "8"
     },
     {
       "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "IntegerLiteral",
-      "offset": 16925,
+      "offset": 17092,
       "length": 1,
       "value": "9"
     },
     {
       "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "IntegerLiteral",
-      "offset": 16974,
+      "offset": 17141,
       "length": 2,
       "value": "10"
     },
     {
       "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "StringLiteral",
-      "offset": 18492,
+      "offset": 18659,
       "length": 5,
       "value": "\"1.0\""
     },
     {
       "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "StringLiteral",
-      "offset": 18532,
+      "offset": 18699,
       "length": 34,
       "value": "\"https:\/\/live.fleetwork.vn\/api\/v1\""
     },
     {
       "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "BooleanLiteral",
-      "offset": 18611,
+      "offset": 18778,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "StringLiteral",
-      "offset": 18705,
+      "offset": 18872,
       "length": 8,
       "value": "\"active\""
     },
     {
       "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "BooleanLiteral",
-      "offset": 18770,
+      "offset": 18937,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "IntegerLiteral",
-      "offset": 18826,
+      "offset": 18993,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "IntegerLiteral",
-      "offset": 18879,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
-      "kind": "BooleanLiteral",
-      "offset": 18920,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
-      "kind": "IntegerLiteral",
-      "offset": 19206,
+      "offset": 19046,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "BooleanLiteral",
-      "offset": 19254,
+      "offset": 19087,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "IntegerLiteral",
-      "offset": 19347,
+      "offset": 19373,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
+      "kind": "BooleanLiteral",
+      "offset": 19421,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
+      "kind": "IntegerLiteral",
+      "offset": 19514,
       "length": 5,
       "value": "30000"
     },
     {
       "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "FloatLiteral",
-      "offset": 19394,
+      "offset": 19561,
       "length": 4,
       "value": "10.0"
     },
     {
       "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "BooleanLiteral",
-      "offset": 19475,
+      "offset": 19642,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "BooleanLiteral",
-      "offset": 19621,
+      "offset": 19788,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "BooleanLiteral",
-      "offset": 19874,
+      "offset": 20045,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
+      "kind": "Array",
+      "offset": 20150,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
+      "kind": "FloatLiteral",
+      "offset": 20208,
+      "length": 3,
+      "value": "1.0"
+    },
+    {
+      "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
+      "kind": "FloatLiteral",
+      "offset": 20291,
+      "length": 4,
+      "value": "60.0"
+    },
+    {
+      "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
+      "kind": "FloatLiteral",
+      "offset": 20370,
+      "length": 4,
+      "value": "50.0"
+    },
+    {
+      "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
+      "kind": "FloatLiteral",
+      "offset": 20457,
+      "length": 3,
+      "value": "5.0"
+    },
+    {
+      "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
+      "kind": "FloatLiteral",
+      "offset": 20544,
+      "length": 5,
+      "value": "200.0"
+    },
+    {
+      "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
+      "kind": "IntegerLiteral",
+      "offset": 20624,
+      "length": 1,
+      "value": "8"
+    },
+    {
+      "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
+      "kind": "FloatLiteral",
+      "offset": 20676,
+      "length": 3,
+      "value": "2.0"
+    },
+    {
+      "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
+      "kind": "BooleanLiteral",
+      "offset": 20930,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "BooleanLiteral",
-      "offset": 19991,
+      "offset": 21047,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "IntegerLiteral",
-      "offset": 20048,
+      "offset": 21104,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "FloatLiteral",
-      "offset": 20101,
+      "offset": 21157,
       "length": 3,
       "value": "5.0"
     },
     {
       "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "IntegerLiteral",
-      "offset": 20734,
+      "offset": 21790,
       "length": 1,
       "value": "5"
     },
     {
       "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "FloatLiteral",
-      "offset": 20776,
+      "offset": 21832,
       "length": 6,
       "value": "1500.0"
     },
     {
       "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "IntegerLiteral",
-      "offset": 20826,
+      "offset": 21882,
       "length": 4,
       "value": "1000"
     },
     {
       "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "StringLiteral",
-      "offset": 21271,
+      "offset": 22327,
       "length": 57,
       "value": "\"https:\/\/drive-api.vietmap.vn\/fleetwork\/api\/Alert\/v2\/mpp\""
     },
     {
       "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "StringLiteral",
-      "offset": 21514,
+      "offset": 22570,
       "length": 44,
       "value": "\"com.vietmaptrackingsdk.background-location\""
     },
     {
       "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "StringLiteral",
-      "offset": 21596,
+      "offset": 22652,
       "length": 38,
       "value": "\"com.vietmaptrackingsdk.location-sync\""
     },
     {
       "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "BooleanLiteral",
-      "offset": 21949,
+      "offset": 23005,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "StringLiteral",
-      "offset": 22152,
+      "offset": 23208,
       "length": 16,
       "value": "\"NetworkMonitor\""
     },
     {
       "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "Array",
-      "offset": 22438,
+      "offset": 23494,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "IntegerLiteral",
-      "offset": 24348,
+      "offset": 25404,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "IntegerLiteral",
-      "offset": 24404,
+      "offset": 25460,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "StringLiteral",
-      "offset": 33330,
+      "offset": 34389,
       "length": 6,
       "value": "\"skip\""
     },
     {
       "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "FloatLiteral",
-      "offset": 33542,
+      "offset": 34601,
       "length": 4,
       "value": "30.0"
     },
     {
       "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "StringLiteral",
-      "offset": 33686,
+      "offset": 34745,
       "length": 23,
       "value": "\"vietmap.fakegps.alert\""
     },
     {
       "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "StringLiteral",
-      "offset": 33839,
+      "offset": 34898,
       "length": 19,
       "value": "\"Fake GPS Detected\""
     },
     {
       "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "StringLiteral",
-      "offset": 33986,
+      "offset": 35045,
       "length": 24,
       "value": "\"Mock location detected\""
     },
     {
       "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "IntegerLiteral",
-      "offset": 34067,
+      "offset": 35126,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "IntegerLiteral",
-      "offset": 34182,
+      "offset": 35241,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "IntegerLiteral",
-      "offset": 34209,
+      "offset": 35268,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "IntegerLiteral",
-      "offset": 34236,
+      "offset": 35295,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "IntegerLiteral",
-      "offset": 34991,
+      "offset": 36050,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "IntegerLiteral",
-      "offset": 35091,
+      "offset": 36150,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "IntegerLiteral",
-      "offset": 35187,
+      "offset": 36246,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "Array",
-      "offset": 35392,
+      "offset": 36451,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "BooleanLiteral",
-      "offset": 38581,
+      "offset": 39640,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "StringLiteral",
-      "offset": 61317,
+      "offset": 62798,
       "length": 57,
       "value": "\"https:\/\/drive-api.vietmap.vn\/fleetwork\/api\/Alert\/v2\/mpp\""
     },
     {
       "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "IntegerLiteral",
-      "offset": 64366,
+      "offset": 65847,
       "length": 1,
       "value": "5"
     },
     {
       "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "FloatLiteral",
-      "offset": 64432,
+      "offset": 65913,
       "length": 6,
       "value": "1500.0"
     },
     {
       "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "IntegerLiteral",
-      "offset": 65693,
+      "offset": 67174,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "IntegerLiteral",
-      "offset": 65762,
+      "offset": 67243,
       "length": 1,
       "value": "5"
     },
     {
       "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "FloatLiteral",
-      "offset": 65836,
+      "offset": 67317,
       "length": 6,
       "value": "1500.0"
     },
     {
       "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "BooleanLiteral",
-      "offset": 121465,
+      "offset": 122984,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "BooleanLiteral",
-      "offset": 152567,
+      "offset": 160002,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "BooleanLiteral",
-      "offset": 152589,
+      "offset": 160024,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "BooleanLiteral",
-      "offset": 157344,
+      "offset": 164779,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "BooleanLiteral",
-      "offset": 166162,
+      "offset": 173958,
       "length": 5,
       "value": "false"
     },
@@ -16571,21 +16783,21 @@
     {
       "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/LocationDatabaseManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 1908,
+      "offset": 1946,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/LocationDatabaseManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 1935,
+      "offset": 1973,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Volumes\/240GB\/New-Develop\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/LocationDatabaseManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 1955,
+      "offset": 1993,
       "length": 1,
       "value": "0"
     },
