@@ -372,8 +372,47 @@ extern "C" {
 
 #if defined(__OBJC__)
 
-@class CLLocation;
 @class NSString;
+@class CLLocationManager;
+/// Collects non-PII device state that can affect the location service.
+/// The result is attached to every GPS push payload under <code>metadata.device</code>
+/// (see <code>buildPayload</code>). It is independent of the <code>evtLog</code> remote flag — device
+/// info is always collected.
+/// Several probes here (<code>UIApplication.shared</code>, <code>UIDevice.current.batteryLevel</code>)
+/// are main-thread-only, while <code>buildPayload</code> runs on both the main thread (at
+/// storage time) and a URLSession background queue (at upload time). So the
+/// snapshot is collected on main and cached; <code>snapshot()</code> is a lock-guarded read
+/// that is safe from any thread and never blocks the push.
+SWIFT_CLASS("_TtC18VietmapTrackingSDK19DeviceInfoCollector")
+@interface DeviceInfoCollector : NSObject
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) DeviceInfoCollector * _Nonnull shared;)
++ (DeviceInfoCollector * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
+/// Version of the framework actually running, read from its own bundle
+/// (<code>CFBundleShortVersionString</code>, fed by MARKETING_VERSION at build time)
+/// rather than hardcoded — a source-level copy would keep reporting the old
+/// version after a bump and send whoever is debugging after the wrong build.
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull sdkVersion;)
++ (NSString * _Nonnull)sdkVersion SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+/// Last collected snapshot. Safe from any thread; never blocks.
+/// Falls back to the fixed identity fields until the first refresh lands. Refreshing
+/// is asynchronous (see <code>refresh</code>), so without this a push issued in that window
+/// would carry no <code>device</code> block at all — and “device info missing” reads as a
+/// collection failure rather than the timing artefact it is. Identity alone is still
+/// enough to tell which build and hardware a payload came from.
+- (NSDictionary<NSString *, id> * _Nonnull)snapshot SWIFT_WARN_UNUSED_RESULT;
+/// Refresh the snapshot if it is stale. Safe to call from any thread.
+- (void)refreshIfNeededWithLocationManager:(CLLocationManager * _Nullable)locationManager networkType:(NSString * _Nullable)networkType;
+/// Force a refresh, e.g. after a known state change (auth, low power mode).
+/// Safe to call from any thread: collection is hopped to main because
+/// <code>UIApplication.shared</code> and <code>UIDevice.batteryLevel</code> are main-thread-only,
+/// while callers include the URLSession background queue and location
+/// callbacks.
+- (void)refreshWithLocationManager:(CLLocationManager * _Nullable)locationManager networkType:(NSString * _Nullable)networkType;
+@end
+
+@class CLLocation;
 SWIFT_CLASS("_TtC18VietmapTrackingSDK23EnhancedLocationManager")
 @interface EnhancedLocationManager : NSObject
 @property (nonatomic, copy) void (^ _Nullable onLocationUpdate)(CLLocation * _Nonnull, NSString * _Nonnull, NSString * _Nonnull);
@@ -391,7 +430,6 @@ SWIFT_CLASS("_TtC18VietmapTrackingSDK23EnhancedLocationManager")
 - (void)enableBackgroundLocationUpdates:(BOOL)enable SWIFT_AVAILABILITY(ios,introduced=14.0);
 @end
 
-@class CLLocationManager;
 @interface EnhancedLocationManager (SWIFT_EXTENSION(VietmapTrackingSDK)) <CLLocationManagerDelegate>
 - (void)locationManager:(CLLocationManager * _Nonnull)manager didUpdateLocations:(NSArray<CLLocation *> * _Nonnull)locations;
 - (void)locationManager:(CLLocationManager * _Nonnull)manager didFailWithError:(NSError * _Nonnull)error;
@@ -436,7 +474,72 @@ typedef SWIFT_ENUM(NSInteger, VMVehicleType, open) {
   VMVehicleTypeSemiTrailer = 10,
 };
 
-@class NSDictionary;
+@protocol EventSender;
+@class NSData;
+/// Diagnostic event log — the mobile half of MOBILE_GPS_EVENT_LOG_GUIDE.
+/// Two channels, deliberately separate:
+/// <ul>
+///   <li>
+///     <em>B1 — lifecycle</em> (<code>logDirect</code>): SDK API calls the host app makes
+///     (initialize, start_tracking, …). POSTed immediately and unconditionally;
+///     these are rare and must always be traceable, so they do not depend on the
+///     remote flag.
+///   </li>
+///   <li>
+///     <em>B2 — in-tracking</em> (<code>log</code> / <code>logError</code>): push results and anomalies.
+///     Gated on the <code>evtLog.on</code> flag that the server piggybacks onto every GPS
+///     push response, buffered in RAM, and flushed right after a push while the
+///     radio is still awake.
+///   </li>
+/// </ul>
+/// This is a <em>diagnostic tracer, not a crash reporter</em>: the B2 buffer lives in
+/// RAM only, so a process kill loses it by design. Logging must never slow or
+/// break a GPS push — every path here swallows its own errors.
+/// Mirrors <code>VietmapEventLogger.java</code> field-for-field so both platforms emit the
+/// same event names and schema.
+SWIFT_CLASS("_TtC18VietmapTrackingSDK18VietmapEventLogger")
+@interface VietmapEventLogger : NSObject
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VietmapEventLogger * _Nonnull shared;)
++ (VietmapEventLogger * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+- (void)attachSender:(id <EventSender> _Nonnull)sender;
+- (void)setDriverId:(NSString * _Nullable)driverId;
+/// Correlates the startup sequence to the later tracking session, since
+/// initialize/configure run before setDriverId and thus have no userId yet.
+/// Randomly generated per install — not an advertising identifier.
+@property (nonatomic, readonly, copy) NSString * _Nonnull installId;
+@property (nonatomic, readonly) BOOL isLoggingEnabled;
+/// Apply the server flag. Turning logging off clears the buffer: the server
+/// drops anything sent while off, so holding it would only waste memory.
+- (void)setLoggingEnabled:(BOOL)enabled;
+- (void)logDirect:(NSString * _Nonnull)event :(NSDictionary<NSString *, id> * _Nonnull)extra;
+- (void)log:(NSString * _Nonnull)event :(NSDictionary<NSString *, id> * _Nonnull)extra;
+/// Attaches the breadcrumb trail as <code>stack</code>, which BE renders indented under the event.
+- (void)logError:(NSString * _Nonnull)event :(NSDictionary<NSString *, id> * _Nonnull)extra;
+/// Buffer an event without touching the breadcrumb trail.
+/// For high-frequency diagnostics: a crumb per GPS fix would evict the lifecycle
+/// crumbs within seconds and leave every <code>stack</code> showing the same repeated line.
+- (void)logQuiet:(NSString * _Nonnull)event :(NSDictionary<NSString *, id> * _Nonnull)extra;
+/// Flush if the buffer has earned it. Called right after a GPS push completes
+/// so the radio is already awake; there is deliberately no timer here.
+- (void)maybeFlush;
+/// Read <code>{"evtLog":{"on":true}}</code> out of an already-decoded GPS push response.
+/// Defensive by contract: a missing field or an unexpected shape means “off”.
+/// A GPS push must succeed even when this cannot be read.
++ (BOOL)parseEvtLogFlag:(NSDictionary<NSString *, id> * _Nullable)json SWIFT_WARN_UNUSED_RESULT;
+/// Same, from a raw body — for callers that have not decoded it yet.
++ (BOOL)parseEvtLogFlagWithBody:(NSData * _Nullable)body SWIFT_WARN_UNUSED_RESULT;
+@end
+
+/// Transport is owned by VietmapTrackingManager, which already holds the pinned upload session.
+SWIFT_PROTOCOL("_TtPC18VietmapTrackingSDK18VietmapEventLogger11EventSender_")
+@protocol EventSender
+- (BOOL)isEventSenderReady SWIFT_WARN_UNUSED_RESULT;
+/// Must be asynchronous — never block the caller.
+- (void)sendEvents:(NSString * _Nonnull)jsonArrayBody completion:(void (^ _Nullable)(BOOL))completion;
+@end
+
 @class NSNumber;
 /// Public Swift wrapper uses a name that does not collide with the module name.
 /// The Swift name must stay distinct from the framework module name so the
@@ -495,7 +598,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VietmapTrack
 @end
 
 SWIFT_CLASS("_TtC18VietmapTrackingSDK22VietmapTrackingManager")
-@interface VietmapTrackingManager : NSObject
+@interface VietmapTrackingManager : NSObject <EventSender>
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VietmapTrackingManager * _Nonnull shared;)
 + (VietmapTrackingManager * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
 /// Set SPKI fingerprints for SSL pinning on the GPS tracking upload session.
@@ -514,6 +617,13 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VietmapTrack
 /// SDK chỉ fire callback — application layer quyết định cách xử lý.
 /// Payload keys: “isFake” (Bool), “reason” (String), “lat”, “lng”, “timestamp”
 @property (nonatomic, copy) void (^ _Nullable onFakeGPSDetected)(NSDictionary * _Nonnull);
+/// Fired when tracking is interrupted (GPS stops pushing / location unavailable / permission
+/// downgraded) or when it recovers, while <code>isTracking</code> is active. The payload shape and its
+/// <code>reason</code> values are an SDK-owned contract — the app CAN configure the local-notification
+/// title/body, but CANNOT configure this channel message. Payload keys:
+/// “reason” (String, one of the constants below), “recovered” (Bool),
+/// “isInBackground” (Bool), “secondsSinceLastFix” (Double), “timestamp” (Double).
+@property (nonatomic, copy) void (^ _Nullable onTrackingInterrupted)(NSDictionary * _Nonnull);
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 - (nonnull instancetype)initWithApiKey:(NSString * _Nullable)apiKey;
@@ -679,6 +789,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VietmapTrack
 - (void)clearStoredCredentials;
 /// Gets comprehensive tracking status for debugging
 - (NSDictionary * _Nonnull)getTrackingHealthStatus SWIFT_WARN_UNUSED_RESULT;
+- (BOOL)isEventSenderReady SWIFT_WARN_UNUSED_RESULT;
+- (void)sendEvents:(NSString * _Nonnull)jsonArrayBody completion:(void (^ _Nullable)(BOOL))completion;
 /// Set the policy the SDK applies automatically whenever a fake GPS location is detected.
 /// Call once during app initialisation (e.g. from Flutter layer).
 /// \param policy one of “skip” | “warn” | “stopTracking” | “logToServer”
@@ -688,6 +800,12 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VietmapTrack
 /// Configure the title and body of the fake-GPS local notification.
 /// Call before (or after) <code>setFakeGPSPolicy("warn")</code> takes effect.
 - (void)setFakeGPSNotificationConfigWithTitle:(NSString * _Nonnull)title body:(NSString * _Nonnull)body;
+/// Enable/disable the local notification shown when tracking is interrupted in background.
+/// The <code>onTrackingInterrupted</code> channel callback still fires when disabled.
+- (void)setTrackingInterruptedNotificationEnabled:(BOOL)enabled;
+/// Customise the interrupted local-notification strings. The channel <code>reason</code>/payload is
+/// SDK-owned and NOT configurable — only the notification title/body can be changed.
+- (void)setTrackingInterruptedNotificationConfigWithTitle:(NSString * _Nonnull)title body:(NSString * _Nonnull)body;
 @end
 
 /// Speed status enum matching C++ SpeedStatus
@@ -718,6 +836,11 @@ SWIFT_AVAILABILITY(ios,introduced=14.0)
 /// @param weights Vehicle weight in kg
 - (void)processSpeedAlertUsingCPPWithLocation:(CLLocation * _Nonnull)location vehicleId:(NSString * _Nonnull)vehicleId vehicleType:(NSInteger)vehicleType seats:(NSInteger)seats weights:(double)weights;
 - (void)locationManager:(CLLocationManager * _Nonnull)manager didFailWithError:(NSError * _Nonnull)error;
+/// iOS paused location updates (e.g. deemed stationary while pausesLocationUpdatesAutomatically
+/// is on) → tracking has effectively stopped pushing GPS. Surface it to the app.
+- (void)locationManagerDidPauseLocationUpdates:(CLLocationManager * _Nonnull)manager;
+/// iOS resumed location updates after a pause → recovered.
+- (void)locationManagerDidResumeLocationUpdates:(CLLocationManager * _Nonnull)manager;
 - (void)locationManager:(CLLocationManager * _Nonnull)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status;
 @end
 

@@ -6,6 +6,7 @@ import AVFoundation
 import BackgroundTasks
 import CommonCrypto
 import CoreLocation
+import Darwin
 import Foundation
 import Network
 import SQLite3
@@ -99,7 +100,7 @@ public struct AlertConfig {
     get
   }
 }
-@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class VietmapTrackingManager : ObjectiveC.NSObject {
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class VietmapTrackingManager : ObjectiveC.NSObject, VietmapTrackingSDK.VietmapEventLogger.EventSender {
   @objc public static let shared: VietmapTrackingSDK.VietmapTrackingManager
   @objc public func setSslFingerprints(_ fingerprints: [Swift.String])
   @objc public func fetchAppConfig()
@@ -110,6 +111,7 @@ public struct AlertConfig {
   @objc public var onPermissionChanged: ((Swift.String) -> Swift.Void)?
   @objc public var onRouteUpdate: ((Swift.Bool, Foundation.NSDictionary?) -> Swift.Void)?
   @objc public var onFakeGPSDetected: ((Foundation.NSDictionary) -> Swift.Void)?
+  @objc public var onTrackingInterrupted: ((Foundation.NSDictionary) -> Swift.Void)?
   @objc public enum SpeedStatus : Swift.Int {
     case safe = 0
     case nearLimit = 1
@@ -178,13 +180,19 @@ public struct AlertConfig {
   @objc public func refreshNetworkStatus()
   @objc public func clearStoredCredentials()
   @objc public func getTrackingHealthStatus() -> Foundation.NSDictionary
+  @objc public func isEventSenderReady() -> Swift.Bool
+  @objc public func sendEvents(_ jsonArrayBody: Swift.String, completion: ((Swift.Bool) -> Swift.Void)?)
   @objc public func setFakeGPSPolicy(_ policy: Swift.String)
   @objc public func setFakeGPSNotificationConfig(title: Swift.String, body: Swift.String)
+  @objc public func setTrackingInterruptedNotificationEnabled(_ enabled: Swift.Bool)
+  @objc public func setTrackingInterruptedNotificationConfig(title: Swift.String, body: Swift.String)
 }
 extension VietmapTrackingSDK.VietmapTrackingManager : CoreLocation.CLLocationManagerDelegate {
   @objc dynamic public func locationManager(_ manager: CoreLocation.CLLocationManager, didUpdateLocations locations: [_LocationEssentials.CLLocation])
   @objc dynamic public func processSpeedAlertUsingCPP(location: _LocationEssentials.CLLocation, vehicleId: Swift.String, vehicleType: Swift.Int, seats: Swift.Int, weights: Swift.Double)
   @objc dynamic public func locationManager(_ manager: CoreLocation.CLLocationManager, didFailWithError error: any Swift.Error)
+  @objc dynamic public func locationManagerDidPauseLocationUpdates(_ manager: CoreLocation.CLLocationManager)
+  @objc dynamic public func locationManagerDidResumeLocationUpdates(_ manager: CoreLocation.CLLocationManager)
   @objc dynamic public func locationManager(_ manager: CoreLocation.CLLocationManager, didChangeAuthorization status: CoreLocation.CLAuthorizationStatus)
 }
 @available(iOS 14.0, *)
@@ -359,6 +367,38 @@ public class VMSpeedAlertState {
     @objc set
   }
   @objc public func startTracking(backgroundMode: Swift.Bool, intervalMs: Swift.Int, forceUpdateBackground: Swift.Bool, distanceFilter: Swift.Double, completion: @escaping (Swift.Bool, Swift.String?) -> Swift.Void)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc final public class DeviceInfoCollector : ObjectiveC.NSObject {
+  @objc public static let shared: VietmapTrackingSDK.DeviceInfoCollector
+  @objc public static let sdkVersion: Swift.String
+  @objc final public func snapshot() -> [Swift.String : Any]
+  @objc final public func refreshIfNeeded(locationManager: CoreLocation.CLLocationManager?, networkType: Swift.String?)
+  @objc final public func refresh(locationManager: CoreLocation.CLLocationManager?, networkType: Swift.String?)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc final public class VietmapEventLogger : ObjectiveC.NSObject {
+  @objc public protocol EventSender {
+    @objc func isEventSenderReady() -> Swift.Bool
+    @objc func sendEvents(_ jsonArrayBody: Swift.String, completion: ((Swift.Bool) -> Swift.Void)?)
+  }
+  @objc public static let shared: VietmapTrackingSDK.VietmapEventLogger
+  @objc final public func attachSender(_ sender: any VietmapTrackingSDK.VietmapEventLogger.EventSender)
+  @objc final public func setDriverId(_ driverId: Swift.String?)
+  @objc final public var installId: Swift.String {
+    @objc get
+  }
+  @objc final public var isLoggingEnabled: Swift.Bool {
+    @objc get
+  }
+  @objc final public func setLoggingEnabled(_ enabled: Swift.Bool)
+  @objc final public func logDirect(_ event: Swift.String, _ extra: [Swift.String : Any] = [:])
+  @objc final public func log(_ event: Swift.String, _ extra: [Swift.String : Any] = [:])
+  @objc final public func logError(_ event: Swift.String, _ extra: [Swift.String : Any] = [:])
+  @objc final public func logQuiet(_ event: Swift.String, _ extra: [Swift.String : Any] = [:])
+  @objc final public func maybeFlush()
+  @objc public static func parseEvtLogFlag(_ json: [Swift.String : Any]?) -> Swift.Bool
+  @objc public static func parseEvtLogFlag(body: Foundation.Data?) -> Swift.Bool
   @objc deinit
 }
 extension VietmapTrackingSDK.VMAuthMode : Swift.Equatable {}
