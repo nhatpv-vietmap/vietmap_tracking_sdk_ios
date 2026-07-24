@@ -26,11 +26,11 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		Q91YrXJtSjxn0LvOwV1bMTytT4k=
+		kRMQicbj2PCJuX8UzwzHVJc/WZg=
 		</data>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		ZgzWa46pBYGJIHGLF3sN9iSR/dM=
+		iuEYDqexzV9IUY6ZOxE6D0eaw0s=
 		</data>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -46,11 +46,11 @@
 		</data>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		dPCeJbfpDjpMs+UubUfhh5zf8w8=
+		FGAKMfN4Zda2Tw2hVNRdMyemVdc=
 		</data>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		ZgzWa46pBYGJIHGLF3sN9iSR/dM=
+		iuEYDqexzV9IUY6ZOxE6D0eaw0s=
 		</data>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -66,7 +66,7 @@
 		</data>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		dQtdm8/3ivGCWWHSPjor7evuEyM=
+		mwd0EWW2LG2v0cDe+n4tiFnwxnI=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -114,7 +114,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			fghOnaYHiEfr1jQFgxbz5CtlPYKmfDnEhMzQ7sP9peA=
+			YgQUP9cUzWnaQQSErwv4aCIhXW0dg4Bu+vROlx/nOo4=
 			</data>
 		</dict>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
@@ -142,14 +142,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			XXVqqi+hNUmLBvHFRgjnkUczHacUjg+1nKF15xRnvw8=
+			B/YCsOHHo0pZsytsfdHuI/kG3TqaqXESYnkjBGGDIUw=
 			</data>
 		</dict>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			fghOnaYHiEfr1jQFgxbz5CtlPYKmfDnEhMzQ7sP9peA=
+			YgQUP9cUzWnaQQSErwv4aCIhXW0dg4Bu+vROlx/nOo4=
 			</data>
 		</dict>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
@@ -177,7 +177,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			FGyzhHZFpADtrhGWJkl0sxhjJEMz0LATXEsYSut5s1Q=
+			N4dPtiSs1P4uJSgLLOQpTDs0MMvFcsM3Fu7c8wgrIeY=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
