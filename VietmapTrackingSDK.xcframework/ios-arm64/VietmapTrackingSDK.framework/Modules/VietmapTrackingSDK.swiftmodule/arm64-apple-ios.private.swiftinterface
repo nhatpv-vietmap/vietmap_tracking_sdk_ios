@@ -140,6 +140,7 @@ public struct AlertConfig {
   @objc public func setDriverId(_ driverId: Swift.String?)
   @objc public func setMessagePackData(_ payload: Foundation.NSDictionary?)
   @objc public func setMetadata(_ metadata: Foundation.NSDictionary?)
+  @objc public func setPackages(_ packages: [Swift.String]?)
   @objc public func validateApiKey(apiKey: Swift.String, baseURL: Swift.String?, completion: @escaping ((any Swift.Error)?) -> Swift.Void)
   @objc public func initializeWithValidation(apiKey: Swift.String, baseURL: Swift.String?, completion: @escaping ((any Swift.Error)?) -> Swift.Void)
   @objc public func getVehicleId() -> Swift.String?
@@ -320,6 +321,7 @@ public class VMSpeedAlertState {
   @objc public func configure(apiKey: Swift.String, baseURL: Swift.String, autoUpload: Swift.Bool = true)
   @objc public func setMessagePackData(_ payload: Foundation.NSDictionary?)
   @objc public func setMetadata(_ metadata: Foundation.NSDictionary?)
+  @objc public func setPackages(_ packages: [Swift.String]?)
   @objc public func setEnableSpeedFallback(_ enabled: Swift.Bool)
   @objc public func initializeWithValidation(apiKey: Swift.String, baseURL: Swift.String?, completion: @escaping ((any Swift.Error)?) -> Swift.Void)
   @objc public func setAutoUpload(enabled: Swift.Bool)

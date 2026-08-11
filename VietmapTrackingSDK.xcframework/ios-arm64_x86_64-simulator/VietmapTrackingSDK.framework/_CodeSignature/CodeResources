@@ -18,7 +18,7 @@
 		</data>
 		<key>Headers/VietmapTrackingSDK-Swift.h</key>
 		<data>
-		pQXxHTvW3s1bHUXwaLwk509ca9Y=
+		ObnjIDvFU9XL6cg018GW56Wa4l8=
 		</data>
 		<key>Headers/VietmapTrackingSDK.h</key>
 		<data>
@@ -30,43 +30,43 @@
 		</data>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		iuEYDqexzV9IUY6ZOxE6D0eaw0s=
+		tzJX+Tajs2jDJzzj7dl5vulIzbE=
 		</data>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		PeBm1A5GBzTn8RnLG7dS2ZIZa8s=
+		JCT94kuRpK4pjtOtwNz5xZ3dlHw=
 		</data>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		jKwIgfZTCV0sokUcYQKPk85VWEY=
+		an2+C5VQlIrvkctF2KExPe2xLj8=
 		</data>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		PeBm1A5GBzTn8RnLG7dS2ZIZa8s=
+		JCT94kuRpK4pjtOtwNz5xZ3dlHw=
 		</data>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		FGAKMfN4Zda2Tw2hVNRdMyemVdc=
+		DfjR8zVDuZ5RGb6P8VjCBlxoNVc=
 		</data>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		iuEYDqexzV9IUY6ZOxE6D0eaw0s=
+		tzJX+Tajs2jDJzzj7dl5vulIzbE=
 		</data>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		QuNHF16MGlVhX3YLZ/HU+zLiEpE=
+		H2cSgyek8N2q2FxC0nnFCD+o2uU=
 		</data>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		GXXD3d6tc08PYBaCQHdgjevhcOc=
+		HlTMZRZIZ0IUKfXdwgksF6riGzU=
 		</data>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		QuNHF16MGlVhX3YLZ/HU+zLiEpE=
+		H2cSgyek8N2q2FxC0nnFCD+o2uU=
 		</data>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		mwd0EWW2LG2v0cDe+n4tiFnwxnI=
+		xghE5biSOnqb6GNGPEQRFMzt59Q=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -100,7 +100,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			4iC3RvBLyFoYJqu+XvKh9O7+pXl0PLehVN63G+jlUSw=
+			DgqegjtUjaJxG2o4r3QCyxrUv1M6kTaJAxth2nt09V0=
 			</data>
 		</dict>
 		<key>Headers/VietmapTrackingSDK.h</key>
@@ -114,70 +114,70 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			YgQUP9cUzWnaQQSErwv4aCIhXW0dg4Bu+vROlx/nOo4=
+			pbhfsWpAgqe5J8pF8EnOSsLP377I7TDeOHf7BCmBR6I=
 			</data>
 		</dict>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			XlZsYb0ZipQ4QWfAI6PGJzEwcc4lmKWLne5/QXbNMQ8=
+			hZfi63LGgV4v4enjTD8DDad3bWRWLimRoJyYsioQ87I=
 			</data>
 		</dict>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			UrAdu3B8PJ9KAMbEApycyfkGMxoSRD3sERz8ESIhgmA=
+			C7s5CmI4dd/dGP6ZDNvzZ2kfF1nb5GmcUAtHOm/Kzs0=
 			</data>
 		</dict>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			XlZsYb0ZipQ4QWfAI6PGJzEwcc4lmKWLne5/QXbNMQ8=
+			hZfi63LGgV4v4enjTD8DDad3bWRWLimRoJyYsioQ87I=
 			</data>
 		</dict>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			B/YCsOHHo0pZsytsfdHuI/kG3TqaqXESYnkjBGGDIUw=
+			225w1U/bMGv9ZxNvSpkm9ovrHLyF/jhG2PK+5kyeMKI=
 			</data>
 		</dict>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			YgQUP9cUzWnaQQSErwv4aCIhXW0dg4Bu+vROlx/nOo4=
+			pbhfsWpAgqe5J8pF8EnOSsLP377I7TDeOHf7BCmBR6I=
 			</data>
 		</dict>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			1gEUggAqcRcZ+0Z/uovNk7iKlA69n6GVXXODWO9zMk4=
+			+WOIExC/swgsMcVIY33sVI5dJvIYCZOW0tNK2jXIl1M=
 			</data>
 		</dict>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			nOWuyUXx8/6kNeT/+B5d5QuZBbhBMkQhWFPWMcAOWMQ=
+			bHi+3JaGf+3xvOcEZ3D56tRjKbn1dSjUfoGG7SBb+LE=
 			</data>
 		</dict>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			1gEUggAqcRcZ+0Z/uovNk7iKlA69n6GVXXODWO9zMk4=
+			+WOIExC/swgsMcVIY33sVI5dJvIYCZOW0tNK2jXIl1M=
 			</data>
 		</dict>
 		<key>Modules/VietmapTrackingSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			N4dPtiSs1P4uJSgLLOQpTDs0MMvFcsM3Fu7c8wgrIeY=
+			Cmq1bhD8V1qLY8o6PZWKC13VCeys9ehcLLmyQdhifL0=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

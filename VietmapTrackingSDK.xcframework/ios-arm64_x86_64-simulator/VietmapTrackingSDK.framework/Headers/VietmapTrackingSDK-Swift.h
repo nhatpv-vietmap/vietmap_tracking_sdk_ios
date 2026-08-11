@@ -560,6 +560,9 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VietmapTrack
 - (void)setMessagePackData:(NSDictionary * _Nullable)payload;
 /// Set arbitrary metadata to be included in every GPS post under the “metadata” key.
 - (void)setMetadata:(NSDictionary * _Nullable)metadata;
+/// Set the package codes included in every GPS post under the top-level “packages”
+/// key, e.g. <code>["#10001", "#10002"]</code>. Optional — nil or empty omits the field.
+- (void)setPackages:(NSArray<NSString *> * _Nullable)packages;
 /// Enable/disable Haversine speed fallback (compute speed when the OS omits it).
 - (void)setEnableSpeedFallback:(BOOL)enabled;
 /// Validate the tracking API key and initialize the SDK if valid.
@@ -646,6 +649,17 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VietmapTrack
 /// Set arbitrary metadata to be included in every GPS post under the “metadata” key.
 /// Call this before startTracking(). Can be updated at any time during tracking.
 - (void)setMetadata:(NSDictionary * _Nullable)metadata;
+/// Set the package codes included in every GPS post under the top-level “packages”
+/// key, e.g. <code>["#10001", "#10002"]</code>.
+/// Optional field — when never set, or set to nil / an empty array, “packages” is
+/// left out of the payload entirely.
+/// Can be called before or during tracking. The list is captured per GPS point at the
+/// moment it is recorded, so points already cached offline keep the packages they were
+/// captured with rather than picking up a later value when they are uploaded.
+/// \param packages package codes to attach; nil or empty clears the field.
+/// Empty strings are skipped.
+///
+- (void)setPackages:(NSArray<NSString *> * _Nullable)packages;
 /// Validate the tracking API key by calling GET {baseURL}/gps-tracking/users.
 /// Network call runs on a background thread; completion is delivered on the main thread.
 /// \param apiKey The API key to validate.
@@ -1438,6 +1452,9 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VietmapTrack
 - (void)setMessagePackData:(NSDictionary * _Nullable)payload;
 /// Set arbitrary metadata to be included in every GPS post under the “metadata” key.
 - (void)setMetadata:(NSDictionary * _Nullable)metadata;
+/// Set the package codes included in every GPS post under the top-level “packages”
+/// key, e.g. <code>["#10001", "#10002"]</code>. Optional — nil or empty omits the field.
+- (void)setPackages:(NSArray<NSString *> * _Nullable)packages;
 /// Enable/disable Haversine speed fallback (compute speed when the OS omits it).
 - (void)setEnableSpeedFallback:(BOOL)enabled;
 /// Validate the tracking API key and initialize the SDK if valid.
@@ -1524,6 +1541,17 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) VietmapTrack
 /// Set arbitrary metadata to be included in every GPS post under the “metadata” key.
 /// Call this before startTracking(). Can be updated at any time during tracking.
 - (void)setMetadata:(NSDictionary * _Nullable)metadata;
+/// Set the package codes included in every GPS post under the top-level “packages”
+/// key, e.g. <code>["#10001", "#10002"]</code>.
+/// Optional field — when never set, or set to nil / an empty array, “packages” is
+/// left out of the payload entirely.
+/// Can be called before or during tracking. The list is captured per GPS point at the
+/// moment it is recorded, so points already cached offline keep the packages they were
+/// captured with rather than picking up a later value when they are uploaded.
+/// \param packages package codes to attach; nil or empty clears the field.
+/// Empty strings are skipped.
+///
+- (void)setPackages:(NSArray<NSString *> * _Nullable)packages;
 /// Validate the tracking API key by calling GET {baseURL}/gps-tracking/users.
 /// Network call runs on a background thread; completion is delivered on the main thread.
 /// \param apiKey The API key to validate.
