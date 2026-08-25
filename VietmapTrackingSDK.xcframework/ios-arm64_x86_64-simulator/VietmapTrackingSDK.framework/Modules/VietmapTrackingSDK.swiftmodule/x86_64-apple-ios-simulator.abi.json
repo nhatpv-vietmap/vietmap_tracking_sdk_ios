@@ -18221,154 +18221,168 @@
     {
       "filePath": "\/Volumes\/240GB\/Vietmap_SDK\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "FloatLiteral",
-      "offset": 44279,
+      "offset": 44352,
       "length": 4,
-      "value": "20.0"
+      "value": "30.0"
+    },
+    {
+      "filePath": "\/Volumes\/240GB\/Vietmap_SDK\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
+      "kind": "FloatLiteral",
+      "offset": 44500,
+      "length": 4,
+      "value": "15.0"
     },
     {
       "filePath": "\/Volumes\/240GB\/Vietmap_SDK\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "IntegerLiteral",
-      "offset": 44397,
+      "offset": 45053,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Volumes\/240GB\/Vietmap_SDK\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "IntegerLiteral",
-      "offset": 44424,
+      "offset": 45168,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Volumes\/240GB\/Vietmap_SDK\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
+      "kind": "IntegerLiteral",
+      "offset": 45195,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Volumes\/240GB\/Vietmap_SDK\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "IntegerLiteral",
-      "offset": 44451,
+      "offset": 45222,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Volumes\/240GB\/Vietmap_SDK\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "IntegerLiteral",
-      "offset": 45206,
+      "offset": 45977,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Volumes\/240GB\/Vietmap_SDK\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "IntegerLiteral",
-      "offset": 45306,
+      "offset": 46077,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Volumes\/240GB\/Vietmap_SDK\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "IntegerLiteral",
-      "offset": 45402,
+      "offset": 46173,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Volumes\/240GB\/Vietmap_SDK\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "Array",
-      "offset": 45607,
+      "offset": 46378,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Volumes\/240GB\/Vietmap_SDK\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "Dictionary",
-      "offset": 48855,
+      "offset": 49626,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Volumes\/240GB\/Vietmap_SDK\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "BooleanLiteral",
-      "offset": 49882,
+      "offset": 50653,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Volumes\/240GB\/Vietmap_SDK\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "StringLiteral",
-      "offset": 80378,
+      "offset": 81360,
       "length": 57,
       "value": "\"https:\/\/drive-api.vietmap.vn\/fleetwork\/api\/Alert\/v2\/mpp\""
     },
     {
       "filePath": "\/Volumes\/240GB\/Vietmap_SDK\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "IntegerLiteral",
-      "offset": 83427,
+      "offset": 84409,
       "length": 1,
       "value": "5"
     },
     {
       "filePath": "\/Volumes\/240GB\/Vietmap_SDK\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "FloatLiteral",
-      "offset": 83493,
+      "offset": 84475,
       "length": 6,
       "value": "1500.0"
     },
     {
       "filePath": "\/Volumes\/240GB\/Vietmap_SDK\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "IntegerLiteral",
-      "offset": 84754,
+      "offset": 85736,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Volumes\/240GB\/Vietmap_SDK\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "IntegerLiteral",
-      "offset": 84823,
+      "offset": 85805,
       "length": 1,
       "value": "5"
     },
     {
       "filePath": "\/Volumes\/240GB\/Vietmap_SDK\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "FloatLiteral",
-      "offset": 84897,
+      "offset": 85879,
       "length": 6,
       "value": "1500.0"
     },
     {
       "filePath": "\/Volumes\/240GB\/Vietmap_SDK\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "Dictionary",
-      "offset": 138976,
+      "offset": 141857,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Volumes\/240GB\/Vietmap_SDK\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "BooleanLiteral",
-      "offset": 152347,
+      "offset": 155228,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Volumes\/240GB\/Vietmap_SDK\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "BooleanLiteral",
-      "offset": 212227,
+      "offset": 215108,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Volumes\/240GB\/Vietmap_SDK\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "BooleanLiteral",
-      "offset": 212249,
+      "offset": 215130,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Volumes\/240GB\/Vietmap_SDK\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "BooleanLiteral",
-      "offset": 217994,
+      "offset": 220875,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Volumes\/240GB\/Vietmap_SDK\/map-sdk-tracking\/ios\/VietmapTrackingSDK\/VietmapTrackingSDK.swift",
       "kind": "BooleanLiteral",
-      "offset": 228841,
+      "offset": 232011,
       "length": 5,
       "value": "false"
     },
